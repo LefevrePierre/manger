@@ -635,44 +635,7 @@ input[type='submit']:hover {
 		font-size:0.8em;
 	}
 	
-		/* FOOTER */
-	footer {
-		z-index: 10;
-		position: fixed;
-	}
-	.footer-manger {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		position: fixed !important;
-		background-color: #fff;
-		width: 100%;
-		bottom: 0;
-		margin: 0;
-		padding: 0;
-		height: 10%;
-		-webkit-box-shadow: -2px -2px 17px -1px rgba(0, 0, 0, 0.11);
-		-moz-box-shadow: -2px -2px 17px -1px rgba(0, 0, 0, 0.11);
-		box-shadow: -2px -2px 17px -1px rgba(0, 0, 0, 0.05);
-	}
-	
-	.ul-footer{
-		display:flex;
-		
-	}
-	
-	.nav-footer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
-		color: black;
-		font-size: 0.7em;
-	}
-	
-	#txt-footer{
-		color: #646464;
-	}
+
 	
 	.test{
 		
@@ -705,14 +668,7 @@ input[type='submit']:hover {
 	#slideIng { /****************************************************************/
 		padding-bottom: 70px;
 	}
-	.footer-manger {
-		height: 14%
-	}
-	.nav-footer {
-		padding: 5px;
-		color: black;
-		font-size: 0.5em;
-	}
+
 	#img-home-1 {
 		position: relative;
 		bottom: -30px;

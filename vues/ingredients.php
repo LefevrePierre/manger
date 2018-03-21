@@ -50,7 +50,7 @@ session_start(); // pour garder la var de SESSION
                     
                     <?php
     //affichage des div comprenant img + bouton ajouter
-     $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Viandes & poissons'";
+     $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Viande-Poisson'";
      $q = $pdo->prepare($sql);
      $q->execute();
      while ($line=$q->fetch()) {
@@ -144,18 +144,18 @@ session_start(); // pour garder la var de SESSION
         <div class="swiper-slide" data-hash="slide2"><?php include('liste.php');?></div>
         <div class="swiper-slide" data-hash="slide3"><?php include('selectionRecette.php');?></div>
         <!-- Fin Slide liste -->
-        <footer id="footer">
-                    <div class="footer-manger">
-                        <ul class="ul-footer">
 
-                            <li class="nav-footer" onclick="afficherCategorie(1);"><img src="../img/icones/viandespoissons.png" onmouseover="this.src='img/icones/viandespoissons-hover.png'" class="test" id="img-footer-2" onmouseout="this.src='img/icones/viandespoissons.png'" class="test" id="img-footer-1"><span id="txt-footer">Viandes</span></li>
-                            <li class="nav-footer" onclick="afficherCategorie(2);"><img src="../img/icones/légumes.png" onmouseover="this.src='img/icones/légumes-hover.png'" class="test" id="img-footer-2" onmouseout="this.src='img/icones/légumes.png'"><span id="txt-footer">Légumes</span></li>
-                            <li class="nav-footer" onclick="afficherCategorie(3);"><img src="../img/icones/féculent.png" onmouseover="this.src='img/icones/féculent-hover.png'" class="test" id="img-footer-2" onmouseout="this.src='img/icones/féculent.png'" class="test" id="img-footer-3"><span id="txt-footer">Féculents</span></li>
-                            <li class="nav-footer" onclick="afficherCategorie(4);"><img src="../img/icones/lait.png" onmouseover="this.src='img/icones/lait-hover.png'" class="test" id="img-footer-2" onmouseout="this.src='img/icones/lait.png'" class="test" id="img-footer-4"><span id="txt-footer">Laitages</span></li>
-                            <li class="nav-footer" onclick="afficherCategorie(5);"><img src="../img/icones/divers.png" onmouseover="this.src='img/icones/divers-hover.png'" class="test" id="img-footer-2" onmouseout="this.src='img/icones/divers.png'" class="test" id="img-footer-5"><span id="txt-footer">Divers</span></li>
+        <footer>
+<div class="footer__container">
+                        <ul>
+
+                            <li class="footer__icon" onclick="afficherCategorie(1);"><img src="img/icones/icon-viandes.png"></li>
+                            <li class="footer__icon" onclick="afficherCategorie(2);"><img src="img/icones/icon-légumes.png"></li>
+                            <li class="footer__icon" onclick="afficherCategorie(3);"><img src="img/icones/icon-féculents.png"></li>
+                            <li class="footer__icon" onclick="afficherCategorie(4);"><img src="img/icones/icon-laitiers.png"></li></li>
+                            <li class="footer__icon" onclick="afficherCategorie(5);"><img src="img/icones/icon-divers.png"></li></li>
                         </ul>
-                        
-                    </div>
+</div>
             </footer>
        
     <!-- Initialize Swiper -->
