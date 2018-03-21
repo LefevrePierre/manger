@@ -12,7 +12,7 @@ $_SESSION['ing_checked']=array();
 </div>
 <div class="content-1">
     <div class="paragraphe-home">
-        <h2 id="slogan">Qu'est-ce qu'on mange ce soir ?</h2>
+        <h2 id="slogan">Qu'est-ce qu'on mange ce soir ce soir  ?</h2>
         <p>Nous aussi on en a marre de se poser la même question tous les soirs.. Mais rassurez-vous, nous répondons enfin à cette question éternelle ! Vos ingrédients, nos recettes, VOS PLATS!</p>
     </div>
 </div>
