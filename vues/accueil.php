@@ -21,7 +21,7 @@ $_SESSION['ing_checked']=array();
 </div>
 <div class="img-home">
 
-    <img src="img/home-1.jpg" id="img-home-1">
+    <img src="../img/home-1.jpg" id="img-home-1">
 </div>
 
 </html>
