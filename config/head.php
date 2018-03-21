@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="dist/css/swiper.min.css">
         <link href="style/header.css" rel="stylesheet">
         <link href="style/style.css" rel="stylesheet">
+        <link href="style/footer.css" rel="stylesheet">
         <!-- Demo styles -->
 
         <!-- Fin Ajouts HEAD -->
