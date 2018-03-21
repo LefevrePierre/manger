@@ -30,7 +30,7 @@ include('config/head.php');
 
             // 1. on remplit un tab ViandesPoissonsBDD à partir des viandes et poissons de la BDD
             $ViandesPoissonsBDD=array();
-            $sql="SELECT * FROM ingredient WHERE type='Viandes & poissons'";          
+            $sql="SELECT * FROM ingredient WHERE type='Viande-Poisson'";
             $q=$pdo->prepare($sql);
             $q->execute();
             while($line=$q->fetch()) {
@@ -40,7 +40,7 @@ include('config/head.php');
             // on fait de meme pour les autres types d'ing de la BDD
             // légumes
             $LegumesBDD=array();
-            $sql="SELECT * FROM ingredient WHERE type='legume'";          
+            $sql="SELECT * FROM ingredient WHERE type='Légume'";
             $q=$pdo->prepare($sql);
             $q->execute();
             while($line=$q->fetch()) {
@@ -49,7 +49,7 @@ include('config/head.php');
 
             //féculents
             $FeculentBDD=array();
-            $sql="SELECT * FROM ingredient WHERE type='feculent'";          
+            $sql="SELECT * FROM ingredient WHERE type='Féculent'";
             $q=$pdo->prepare($sql);
             $q->execute();
             while($line=$q->fetch()) {
@@ -58,7 +58,7 @@ include('config/head.php');
 
             //laitage
             $LaitierBDD=array();
-            $sql="SELECT * FROM ingredient WHERE type='laitier'";          
+            $sql="SELECT * FROM ingredient WHERE type='Laitier'";
             $q=$pdo->prepare($sql);
             $q->execute();
             while($line=$q->fetch()) {
@@ -67,7 +67,7 @@ include('config/head.php');
 
             //divers
             $DiversBDD=array();
-            $sql="SELECT * FROM ingredient WHERE type='divers'";          
+            $sql="SELECT * FROM ingredient WHERE type='Divers'";
             $q=$pdo->prepare($sql);
             $q->execute();
             while($line=$q->fetch()) {
@@ -112,7 +112,7 @@ include('config/head.php');
                     $q->execute(array($id));
                     while($line=$q->fetch()) {
                         echo "<div>";
-                        echo "<img src=img/viandes/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
+                        echo "<img src=img/Viande-Poisson/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
                         echo "<a href=index.php?id=".$line['id']."&action=supprimer>-</a>";
                         echo "</div>";
                     }
@@ -134,7 +134,7 @@ include('config/head.php');
                     $q->execute(array($id));
                     while($line=$q->fetch()) {
                         echo "<div>";
-                        echo "<img src=img/legumes/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
+                        echo "<img src=img/Légume/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
                         echo "<a href=index.php?id=".$line['id']."&action=supprimer>-</a>";
                         echo "</div>";
                     }
@@ -156,7 +156,7 @@ include('config/head.php');
                     $q->execute(array($id));
                     while($line=$q->fetch()) {
                         echo "<div>";
-                        echo "<img src=img/feculents/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
+                        echo "<img src=img/Féculent/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
                         echo "<a href=index.php?id=".$line['id']."&action=supprimer>-</a>";
                         echo "</div>";
                     }
@@ -178,7 +178,7 @@ include('config/head.php');
                     $q->execute(array($id));
                     while($line=$q->fetch()) {
                         echo "<div>";
-                        echo "<img src=img/laitiers/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
+                        echo "<img src=img/Laitier/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
                         echo "<a href=index.php?id=".$line['id']."&action=supprimer>-</a>";
                         echo "</div>";
                     }
@@ -200,7 +200,7 @@ include('config/head.php');
                     $q->execute(array($id));
                     while($line=$q->fetch()) {
                         echo "<div>";
-                        echo "<img src=img/divers/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
+                        echo "<img src=img/Divers/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
                         echo "<a href=index.php?id=".$line['id']."&action=supprimer>-</a>";
                         echo "</div>";
                     }
