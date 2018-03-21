@@ -5,7 +5,8 @@ include('config/head.php');
 
             <section id="MaListe">
             <!-- Début de la liste -->
-            
+
+
             <?php
 
             // débuggage
@@ -100,10 +101,11 @@ include('config/head.php');
             // echo "</pre>";
             
             // s'il y a des viandes poissons parmi les checked, on affiche image et bouton - pour chaque
+            echo "<div class='liste__cat-container'>";
             if(COUNT($viandespoissonsAffiches)>0) {
-            
+
                 echo "<h3>Mes viandes et poissons</h3>";
-                
+                echo "<div class='liste__cat'>";
                 // on passe en revue tous les ingredients checked du type viande/poisson
                 foreach ($viandespoissonsAffiches as $key => $id) {
                     // pour chaque, on va chercher l'image et l'id (pour le supprimer si voulu)
@@ -111,21 +113,23 @@ include('config/head.php');
                     $q=$pdo->prepare($sql);
                     $q->execute(array($id));
                     while($line=$q->fetch()) {
-                        echo "<div>";
+                        echo "<div class='liste__item'>";
                         echo "<img src=img/Viande-Poisson/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>-</a>";
+                        echo "<p class=nom>".$line['nom']."</p>";
+                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>x</a>";
                         echo "</div>";
                     }
                     // fin du while
                 }
-                // fin du foreach              
+                // fin du foreach
+                echo "</div>";
             }
             // fin du if COUNT Viandes & Poissons
 
             if(COUNT($legumesAffiches)>0) {
-            
+
                 echo "<h3>Mes légumes</h3>";
-                
+                echo "<div class='liste__cat'>";
                 // on passe en revue tous les ingredients checked du type viande/poisson
                 foreach ($legumesAffiches as $key => $id) {
                     // pour chaque, on va chercher l'image et l'id (pour le supprimer si voulu)
@@ -133,21 +137,23 @@ include('config/head.php');
                     $q=$pdo->prepare($sql);
                     $q->execute(array($id));
                     while($line=$q->fetch()) {
-                        echo "<div>";
+                        echo "<div class='liste__item'>";
                         echo "<img src=img/Légume/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>-</a>";
+                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>x</a>";
                         echo "</div>";
                     }
                     // fin du while
                 }
-                // fin du foreach              
+                // fin du foreach
+                echo "</div>";
+
             }
             // fin du if COUNT Légumes
 
             if(COUNT($feculentAffiches)>0) {
-            
+
                 echo "<h3>Mes féculents</h3>";
-                
+                echo "<div class='liste__cat'>";
                 // on passe en revue tous les ingredients checked du type viande/poisson
                 foreach ($feculentAffiches as $key => $id) {
                     // pour chaque, on va chercher l'image et l'id (pour le supprimer si voulu)
@@ -155,21 +161,23 @@ include('config/head.php');
                     $q=$pdo->prepare($sql);
                     $q->execute(array($id));
                     while($line=$q->fetch()) {
-                        echo "<div>";
+                        echo "<div class='liste__item'>";
                         echo "<img src=img/Féculent/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>-</a>";
+                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>x</a>";
                         echo "</div>";
                     }
                     // fin du while
                 }
-                // fin du foreach              
+                // fin du foreach
+                echo "</div>";
+
             }
             // fin du if COUNT Féculents
 
             if(COUNT($laitierAffiches)>0) {
-            
+
                 echo "<h3>Mes produits laitiers</h3>";
-                
+                echo "<div class='liste__cat'>";
                 // on passe en revue tous les ingredients checked du type viande/poisson
                 foreach ($laitierAffiches as $key => $id) {
                     // pour chaque, on va chercher l'image et l'id (pour le supprimer si voulu)
@@ -177,21 +185,23 @@ include('config/head.php');
                     $q=$pdo->prepare($sql);
                     $q->execute(array($id));
                     while($line=$q->fetch()) {
-                        echo "<div>";
+                        echo "<div class='liste__item'>";
                         echo "<img src=img/Laitier/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>-</a>";
+                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>x</a>";
                         echo "</div>";
                     }
                     // fin du while
                 }
-                // fin du foreach              
+                // fin du foreach
+                echo "</div>";
+
             }
             // fin du if COUNT Laitiers
 
              if(COUNT($diversAffiches)>0) {
-            
+
                 echo "<h3>Mes autres produits</h3>";
-                
+                 echo "<div class='liste__cat'>";
                 // on passe en revue tous les ingredients checked du type viande/poisson
                 foreach ($diversAffiches as $key => $id) {
                     // pour chaque, on va chercher l'image et l'id (pour le supprimer si voulu)
@@ -199,17 +209,21 @@ include('config/head.php');
                     $q=$pdo->prepare($sql);
                     $q->execute(array($id));
                     while($line=$q->fetch()) {
-                        echo "<div>";
+                        echo "<div class='liste__item'>";
                         echo "<img src=img/Divers/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>-</a>";
+                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>x</a>";
                         echo "</div>";
                     }
                     // fin du while
                 }
-                // fin du foreach              
-            }
+                // fin du foreach
+                 echo "</div>";
+
+             }
             // fin du if COUNT Divers
-    }
+            echo "</div>";
+
+        }
     // fin du if isset SESSION
         
             

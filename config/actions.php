@@ -6,7 +6,7 @@ $listeDesActions = array(
 	"listeIngredients"=>"vues/ingredients.php",
 	"listeCoches"=>"vues/liste.php",
     "ajouter"=>"traitement/ajouter.php",
-    "supprimerDuPanier"=>"traitement/supprimer.php",
+    "supprimer"=>"traitement/supprimer.php",
     "selectionRecette"=>"vues/selectionRecette.php",
     "afficherRecette"=>"vues/afficherRecette.php",
     // admin

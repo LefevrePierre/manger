@@ -1,0 +1,31 @@
+.liste__cat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* height: 200px; */
+    /* align-items: center; */
+    overflow-x: hidden;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.liste__cat-container {
+    width: 95vw;
+    margin: 0 auto;
+}
+
+.liste__item {
+    height: auto;
+    position: relative;
+}
+
+.liste__item img {
+    height: 120px;
+    width: auto;
+}
+
+.liste__item a {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+}
