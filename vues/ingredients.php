@@ -24,12 +24,19 @@ session_start(); // pour garder la var de SESSION
 </div>
  <div class="header-manger" id="header">
                 <nav>
-                    <h2 id="titre-projet">Qu'est-ce qu'on mange ?</h2>
-                    <ul>
-                        <li class="nav-manger" id="page-ingredients">Ingrédients</li>
-                        <li class="nav-manger" id="maliste">Ma liste</a></li>
-                        <li class="nav-manger" id="recettes">Recettes</a></li>
+
+                    <ul class="ul-header">
+                        <li class="nav-manger" id="page-ingredients">
+                            <a href="#slide1">Ingrédients</a>
+                        </li>
+                        <li class="nav-manger" id="maliste">
+                            <a href="#slide2">Ma liste</a></li>
+                        </li>
+                        <li class="nav-manger" id="recettes">
+                            <a href="#slide3">Recettes</a>
+                        </li>
                     </ul>
+
                 </nav>
 </div>
 <div class="swiper-container">
@@ -161,8 +168,11 @@ session_start(); // pour garder la var de SESSION
     <!-- Initialize Swiper -->
     <script>
         var mySwiper = new Swiper('.swiper-container', {
-                hashNavigation:true,
-                init:false
+                watchState: true,
+                replaceState: true,
+                hashNavigation: {
+                    watchState: true,
+                },
             });
 
     </script>

@@ -27,6 +27,7 @@
 
         <!-- Link Swiper's CSS -->
         <link rel="stylesheet" href="dist/css/swiper.min.css">
+        <link href="style/header.css" rel="stylesheet">
         <link href="style/style.css" rel="stylesheet">
         <!-- Demo styles -->
 

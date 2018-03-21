@@ -442,26 +442,7 @@ input[type='submit']:hover {
 		width: 100%;
 	}
 	
-	/* HEADER */
-	.header-manger {
-		width: 100%;
-		background-color: #e65042;
-		overflow-x: hidden;
-		position: fixed;
-		top:0;
-		z-index: 2;
-	}
-	.nav-manger {
-		color: #fff;
-		font-family'Roboto';
-		font-weight: 300;
-		padding: 0;
-		padding: 5%;
-	}
 
-	.swiper-container {
-		margin-top: 60px;
-	}
 	
 	
 	/* PAGE INGRÉDIENTS */
