@@ -104,7 +104,7 @@ include('config/head.php');
             echo "<div class='liste__cat-container'>";
             if(COUNT($viandespoissonsAffiches)>0) {
 
-                echo "<h3>Mes viandes et poissons</h3>";
+                echo "<h3 class='liste-titre'>Mes viandes et poissons</h3>";
                 echo "<div class='liste__cat'>";
                 // on passe en revue tous les ingredients checked du type viande/poisson
                 foreach ($viandespoissonsAffiches as $key => $id) {
@@ -115,8 +115,8 @@ include('config/head.php');
                     while($line=$q->fetch()) {
                         echo "<div class='liste__item'>";
                         echo "<img src=img/Viande-Poisson/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                        echo "<p class=nom>".$line['nom']."</p>";
-                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>x</a>";
+                        echo "<p class=liste-nom>".$line['nom']."</p>";
+                        echo "<a href=index.php?id=".$line['id']."&action=supprimer><img src='img/icones/cancel.png' class='croix-supp' alt='supprimer'></a>";
                         echo "</div>";
                     }
                     // fin du while
@@ -128,7 +128,7 @@ include('config/head.php');
 
             if(COUNT($legumesAffiches)>0) {
 
-                echo "<h3>Mes légumes</h3>";
+                echo "<h3 class='liste-titre'>Mes légumes</h3>";
                 echo "<div class='liste__cat'>";
                 // on passe en revue tous les ingredients checked du type viande/poisson
                 foreach ($legumesAffiches as $key => $id) {
@@ -139,7 +139,8 @@ include('config/head.php');
                     while($line=$q->fetch()) {
                         echo "<div class='liste__item'>";
                         echo "<img src=img/Légume/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>x</a>";
+                        echo "<p class=liste-nom>".$line['nom']."</p>";
+                        echo "<a href=index.php?id=".$line['id']."&action=supprimer><img src='img/icones/cancel.png' class='croix-supp' alt='supprimer'></a>";
                         echo "</div>";
                     }
                     // fin du while
@@ -152,7 +153,7 @@ include('config/head.php');
 
             if(COUNT($feculentAffiches)>0) {
 
-                echo "<h3>Mes féculents</h3>";
+                echo "<h3 class='liste-titre'>Mes féculents</h3>";
                 echo "<div class='liste__cat'>";
                 // on passe en revue tous les ingredients checked du type viande/poisson
                 foreach ($feculentAffiches as $key => $id) {
@@ -163,7 +164,8 @@ include('config/head.php');
                     while($line=$q->fetch()) {
                         echo "<div class='liste__item'>";
                         echo "<img src=img/Féculent/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>x</a>";
+                        echo "<p class=liste-nom>".$line['nom']."</p>";
+                        echo "<a href=index.php?id=".$line['id']."&action=supprimer><img src='img/icones/cancel.png' class='croix-supp' alt='supprimer'></a>";
                         echo "</div>";
                     }
                     // fin du while
@@ -176,7 +178,7 @@ include('config/head.php');
 
             if(COUNT($laitierAffiches)>0) {
 
-                echo "<h3>Mes produits laitiers</h3>";
+                echo "<h3 class='liste-titre'>Mes produits laitiers</h3>";
                 echo "<div class='liste__cat'>";
                 // on passe en revue tous les ingredients checked du type viande/poisson
                 foreach ($laitierAffiches as $key => $id) {
@@ -187,7 +189,8 @@ include('config/head.php');
                     while($line=$q->fetch()) {
                         echo "<div class='liste__item'>";
                         echo "<img src=img/Laitier/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>x</a>";
+                        echo "<p class=liste-nom>".$line['nom']."</p>";
+                        echo "<a href=index.php?id=".$line['id']."&action=supprimer><img src='img/icones/cancel.png' class='croix-supp' alt='supprimer'></a>";
                         echo "</div>";
                     }
                     // fin du while
@@ -200,7 +203,7 @@ include('config/head.php');
 
              if(COUNT($diversAffiches)>0) {
 
-                echo "<h3>Mes autres produits</h3>";
+                echo "<h3 class='liste-titre'>Mes autres produits</h3>";
                  echo "<div class='liste__cat'>";
                 // on passe en revue tous les ingredients checked du type viande/poisson
                 foreach ($diversAffiches as $key => $id) {
@@ -211,7 +214,8 @@ include('config/head.php');
                     while($line=$q->fetch()) {
                         echo "<div class='liste__item'>";
                         echo "<img src=img/Divers/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                        echo "<a href=index.php?id=".$line['id']."&action=supprimer>x</a>";
+                        echo "<p class=liste-nom>".$line['nom']."</p>";
+                        echo "<a href=index.php?id=".$line['id']."&action=supprimer><img src='img/icones/cancel.png' class='croix-supp' alt='supprimer'></a>";
                         echo "</div>";
                     }
                     // fin du while
