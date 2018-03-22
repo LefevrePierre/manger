@@ -27,13 +27,17 @@ session_start(); // pour garder la var de SESSION
 
                     <ul class="ul-header">
                         <li class="nav-manger" id="page-ingredients">
-                            <a href="#slide1">Ingrédients</a>
+                            <a href="#slide1">Ingrédients<div class="triangle"></div></a>
+
                         </li>
                         <li class="nav-manger" id="maliste">
-                            <a href="#slide2">Ma liste</a></li>
+                            <a href="#slide2">Ma liste<div class="triangle"></div></a>
+
+                        </li>
                         </li>
                         <li class="nav-manger" id="recettes">
-                            <a href="#slide3">Recettes</a>
+                            <a href="#slide3">Recettes<div class="triangle"></div></a>
+
                         </li>
                     </ul>
 

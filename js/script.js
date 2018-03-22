@@ -100,7 +100,16 @@ mySwiper.on('init', function() {
 
 mySwiper.init();
 
-mySwiper.on('slideChange', function() {
+//Etats initiales :
+    $('.nav-manger:nth-child(2) .triangle').css('top','45px');
+    $('.nav-manger:nth-child(3) .triangle').css('top','45px');
+    $('#page-ingredients').css('font-weight','bold'); //normal de la categorie ingredients swiper
+    $('.nav-manger:nth-child(1) .triangle').css('transition','all 500ms');
+    $('.nav-manger:nth-child(2) .triangle').css('transition','all 500ms');
+    $('.nav-manger:nth-child(3) .triangle').css('transition','all 500ms');
+
+
+    mySwiper.on('slideChange', function() {
 		if(mySwiper.activeIndex==0) {
 			$('footer').fadeIn("fast", function() {
    				 // Apparition
@@ -109,6 +118,10 @@ mySwiper.on('slideChange', function() {
   			$('#page-ingredients').css('font-weight','bold'); //normal de la categorie ingredients swiper
  			$('#maliste').css('font-weight','300'); //bold de la categorie maliste swiper
  			$('#recettes').css('font-weight','300'); //bold de la categorie recette swiper
+
+            $('.nav-manger:nth-child(1) .triangle').css('top','25px');
+		    $('.nav-manger:nth-child(2) .triangle').css('top','45px');
+		    $('.nav-manger:nth-child(3) .triangle').css('top','45px');
 		}
 
 		if(mySwiper.activeIndex==1) {
@@ -120,6 +133,11 @@ mySwiper.on('slideChange', function() {
  			$('#maliste').css('font-weight','bold'); //bold de la categorie maliste swiper
  			$('#recettes').css('font-weight','300'); //bold de la categorie recette swiper
 
+            $('.nav-manger:nth-child(2) .triangle').css('top','25px');
+            $('.nav-manger:nth-child(1) .triangle').css('top','45px');
+            $('.nav-manger:nth-child(3) .triangle').css('top','45px');
+
+
  			$('.ingredient-panier').fadeOut("fast",function(){
  				// Disparition
  			});
@@ -130,6 +148,10 @@ mySwiper.on('slideChange', function() {
   			$('#page-ingredients').css('font-weight','300'); //normal de la categorie ingredients swiper
  			$('#maliste').css('font-weight','300'); //bold de la categorie maliste swiper
  			$('#recettes').css('font-weight','bold'); //bold de la categorie recette swiper
+
+            $('.nav-manger:nth-child(3) .triangle').css('top','25px');
+            $('.nav-manger:nth-child(2) .triangle').css('top','45px');
+            $('.nav-manger:nth-child(1) .triangle').css('top','45px');
 		}
 	});
 

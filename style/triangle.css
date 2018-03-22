@@ -1,0 +1,15 @@
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 20px 15px;
+    border-color: transparent transparent white transparent;
+    position: absolute;
+    left: 25%;
+    top: 25px;
+}
+
+.nav-manger a {
+    position: relative;
+}
+
