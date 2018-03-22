@@ -1,12 +1,8 @@
 .liste__cat {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* height: 200px; */
-    /* align-items: center; */
-    overflow-x: hidden;
+    display: grid;
     margin: 0 auto;
     width: 95%;
+    grid-template-columns: 0.32fr 0.32fr 0.32fr;
 }
 
 .liste__cat-container {
@@ -17,11 +13,13 @@
 .liste__item {
     height: auto;
     position: relative;
+    display: flex;
 }
 
 .liste__item img {
     height: 120px;
     width: auto;
+    margin: auto;
 }
 
 .liste__item a {
