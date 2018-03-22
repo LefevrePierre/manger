@@ -48,10 +48,10 @@ img.croix-supp {
     text-align: center;
     text-transform: uppercase;
     font-size: 1em;
-    padding-top: 25px;
+    padding-top: 40px;
     padding-bottom: 25px;
     margin-bottom: 0;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 h3:nth-child(3) {
