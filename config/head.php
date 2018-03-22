@@ -33,6 +33,7 @@
         <link href="style/footer.css" rel="stylesheet">
         <link href="style/icons.css" rel="stylesheet">
         <link href="style/liste.css" rel="stylesheet">
+        <link href="style/recette.css" rel="stylesheet">
         <!-- Demo styles -->
 
         <!-- Fin Ajouts HEAD -->

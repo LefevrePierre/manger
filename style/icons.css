@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?moib6n');
-  src:  url('../fonts/icomoon.eot?moib6n#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?moib6n') format('truetype'),
-    url('../fonts/icomoon.woff?moib6n') format('woff'),
-    url('../fonts/icomoon.svg?moib6n#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?sydgr8');
+  src:  url('../fonts/icomoon.eot?sydgr8#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?sydgr8') format('truetype'),
+    url('../fonts/icomoon.woff?sydgr8') format('woff'),
+    url('../fonts/icomoon.svg?sydgr8#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-stopwatch:before {
+  content: "\e900";
+}
 .icon-salt-and-pepper:before {
   content: "\e901";
 }
@@ -37,5 +40,5 @@
   content: "\e904";
 }
 .icon-milk:before {
-  content: "\e900";
+  content: "\e905";
 }
