@@ -35,6 +35,7 @@
         <link href="style/liste.css" rel="stylesheet">
         <link href="style/recette.css" rel="stylesheet">
         <link href="style/triangle.css" rel="stylesheet">
+        <link href="style/selectionRecette.css" rel="stylesheet">
         <!-- Demo styles -->
 
         <!-- Fin Ajouts HEAD -->

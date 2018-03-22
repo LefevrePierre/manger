@@ -14,9 +14,10 @@ if(isset($_SESSION['ing_checked'])) {
     else {
         //remplissage des tableaux de recettes et ingredients de cette recette
         $recetteTab=array();
+        $recetteTabImg=array();
         $ingredientsDeLaRecette=array($recetteTab);
 
-        $sql1="SELECT DISTINCT titre FROM recette";
+        $sql1="SELECT DISTINCT titre, imgBg FROM recette";
         $sql2="SELECT idIngredient FROM estDans JOIN recette ON recette.id=idRecette WHERE idRecette=? GROUP BY idIngredient";
 
         $q1 = $pdo->prepare($sql1);
@@ -29,6 +30,7 @@ if(isset($_SESSION['ing_checked'])) {
         while ($line1=$q1->fetch()) { // ne pas oublier de le mettre
 
             $recetteTab[$numRecette]=$line1['titre'];
+            $recetteTabImg[$numRecette]=$line1['imgBg'];
 
             $q2 = $pdo->prepare($sql2);
             $q2->execute(array($numRecette));
@@ -46,9 +48,9 @@ if(isset($_SESSION['ing_checked'])) {
             
         }
 
-
+        echo "<div class='selectionRecette-conteneur'>";
         // TOUS LES INGREDIENTS ET PLUS FONCTIONNE
-        echo "<h2>Vous avez tous les ingrédients</h2>";
+        echo "<h2 class='selectionRecette-titre'>Recette(s) trouvée(s)</h2>";
         $x=0;
         $recetteTrouve=false;
 
@@ -56,8 +58,20 @@ if(isset($_SESSION['ing_checked'])) {
             $result= array_diff($ingredientsDeLaRecette[$niemeIng], $_SESSION['ing_checked']); 
             /* var_dump($result)*/;
             /*echo "niemeIng = ".$niemeIng."<br>";*/
-            if($result==array() && $x>0){ 
+            if($result==array() && $x>0){
                     echo "<h5>".$recetteTab[$niemeIng]."</h5>";
+
+                    //div fictive pour intégrer
+                    echo "<div class='imgRecette'></div>";
+                    echo "<div class='titreRecette'>
+                            <h5>".$recetteTab[$niemeIng]."</h5>
+                            <a href=index.php?id=".$niemeIng."&action=afficherRecette>Voir recette</a>
+                        </div>";
+
+                    //il faut mettre dans ce echo une div avec un bgimg
+                    //echo "<img src='img/recette/".$recetteTabImg[$niemeIng]."'>";
+
+
                     $recetteTrouve=true;
                     echo "<a href=index.php?id=".$niemeIng."&action=afficherRecette>Voir recette</a>";
                 }
@@ -69,7 +83,7 @@ if(isset($_SESSION['ing_checked'])) {
         }
 
 
-        echo "<h2>Il vous manque 1 ingrédient</h2>";
+        echo "<h2 class='selectionRecette-titre'>Il vous manque 1 ingrédient</h2>";
             
         $y=0;
         $recetteTrouveManque1=false;
@@ -103,6 +117,8 @@ if(isset($_SESSION['ing_checked'])) {
         if($recetteTrouveManque1==false){
             echo "Pas de recette trouvée debug !";
         }
+        echo "</div>";
+
     }
 }
 
