@@ -1,19 +1,21 @@
 .liste__cat {
     display: grid;
-    margin: 0 auto;
-    width: 95%;
+    /* margin: 0 auto; */
+    /* width: 95%; */
     grid-template-columns: 0.32fr 0.32fr 0.32fr;
+    justify-content: center;
+    padding-bottom: 20px;
+
 }
 
-.liste__cat-container {
-    width: 95vw;
-    margin: 0 auto;
-}
+
 
 .liste__item {
     height: auto;
     position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .liste__item img {
@@ -26,4 +28,44 @@
     position: absolute;
     right: 10%;
     top: 10%;
+}
+
+img.croix-supp {
+    height: 12px;
+    top: -10px;
+    position: relative;
+}
+
+.liste-nom {
+    font-weight: 200;
+    font-size:0.85em;
+    text-transform: capitalize;
+    margin-top: -35%;
+
+}
+
+.liste-titre {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+h3:nth-child(3) {
+    background: #f6f6f6;
+}
+
+.liste__cat:nth-child(4) {
+    background: #f6f6f6;
+}
+
+h3:nth-child(7) {
+    background: #f6f6f6;
+}
+
+.liste__cat:nth-child(8) {
+    background: #f6f6f6;
 }
