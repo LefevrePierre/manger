@@ -50,7 +50,7 @@ if(isset($_SESSION['ing_checked'])) {
 
         echo "<div class='selectionRecette-conteneur'>";
         // TOUS LES INGREDIENTS ET PLUS FONCTIONNE
-        echo "<h2 class='selectionRecette-titre'>Recette(s) trouvée(s)</h2>";
+        echo "<h2 class='selectionRecette-titre'>Recettes trouvées</h2>";
         $x=0;
         $recetteTrouve=false;
 
@@ -59,21 +59,29 @@ if(isset($_SESSION['ing_checked'])) {
             /* var_dump($result)*/;
             /*echo "niemeIng = ".$niemeIng."<br>";*/
             if($result==array() && $x>0){
-                    echo "<h5>".$recetteTab[$niemeIng]."</h5>";
+                   /* echo "<h5>".$recetteTab[$niemeIng]."</h5>";
 
                     //div fictive pour intégrer
                     echo "<div class='imgRecette'></div>";
                     echo "<div class='titreRecette'>
-                            <h5>".$recetteTab[$niemeIng]."</h5>
-                            <a href=index.php?id=".$niemeIng."&action=afficherRecette>Voir recette</a>
-                        </div>";
+                            
+                        </div>";*/
+
+
+                    echo "<div class='selectionRecette-div'>
+                                <div class='selectionRecette-desc'>
+                                    <h5>".$recetteTab[$niemeIng]."</h5>
+                                    <a href=index.php?id=".$niemeIng."&action=afficherRecette>Voir recette</a>
+                                </div>
+                          </div>";
+
 
                     //il faut mettre dans ce echo une div avec un bgimg
                     //echo "<img src='img/recette/".$recetteTabImg[$niemeIng]."'>";
 
 
                     $recetteTrouve=true;
-                    echo "<a href=index.php?id=".$niemeIng."&action=afficherRecette>Voir recette</a>";
+/*                    echo "<a href=index.php?id=".$niemeIng."&action=afficherRecette>Voir recette</a>";*/
                 }
             $x++;
         }

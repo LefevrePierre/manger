@@ -5,17 +5,39 @@
 }
 
 .selectionRecette-titre {
-    font-size: 1.7em;
+    font-size: 1.4em;
 }
 
 
-.imgRecette {
+.selectionRecette-div {
     background-image: url("../img/recettes/escalopelegumes.jpg");
-    height: 180px;
+    height: 220px;
     background-size: cover;
     background-position: center;
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    box-shadow: 1px 0px 20px 0px #95939345;
 }
 
-.titreRecette {
+.selectionRecette-desc {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    align-items: center;
+    height: 55px;
+    padding:10px 10px 10px 20px;
+}
 
+.selectionRecette-desc h5 {
+    color: #616861;
+    font-weight: 500;
+}
+
+.selectionRecette-desc a {
+    margin-left: auto;
+    border-left: 1px #b3b3b3 solid;
+    padding: 10px 10px;
 }
