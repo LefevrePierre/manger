@@ -71,7 +71,7 @@ if(isset($_SESSION['ing_checked'])) {
                     echo "<div class='selectionRecette-div'>
                                 <div class='selectionRecette-desc'>
                                     <h5>".$recetteTab[$niemeIng]."</h5>
-                                    <a href=index.php?id=".$niemeIng."&action=afficherRecette>Voir recette</a>
+                                    <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
                                 </div>
                           </div>";
 
@@ -81,7 +81,7 @@ if(isset($_SESSION['ing_checked'])) {
 
 
                     $recetteTrouve=true;
-/*                    echo "<a href=index.php?id=".$niemeIng."&action=afficherRecette>Voir recette</a>";*/
+/*                    echo "<a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>";*/
                 }
             $x++;
         }
@@ -104,21 +104,33 @@ if(isset($_SESSION['ing_checked'])) {
             /*echo "niemeIng = ".$niemeIng."<br>";*/
             if(count($result)==1 && $y>0){ 
                     //var_dump($result);
-                    echo $recetteTab[$niemeIng]."<br>";
-                    $recetteTrouveManque1=true;
-                    /*$ingredientManquant=$result[1];*/
-                
-                    foreach($result as $idManquant => $idRecette){
-                        $ingredientManquant=$result[$idManquant];
-                        $sql="SELECT nom FROM ingredient WHERE id=?";
-                        $q=$pdo->prepare($sql);
-                        $q->execute(array($ingredientManquant));
-                        if($line=$q->fetch()) {
-                            $nomIngredientManquant=$line['nom'];
-                        }
+                    //echo $recetteTab[$niemeIng]."<br>";
+                    //echo "<img src='img/recette/".$recetteTabImg[$niemeIng]."'>";
+                foreach($result as $idManquant => $idRecette){
+                    $ingredientManquant=$result[$idManquant];
+                    $sql="SELECT nom FROM ingredient WHERE id=?";
+                    $q=$pdo->prepare($sql);
+                    $q->execute(array($ingredientManquant));
+                    if($line=$q->fetch()) {
+                        $nomIngredientManquant=$line['nom'];
                     }
-                    echo "Manque : ".$nomIngredientManquant;
                 }
+
+
+
+                echo "<div class='selectionRecette-div'>
+                                <div class='manque'>Ingrédient manquant :<br> ".$nomIngredientManquant."</div>
+                                <div class='selectionRecette-desc'>
+                                    <h5>".$recetteTab[$niemeIng]."</h5>
+                                    <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
+                                </div>
+                          </div>";
+
+
+                $recetteTrouveManque1=true;
+                /*$ingredientManquant=$result[1];*/
+
+            }
             $y++;
         }
 

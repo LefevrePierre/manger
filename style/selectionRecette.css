@@ -34,10 +34,25 @@
 .selectionRecette-desc h5 {
     color: #616861;
     font-weight: 500;
+    font-size: 0.85em;
+}
+
+.selectionRecette-desc img {
+    height: 30px;
 }
 
 .selectionRecette-desc a {
     margin-left: auto;
-    border-left: 1px #b3b3b3 solid;
-    padding: 10px 10px;
+    border-left: 1px #f7f7f7 solid;
+    padding: 3px 10px 3px 15px;
 }
+
+.manque {
+    background-color: rgba(0,0,0,0.6);
+    height: 100%;
+    text-align: center;
+    padding-top: 50px;
+    color: #fffefc;
+    text-transform: uppercase;
+}
+

@@ -1,8 +1,8 @@
-.recette__mainimg {
-    background-size: cover;
-    position:absolute;
+.recette__mainimg {         
     width: 100%;
     height: 100vh;
+    height: 100vh;
+    filter: brightness(0.6);
 }
 
 .recette__title{
@@ -13,6 +13,14 @@
 
 .recette__title:first-letter{
     text-transform: capitalize;
+}
+
+.div-recette__info {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
 }
 
 .recette__infos{
@@ -41,12 +49,64 @@
     z-index:20;
     text-align:center;
     color:white;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .recette__g{
     margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .icon-stopwatch{
     font-size:1.9em;
+}
+
+.recette__tps1, .recette__tps2 {
+    margin-left: 10px;
+}
+
+
+
+.ingredients-recette {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-gap: 10px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    text-transform: capitalize;
+}
+.ingredients-recette-div {
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+}
+
+.ingredients-recette-img {
+    height: 60px;
+}
+
+
+
+.etape {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px whitesmoke solid;
+    border-top: 1px whitesmoke solid;
+}
+
+.etape h4 {
+    color: #e2e2e2d6;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.etape div {
+    width: 90%;
+    text-align: center;
+    margin: auto;
 }
