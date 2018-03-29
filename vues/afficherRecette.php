@@ -43,22 +43,34 @@ if(isset($_GET['id'])) {
 
 
         echo "<div class='recette__container'>";
-
+        echo "<h4>INGRÉDIENTS</h4>";
         echo "<div class='ingredients-recette-div'>";
 
-        $sql = "SELECT * FROM ingredient JOIN estdans ON ingredient.id=idIngredient WHERE idRecette=? ";
-        $q = $pdo->prepare($sql);
-        $q->execute(array($_GET['id']));
+        $sql3="SELECT nom,qteIng,uniteQte,type,imgListe FROM estDans JOIN ingredient ON ingredient.id=idIngredient WHERE idRecette=?";
+        $q3=$pdo->prepare($sql3);
+        $q3->execute(array($_GET['id']));
         echo "<div class='ingredients-recette'>";
-        while ($line = $q->fetch()) {
-            echo "<div>" . $line['nom'] . "<img class='ingredients-recette-img' src='img/".$line['type']."/".$line['imgListe']."'> </div>";
-            echo "<div>" . $line['nom'] . "<img class='ingredients-recette-img' src='img/".$line['type']."/".$line['imgListe']."'> </div>";
+        while ($line = $q3->fetch()) {
+            echo "<div>".$line['nom'] . "<img class='ingredients-recette-img' src='img/".$line['type']."/".$line['imgListe']."'>".$line['qteIng'].$line['uniteQte']." </div>";
         }
         echo "</div>";
         echo "</div>";
 
         echo "<div>";
 
+
+/*
+        $sql3="SELECT nom,qteIng,uniteQte,type,imgListe FROM estDans JOIN ingredient ON ingredient.id=idIngredient WHERE idRecette=?";
+        $q3=$pdo->prepare($sql3);
+        $q3->execute(array($_GET['id']));
+
+while($line=$q3->fetch()) {
+    echo $line['qteIng'];
+    echo $line['uniteQte'];
+    echo $line['nom'];
+    echo $line['type'];
+    echo $line['imgListe'];
+}*/
 
         echo "<iframe width=\"100%\" height=\"218px\" src=\"https://www.youtube.com/embed/woYrzHuC7yw?rel=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
 
