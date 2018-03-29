@@ -3,6 +3,7 @@
     height: 100vh;
     height: 100vh;
     filter: brightness(0.6);
+
 }
 
 .recette__title{
@@ -72,9 +73,9 @@
 
 .ingredients-recette {
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
-    grid-gap: 10px;
-    width: 50%;
+    grid-template-columns: 0.33fr 0.33fr 0.33fr;
+    grid-gap: 0px;
+    width:75%;
     margin: auto;
     text-align: center;
     text-transform: capitalize;
@@ -86,7 +87,7 @@
 }
 
 .ingredients-recette-img {
-    height: 60px;
+    height: 70px;
 }
 
 

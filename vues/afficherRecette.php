@@ -14,7 +14,7 @@ if(isset($_GET['id'])) {
         echo "<button><a href=index.php?action=selection>&#171;</a></button>";
         //fin header
 
-        echo "<div class=recette__mainimg style='background: url(img/recette/" . $line['imgBg'] . ");background-size: cover;'></div>";
+        echo "<div class=recette__mainimg style='background: url(img/recette/" . $line['imgBg'] . ");background-size: cover;background-position: center;'></div>";
 
         echo "<div class='div-recette__info'>";
         echo "<h2 class='recette__infos-title'>" . $line['titre'] . "</h2>";
@@ -51,12 +51,17 @@ if(isset($_GET['id'])) {
         $q->execute(array($_GET['id']));
         echo "<div class='ingredients-recette'>";
         while ($line = $q->fetch()) {
-            echo "<div>" . $line['nom'] . "<img class='ingredients-recette-img' src='img/Féculent/".$line['imgListe']."'> </div>";
+            echo "<div>" . $line['nom'] . "<img class='ingredients-recette-img' src='img/".$line['type']."/".$line['imgListe']."'> </div>";
+            echo "<div>" . $line['nom'] . "<img class='ingredients-recette-img' src='img/".$line['type']."/".$line['imgListe']."'> </div>";
         }
         echo "</div>";
         echo "</div>";
 
         echo "<div>";
+
+
+        echo "<iframe width=\"100%\" height=\"218px\" src=\"https://www.youtube.com/embed/woYrzHuC7yw?rel=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
+
 
 
         if (isset($_GET['id'])) {

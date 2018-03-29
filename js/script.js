@@ -162,5 +162,10 @@ $('.ingredient-panier').delay(1100).fadeOut(400);//disparition de l'ajout en fad
 $('.ingredient-panier-supp').delay(1100).fadeOut(400);//disparition de la supp en fadeout de 400ms après 1s
 
 
+//etape
+var ty = $('.recette__inf').text();
+console.log(ty);
+console.log('egr');
+
 });
 
