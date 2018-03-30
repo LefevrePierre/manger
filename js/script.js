@@ -162,10 +162,26 @@ $('.ingredient-panier').delay(1100).fadeOut(400);//disparition de l'ajout en fad
 $('.ingredient-panier-supp').delay(1100).fadeOut(400);//disparition de la supp en fadeout de 400ms après 1s
 
 
-//etape
-var ty = $('.recette__inf').text();
-console.log(ty);
-console.log('egr');
+
 
 });
 
+
+$(document).ready(function($){
+    $( window ).scroll(function() {
+//etape
+        var scy=$(window).scrollTop();
+        var visible = $('.ingredients-recette').visible(); // Set the visible status into the span.
+        console.log(visible);
+        console.log(scy);
+        if(scy > 800){
+            $('.ingredients-recette').addClass('ingredients-fixed');
+        }else if(scy < 654){
+            $('.ingredients-recette').removeClass('ingredients-fixed');
+
+        }else {
+
+        }
+    });
+
+});

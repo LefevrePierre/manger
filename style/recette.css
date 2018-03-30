@@ -80,6 +80,7 @@
     text-align: center;
     text-transform: capitalize;
     margin-bottom: 50px;
+    transition: all 400ms ease;
 }
 .ingredients-recette-div {
     width: 100%;
@@ -119,4 +120,20 @@
     text-align: center;
     margin-top: 20px;
     color: #e2e2e2d6;
+}
+
+.ingredients-fixed {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: white;
+    padding: 50px 0;
+    width: 100%;
+    box-shadow: -1px 2px 20px 0px #cacaca;
+    padding: 12px 9px;
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
