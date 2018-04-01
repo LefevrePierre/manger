@@ -169,7 +169,6 @@ $('.ingredient-panier-supp').delay(1100).fadeOut(400);//disparition de la supp e
 
 $(document).ready(function($){
     $( window ).scroll(function() {
-//etape
         var scy=$(window).scrollTop();
         var visible = $('.ingredients-recette').visible(); // Set the visible status into the span.
         console.log(visible);
@@ -182,6 +181,27 @@ $(document).ready(function($){
         }else {
 
         }
+    });
+
+
+
+    //script pour la recherche
+
+	$('#search-input').keyup(function () {
+		var recherche = $(this).val();
+		var data = 'motcle=' + recherche;
+
+		if(recherche.length>0) {
+			$.ajax({
+				type : "GET",
+				url : "traitement/search.php",
+				data : data,
+				success: function (server_response){
+					$('.searchResult-div').html(server_response).show();
+				}
+                });
+		}
+
     });
 
 });

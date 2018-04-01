@@ -51,7 +51,7 @@ if(isset($_GET['id'])) {
         $q3->execute(array($_GET['id']));
         echo "<div class='ingredients-recette'>";
         while ($line = $q3->fetch()) {
-            echo "<div>".$line['nom'] . "<img class='ingredients-recette-img' src='img/".$line['type']."/".$line['imgListe']."'>".$line['qteIng'].$line['uniteQte']." </div>";
+            echo "<div>".$line['nom'] ."<br>".$line['qteIng'].$line['uniteQte']. "<img class='ingredients-recette-img' src='img/".$line['type']."/".$line['imgListe']."'>"." </div>";
         }
         echo "</div>";
         echo "</div>";

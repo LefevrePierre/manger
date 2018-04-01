@@ -148,6 +148,12 @@ session_start(); // pour garder la var de SESSION
      }
 ?>
                 </div>
+                <div class="col-md-6 col-sm-6 col-xs-6" id="categorie6">
+
+                    <div class='search-div'> <input type='text' name='search-input' id='search-input'/></div>
+                    <div class='searchResult-div'></div>
+                </div>
+
             </div>
             <!-- Fin content-manger -->
         </div>
@@ -165,7 +171,8 @@ session_start(); // pour garder la var de SESSION
                             <li class="footer__icon" onclick="afficherCategorie(2);"><span class="icon-cabbage"></li>
                             <li class="footer__icon" onclick="afficherCategorie(3);"><span class="icon-spaguetti"></li>
                             <li class="footer__icon" onclick="afficherCategorie(4);"><span class="icon-milk"></span></li>
-                            <li class="footer__icon" id="footer__last-icon"onclick="afficherCategorie(5);"><span class="icon-salt-and-pepper"></li></li>
+                            <li class="footer__icon" onclick="afficherCategorie(5);"><span class="icon-salt-and-pepper"></li></li>
+                            <li class="footer__icon" id="footer__last-icon"onclick="afficherCategorie(6);"><span class="icon-search"></li></li>
                         </ul>
 </div>
             </footer>

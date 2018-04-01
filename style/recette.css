@@ -82,6 +82,11 @@
     margin-bottom: 50px;
     transition: all 400ms ease;
 }
+
+.ingredients-recette div {
+    display: flex;
+    flex-direction: column;
+}
 .ingredients-recette-div {
     width: 100%;
     height: auto;
