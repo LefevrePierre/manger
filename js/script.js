@@ -246,10 +246,12 @@ $(document).ready(function($){
     //script pour la recherche
     $('#search-input').hide();
 $('*').click(function () {
-        if($('.categorie6:visible')){
-            $('#search-input').show();
-            $('#search-input').focus();
-            console.log('socus');
+    if($('.categorie6:visible')){
+        $('#search-input').show();
+        $('#search-input').focus();
+        console.log('socus');
+    }else{
+        $('#search-input').hide();
         }
 
     })
