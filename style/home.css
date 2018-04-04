@@ -2,6 +2,7 @@
     width: 100vw;
     height: 95vh;
     background: #82be91;
+    overflow: hidden;
 }
 
 .home-logo {
