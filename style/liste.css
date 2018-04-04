@@ -111,9 +111,5 @@ footer li {
     transition: all 300ms ease-in-out;
 }
 
-footer li:hover {
-    transform: scale(1.2);
-}
-
 
 

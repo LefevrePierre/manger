@@ -45,17 +45,15 @@ footer{
     border-right: 1px solid #e1e1e1;
 }
 
-.footer__icon:hover {
+/*.footer__icon:hover {
     background-color: #76BE77;
-}
-#footer__first-icon:hover {
-    background-color: #76be77;
+}*/
+#footer__first-icon {
     border-radius: 120px 0px 0px 120px;
 }
 
 
-#footer__last-icon:hover{
-    background-color: #76be77;
+#footer__last-icon{
     border-radius: 0px 120px 120px 0px;
 }
 
@@ -87,4 +85,6 @@ font-size:1.3em;
 
 *[id^="categorie"]{
     transition: all 400ms ease-in-out;
+    transform-origin: center;
 }
+

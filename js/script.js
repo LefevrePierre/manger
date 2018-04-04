@@ -1,13 +1,17 @@
-function afficherCategorie(numero) {
-	var i;
-	document.getElementById('categorie'+numero).style.display="block";
-	for(i=1;i<numero;i++) {
-		document.getElementById('categorie'+i).style.display="none";
-	}
-	for(i=numero+1;i<=6;i++) {
-		document.getElementById('categorie'+i).style.display="none";
-	}
-}
+
+
+     function afficherCategorie(numero) {
+        var i;
+        document.getElementById('categorie' + numero).style.display = "block";
+        for (i = 1; i < numero; i++) {
+            document.getElementById('categorie' + i).style.display = "none";
+        }
+        for (i = numero + 1; i <= 6; i++) {
+            document.getElementById('categorie' + i).style.display = "none";
+        }
+    }
+
+
 
 dataQte=[];
 
@@ -240,11 +244,14 @@ $(document).ready(function($){
 
 
     //script pour la recherche
+    $('#search-input').hide();
 $('*').click(function () {
         if($('.categorie6:visible')){
+            $('#search-input').show();
             $('#search-input').focus();
             console.log('socus');
         }
+
     })
 
 	$('#search-input').keyup(function () {
@@ -267,13 +274,24 @@ $('*').click(function () {
 
 
     //script couleur fouteur
-
+    $('.footer__icon:nth-child(1)').css('background','#76be77');
+    $('.footer__icon:nth-child(1)').find('span').css('color','#ffffff');
     $('.footer__icon').click(function () {
-        $(this).css('background','green');
+        var celi = $(this)
+        $('.footer__icon').not(celi).css('background','white');
+        $('.footer__icon').not(celi).find('span').css('color','#b2b2b2');
+        $(this).css('background','#76be77');
         $(this).find('span').css('color','#ffffff')
-/*
-        $('.footer__icon:not('$(this)')').css('background','white');
-*/
+
     })
+
+//test
+       /* $('.footer__icon:nth-child(2)').click(function () {
+            var cecat = $(this);
+            $('*[id^="categorie"]').not(cecat).css('transform','rotateY(90deg)');
+            $('#categorie2').css('transform','rotateY(0deg)');
+        })
+*/
+
 
 });
