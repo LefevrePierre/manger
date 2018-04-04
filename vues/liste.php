@@ -20,7 +20,7 @@ include('config/head.php');
             $nbrCoches=COUNT($_SESSION['ing_checked']);
             $nbrManquant=4-$nbrCoches;
             if($nbrCoches==0) {
-                 echo "<p class=pas-ing__comp>Votre liste est vide</p>";
+                 echo "<img class='img-vide' src='img/icones/vide.png'>";
             }
             if($nbrManquant==1) { //gestion du pluriel
                 echo "<p class=pas-ing__coch>Merci de cocher au moins ".$nbrManquant." ingrédient supplémentaire pour voir une recette</p>";

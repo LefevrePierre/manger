@@ -28,17 +28,31 @@
   content: "\e900";
 }
 .icon-salt-and-pepper:before {
-  content: "\e901";
+  content: "\e90b";
 }
 .icon-chicken:before {
   content: "\e902";
 }
 .icon-cabbage:before {
-  content: "\e903";
+  content: "\e901";
 }
 .icon-spaguetti:before {
-  content: "\e904";
+  content: "\e90c";
 }
 .icon-milk:before {
-  content: "\e905";
+  content: "\e908";
+}
+
+.icon-magnifying-glass:before {
+  content: "\e907";
+}
+
+.icon-pan:before {
+content: '\e90a';
+  font-size: 30px;
+}
+
+.icon-chopping-board:before {
+  content: '\e903';
+  font-size: 30px;
 }

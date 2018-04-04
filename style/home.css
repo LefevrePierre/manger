@@ -1,13 +1,15 @@
 .home-fond {
     width: 100vw;
     height: 95vh;
-    background: #82be91;
+    background: #76be77;
+    overflow: hidden;
 }
 
 .home-logo {
     height: 90px;
     margin: 0 auto;
     display: block;
+    margin-top: 50px;
 }
 
 .home-p {
@@ -21,7 +23,7 @@
     margin: 0 auto;
     display: block;
     position: absolute;
-    bottom: -30px;
+    bottom: -110px;
 }
 
 .home-blanc {
@@ -31,7 +33,7 @@
 }
 
 .home-go {
-    background: #82be91;
+    background: #76be77;
     position: absolute;
     bottom: 45px;
     color: white;

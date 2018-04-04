@@ -172,7 +172,7 @@ session_start(); // pour garder la var de SESSION
                             <li class="footer__icon" onclick="afficherCategorie(3);"><span class="icon-spaguetti"></li>
                             <li class="footer__icon" onclick="afficherCategorie(4);"><span class="icon-milk"></span></li>
                             <li class="footer__icon" onclick="afficherCategorie(5);"><span class="icon-salt-and-pepper"></li></li>
-                            <li class="footer__icon" id="footer__last-icon"onclick="afficherCategorie(6);"><span class="icon-search"></li></li>
+                            <li class="footer__icon" id="footer__last-icon"onclick="afficherCategorie(6);"><span class="icon-magnifying-glass"></li></li>
                         </ul>
 </div>
             </footer>

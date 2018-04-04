@@ -7,8 +7,8 @@ if(isset($_SESSION['ing_checked'])) {
     $nbrCoches=COUNT($_SESSION['ing_checked']);
     if($nbrCoches<4) {
         echo "<div class=pas-ing>";
-        echo "<p class=pas-ing__comp>Ca va être compliqué</p>";
-        echo "<p class=pas-ing__coch>Veuillez cocher plus ingrédients</p>";
+        echo "<img class='img-vide' src='img/icones/recetteVide.png'>";
+        echo "<p class=pas-ing__coch>Pas de recette trouvée</p>";
         echo "</div>";
     }
     else {
@@ -87,7 +87,7 @@ if(isset($_SESSION['ing_checked'])) {
         }
 
         if($recetteTrouve==false){
-            echo "Pas de recette trouvée !";
+            echo "";
         }
 
 
