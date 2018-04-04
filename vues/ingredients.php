@@ -51,14 +51,7 @@ session_start(); // pour garder la var de SESSION
 
             <div class="content-manger">
                 <div class="col-md-6 col-sm-6 col-xs-6" id="categorie1">
-                    
 
-                    <!-- test affichage une image
-                    <div class="ingredient-checkable">
-                        <img src="img/viandes/colin.png" alt="colin.png"> PAS de ../
-                        <a href="#">+</a>
-                    </div>-->
-                    
                     <?php
     //affichage des div comprenant img + bouton ajouter
      $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Viande-Poisson'";
