@@ -1,3 +1,335 @@
+a:hover {
+	text-decoration: none;
+}
+
+/* CSS DU PHONE */
+/*viandespoissons, on affiche la premiere au moins*/
+#categorie1 {
+	display:block;
+}
+/*legumes*/
+#categorie2 {
+	display:none;
+}
+/*feculents*/
+#categorie3 {
+	display:none;
+}
+/*laitiers*/
+#categorie4 {
+	display:none;
+}
+/*divers*/
+#categorie5 {
+	display:none;
+}
+
+/* page admin PC */
+
+/* connexion */
+
+.form_connexion {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.form_connexion form {
+	margin: auto;
+}
+
+.input_co {
+	border: none;
+	background-color: #eeeeee;
+	border-radius: 5px;
+	width:150px;
+	height:30px;
+	padding-left: 10px;
+}
+
+#seconnecter {
+	left:0 !important;
+}
+
+.container__admin {
+	display: flex;
+	max-height:1500px;
+}
+
+.admin {
+	position: relative;
+}
+
+/*ajout ing*/
+select.liste__type  {
+	text-transform: uppercase;
+}
+
+input[type='submit'].submit__ing {
+	position: absolute;
+	right: 25px;
+}
+
+.annuler.annuler__ing {
+	position: absolute;
+	right:120px;
+}
+
+.notif__new__ing {
+	color: #1C1C1C;
+	background-color: transparent;
+	border: 1px solid #1D1D1D;
+	margin-left: 20px;
+}
+
+.notif__new__ing:hover {
+	background-color: transparent;
+	color: #1C1C1C;
+	cursor: default;
+	border: 1px solid #1D1D1D;
+}
+
+/* formulaires de new et modif*/
+form {
+	margin-left:auto;
+	margin-right:auto;
+	position: relative;
+}
+
+.form__content {
+	display: flex;
+}
+
+.un {
+	background-color: rgba(238,238,238,0.5);
+	transition: all 0.8s;
+	padding: 30px 40px;
+	max-width: 650px;
+}
+
+.un:hover {
+	background-color: rgba(238,238,238,0.7);
+	transition: all 0.8s;
+}
+
+.deux {
+	background-color: rgba(238,238,238,0.5);
+	transition: all 0.8s;
+	padding: 30px 40px;
+}
+
+.deux:hover {
+	background-color: rgba(238,238,238,0.7);
+	transition: all 0.8s;
+}
+
+.deux table tr td {
+	transition: all 0.8s;
+	padding:10px 20px;
+	transition: background 0.8s;
+}
+
+.deux table tr td:hover {
+	background-color: rgba(238,238,238,0.8);
+	transition: background 0.8s;
+}
+
+.divQte {
+	padding-bottom: 10px;
+}
+
+.trois {
+	background-color: rgba(238,238,238,0.5);
+	transition: all 0.8s;
+	padding: 30px 40px;
+	position: relative;
+	width:300px;
+}
+
+.trois:hover {
+	background-color: rgba(238,238,238,0.7);
+	transition: all 0.8s;
+}
+
+.apercu__image {
+	width:100px;
+}
+
+.modif {
+	background-color: rgba(34,139,24,0.9);
+	color:white;
+	border-radius: 5px;
+	padding:10px 20px;
+	border: none;
+	transition: background 0.5s;
+}
+
+.changeCouleur {
+	background-color: rgba(244,162,10,0.9);
+	color:white;
+	border-radius: 5px;
+	padding:10px 20px;
+	border: none;
+	transition: background 0.5s;
+}
+
+
+#new__image {
+	display: none;
+	position: relative;
+	left:-300px;
+	z-index: 10;
+}
+
+input[type="file"].input__cache {
+	left: -110px;
+	position: relative;
+	z-index: 1;
+	opacity: 0;
+}
+
+.actuels {
+	margin-top: 60px;
+}
+
+.nom__ing {
+	text-transform: uppercase;
+	font-size: 0.9em;
+}
+
+.nom__ing__index {
+	text-transform: uppercase;
+}
+
+.etp {
+	margin-bottom: 20px;
+}
+
+textarea {
+	width: 90%;
+	padding: 10px;
+	border-radius: 2px;
+	border:none;
+	-webkit-box-shadow: 9px 7px 12px -5px rgba(0,0,0,0.05);
+	-moz-box-shadow: 9px 7px 12px -5px rgba(0,0,0,0.05);
+	box-shadow: 9px 7px 12px -5px rgba(0,0,0,0.05);
+}
+
+.check__admin {
+	transform: scale(1.1);
+}
+	
+.etape__title {
+	font-size: 1.5em;
+}
+
+/*retour*/
+.retour {
+	color: #1C1C1C;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: inline-block;
+	transform: translateX(0px);
+	transition: transform 1s;
+}
+
+.retour:hover {
+	transform: translateX(-1px);
+	transition: transform 1s;
+}
+
+.triangle {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-right: 20px solid #1C1C1C;
+	border-bottom: 10px solid transparent;
+}
+/*fin retour*/
+
+/*tableau d'ing*/
+tr>td {
+	padding-bottom: 15px;
+}
+
+td {
+	padding-right: 25px;
+}
+
+/*boutons et checkbox*/
+
+#deco {
+	right:0px;
+	border: none ! important;
+}
+
+#deco:hover {
+	background-color: rgba(230,80,66,1);
+}
+
+.bouton__plus {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	font-size: 1.1em;
+	background-color: rgba(34,139,24,0.9);
+	color:white;
+	border: none;
+	display: block;
+	position: absolute;
+	right: 50%;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.bouton__plus:hover {
+	background-color: rgba(34,139,24,1);
+}
+
+.supprimer__etape {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	font-size: 1.1em;
+	background-color: rgba(230,80,66,0.9);
+	color:white;
+	border: none;
+	position: absolute;
+	right: -10px;
+	top:45px;
+	cursor: pointer;
+}
+
+.supprimer__etape:hover {
+	background-color: rgba(230,80,66,1);
+}
+
+input[type='checkbox'] {
+	margin-right: 10px;
+}
+
+
+.annuler {
+	display: block;
+	position: absolute;
+	right:180px;
+	background-color: rgba(230,80,66,0.9);
+	color:white;
+	border-radius: 5px;
+	padding:10px 20px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+.annuler:hover {
+	color: white;
+	background-color: rgba(230,80,66,1);
+}
+
+/* fin admin PC */
+
+
 @media screen and (max-width: 1024px) {
 	/* GENERAL */
 	* {
@@ -111,9 +443,24 @@
 		height: 100%;
 	
 	}
+	.item-container-search {
+		/* position: relative; */
+		/* display: inline-block; */
+		/* width: 50%; */
+		height: 200px;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+
 	.post-it {
 		position:relative;
 		width:100%;
+	}
+
+	.post-it-search {
+		position: relative;
+		height: 75%;
 	}
 	
 	.nom{
@@ -123,6 +470,16 @@
 	    left: 23px;
 		font-weight: 200;
 		font-size:0.85em;
+		text-transform: capitalize;
+	}
+
+	.nom-search {
+		/* position: absolute; */
+		/* display: inline; */
+		/* bottom: 13px; */
+		/* left: 23px; */
+		font-weight: 200;
+		font-size: 1.75em;
 		text-transform: capitalize;
 	}
 
@@ -137,6 +494,20 @@
 		height:25px;
 		padding-left: 0.475em;
 		color:#787784;
+		text-decoration: none;
+	}
+
+	.ajout-search {
+		/* bottom: 26px; */
+		right: 63px;
+		font-weight: 300;
+		border: 1px solid #787784;
+		border-radius: 50%;
+		width: 25px;
+		TRANSFORM: translateY(-25%);
+		height: 25px;
+		padding-left: 0.475em;
+		color: #787784;
 		text-decoration: none;
 	}
 	
@@ -267,6 +638,7 @@
 		font-weight: 400;
 		font-size:0.8em;
 	}
+	
 
 	
 	.test{
@@ -275,6 +647,21 @@
 		
 		bottom:40%;
 	}
+
+	/* PAGE ADMIN TABLETTE*/
+
+	.form__content {
+		flex-direction: column;
+	}
+
+	.trois {
+		width:inherit; /*prend donc 100% du parent*/
+	}
+
+	.bouton__plus {
+		margin-top: -10px;
+	}
+
 	
 }
 

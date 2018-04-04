@@ -98,4 +98,76 @@ while($line=$q3->fetch()) {
         }
     }
 }
+
+
+if(isset($_GET['id']) AND !empty($_GET['id'])) {
+
+    $getid = htmlspecialchars($_GET['id']);
+
+    $sql="SELECT * FROM recette WHERE id = ?";
+
+    $recette = $pdo->prepare($sql);
+
+
+    $recette->execute(array($getid));
+
+
+    $recette = $recette->fetch();
+
+    if(isset($_POST['submit_commentaire'])) {
+
+
+        if(isset($_POST['pseudo'],$_POST['commentaire']) AND !empty($_POST['pseudo']) AND !empty($_POST['commentaire'])) {
+
+            $pseudo = htmlspecialchars($_POST['pseudo']);
+
+            $commentaire = htmlspecialchars($_POST['commentaire']);
+
+            if(strlen($pseudo) < 25) {
+                $ins = $pdo->prepare('INSERT INTO commentaires (pseudo, commentaire, id_recette) VALUES (?,?,?)');
+
+                $ins->execute(array($pseudo,$commentaire,$getid));
+
+
+                $c_msg = "<span style='color:green'>Votre commentaire a bien été posté</span>";
+
+            } else {
+                $c_msg = "Erreur: Le pseudo doit faire moins de 25 caractères";
+            }
+        } else {
+            $c_msg = "Erreur: Tous les champs doivent être complétés";
+        }
+    }
+
+
+    $commentaires = $pdo->prepare('SELECT * FROM commentaires WHERE id_recette = ? ORDER BY id DESC');
+    $commentaires->execute(array($getid));
+
+    echo"<div class='commentaire__container'>";
+    echo" <h5 class='commentaire__title'>Commentaires:</h5>";
+     while($c = $commentaires->fetch()) {
+         echo" <div class='fieldset'>";
+         echo" </div>";
+         echo "<span class='commentaire__pseudo'>" . $c['pseudo'] . " à écrit:</span>";
+         echo "<span class='commentaire__contenu'>" . $c['commentaire'] . "</span>";
+
+    }
+    echo" <h5 class='commentaire__title'>Partagez votre expérience :</h5>";?>
+
+    <br />
+
+    <form method="POST">
+        <input type="text" name="pseudo" class="commentaire__form-pseudo" placeholder="Prenom" /><br />
+        <textarea name="commentaire" class="commentaire__form-contenu" placeholder="Commentaire"></textarea><br />
+        <input type="submit" value="Poster mon commentaire" class="commentaire__form-btn" name="submit_commentaire" />
+    </form>
+</div>
+
+
+    <?php if(isset($c_msg)) { echo "<p class='commentaire__message'>".$c_msg."</p>"; } ?>
+    <br /><br />
+
+    <?php
+}
+
 	?>

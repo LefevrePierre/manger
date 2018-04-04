@@ -12,14 +12,14 @@ if(isset($_GET['motcle'])){
 
     if($count == 1){
         while ($line=$req->fetch()) {
-            echo "<div class=item-container>";
-            echo "<img src=img/".$line['type']."/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-            echo "<p class=nom>".$line['nom']."</p>";
-            echo "<a href=index.php?id=".$line['id']."&action=ajouter class=ajout>+</a>";
+            echo "<div class=item-container-search>";
+            echo "<img src=img/".$line['type']."/".$line['imgListe']." class=post-it-search alt=".$line['imgListe'].">";
+            echo "<p class=nom-search>".$line['nom']."</p>";
+            echo "<a href=index.php?id=".$line['id']."&action=ajouter class=ajout-search>+</a>";
             echo "</div>";
         }
     }else{
-        echo "Aucun resultat pour : ".$motcle;
+        echo "<div class='aucunResultat'>Aucun résultat pour : ".$motcle."</div>";
     }
 }
 ?>

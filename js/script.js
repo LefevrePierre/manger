@@ -1,12 +1,12 @@
 function afficherCategorie(numero) {
-    var i;
-    document.getElementById('categorie'+numero).style.display="block";
-    for(i=1;i<numero;i++) {
-        document.getElementById('categorie'+i).style.display="none";
-    }
-    for(i=numero+1;i<=5;i++) {
-        document.getElementById('categorie'+i).style.display="none";
-    }
+	var i;
+	document.getElementById('categorie'+numero).style.display="block";
+	for(i=1;i<numero;i++) {
+		document.getElementById('categorie'+i).style.display="none";
+	}
+	for(i=numero+1;i<=6;i++) {
+		document.getElementById('categorie'+i).style.display="none";
+	}
 }
 
 dataQte=[];
@@ -32,7 +32,7 @@ function quantiteParPersonne() {
 // fonctions admin
 // bouton ajouter l'image qui change de couleur si image changee
 function notifUpload() {
-    document.getElementById('modif__img').className="changeCouleur";
+	document.getElementById('modif__img').className="changeCouleur";
 }
 
 function afficherInputLien() {
@@ -154,45 +154,108 @@ $(document).ready(function () {
 
     mySwiper.init();
 
+//Etats initiales :
+    $('.nav-manger:nth-child(2) .triangle').css('top','45px');
+    $('.nav-manger:nth-child(3) .triangle').css('top','45px');
+    $('#page-ingredients').css('font-weight','bold'); //normal de la categorie ingredients swiper
+    $('.nav-manger:nth-child(1) .triangle').css('transition','all 500ms');
+    $('.nav-manger:nth-child(2) .triangle').css('transition','all 500ms');
+    $('.nav-manger:nth-child(3) .triangle').css('transition','all 500ms');
+
+
     mySwiper.on('slideChange', function() {
-        if(mySwiper.activeIndex==0) {
-            $('footer').fadeIn("fast", function() {
-                // Apparition
-            });
-            //bold et normal categorie
-            $('#page-ingredients').css('font-weight','bold'); //normal de la categorie ingredients swiper
-            $('#maliste').css('font-weight','300'); //bold de la categorie maliste swiper
-            $('#recettes').css('font-weight','300'); //bold de la categorie recette swiper
-        }
+		if(mySwiper.activeIndex==0) {
+			$('footer').fadeIn("fast", function() {
+   				 // Apparition
+  			});
+  			//bold et normal categorie
+  			$('#page-ingredients').css('font-weight','bold'); //normal de la categorie ingredients swiper
+ 			$('#maliste').css('font-weight','300'); //bold de la categorie maliste swiper
+ 			$('#recettes').css('font-weight','300'); //bold de la categorie recette swiper
 
-        if(mySwiper.activeIndex==1) {
-            $('footer').fadeOut("fast", function() {
-                // Disparition
-            });
-            //bold et normal categorie
-            $('#page-ingredients').css('font-weight','300'); //normal de la categorie ingredients swiper
-            $('#maliste').css('font-weight','bold'); //bold de la categorie maliste swiper
-            $('#recettes').css('font-weight','300'); //bold de la categorie recette swiper
+            $('.nav-manger:nth-child(1) .triangle').css('top','25px');
+		    $('.nav-manger:nth-child(2) .triangle').css('top','45px');
+		    $('.nav-manger:nth-child(3) .triangle').css('top','45px');
+		}
 
-            $('.ingredient-panier').fadeOut("fast",function(){
-                // Disparition
-            });
-        }
+		if(mySwiper.activeIndex==1) {
+			$('footer').fadeOut("fast", function() {
+    			// Disparition
+ 			});
+ 			//bold et normal categorie
+ 			$('#page-ingredients').css('font-weight','300'); //normal de la categorie ingredients swiper
+ 			$('#maliste').css('font-weight','bold'); //bold de la categorie maliste swiper
+ 			$('#recettes').css('font-weight','300'); //bold de la categorie recette swiper
 
-        if(mySwiper.activeIndex==2) {
-            //bold et normal categorie
-            $('#page-ingredients').css('font-weight','300'); //normal de la categorie ingredients swiper
-            $('#maliste').css('font-weight','300'); //bold de la categorie maliste swiper
-            $('#recettes').css('font-weight','bold'); //bold de la categorie recette swiper
-        }
-    });
+            $('.nav-manger:nth-child(2) .triangle').css('top','25px');
+            $('.nav-manger:nth-child(1) .triangle').css('top','45px');
+            $('.nav-manger:nth-child(3) .triangle').css('top','45px');
+
+
+ 			$('.ingredient-panier').fadeOut("fast",function(){
+ 				// Disparition
+ 			});
+		}
+		
+		if(mySwiper.activeIndex==2) {
+			//bold et normal categorie
+  			$('#page-ingredients').css('font-weight','300'); //normal de la categorie ingredients swiper
+ 			$('#maliste').css('font-weight','300'); //bold de la categorie maliste swiper
+ 			$('#recettes').css('font-weight','bold'); //bold de la categorie recette swiper
+
+            $('.nav-manger:nth-child(3) .triangle').css('top','25px');
+            $('.nav-manger:nth-child(2) .triangle').css('top','45px');
+            $('.nav-manger:nth-child(1) .triangle').css('top','45px');
+		}
+	});
 
 
 // message ajout et suppression
-    $('.ingredient-panier').delay(1100).fadeOut(400);//disparition de l'ajout en fadeout de 400ms après 1s
+$('.ingredient-panier').delay(1100).fadeOut(400);//disparition de l'ajout en fadeout de 400ms après 1s
 
-    $('.ingredient-panier-supp').delay(1100).fadeOut(400);//disparition de la supp en fadeout de 400ms après 1s
+$('.ingredient-panier-supp').delay(1100).fadeOut(400);//disparition de la supp en fadeout de 400ms après 1s
+
+
 
 
 });
 
+
+$(document).ready(function($){
+    $( window ).scroll(function() {
+        var scy=$(window).scrollTop();
+        var visible = $('.ingredients-recette').visible(); // Set the visible status into the span.
+        console.log(visible);
+        console.log(scy);
+        if(scy > 800){
+            $('.ingredients-recette').addClass('ingredients-fixed');
+        }else if(scy < 654){
+            $('.ingredients-recette').removeClass('ingredients-fixed');
+
+        }else {
+
+        }
+    });
+
+
+
+    //script pour la recherche
+
+	$('#search-input').keyup(function () {
+		var recherche = $(this).val();
+		var data = 'motcle=' + recherche;
+
+		if(recherche.length>0) {
+			$.ajax({
+				type : "GET",
+				url : "traitement/search.php",
+				data : data,
+				success: function (server_response){
+					$('.searchResult-div').html(server_response).show();
+				}
+                });
+		}
+
+    });
+
+});

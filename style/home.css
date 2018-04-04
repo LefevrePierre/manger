@@ -1,0 +1,49 @@
+.home-fond {
+    width: 100vw;
+    height: 95vh;
+    background: #82be91;
+}
+
+.home-logo {
+    height: 90px;
+    margin: 0 auto;
+    display: block;
+}
+
+.home-p {
+    color: white;
+    text-align: center;
+
+}
+
+.home-iphone {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    bottom: -30px;
+}
+
+.home-blanc {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
+
+.home-go {
+    background: #82be91;
+    position: absolute;
+    bottom: 45px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    width: 55%;
+}
+
+home-fond a:focus {
+    color: grey;
+}
