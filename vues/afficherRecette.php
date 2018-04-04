@@ -21,10 +21,10 @@ if(isset($_GET['id'])) {
         echo "<div class='recette__infos'>";
 
         echo "<div class='recette__g'>";
-        echo "<span class='icon-stopwatch'></span><span class='recette__tps1'>" . $line['tpsPrep'] . " min</span>";
+        echo "<span class='icon-chopping-board'></span><span class='recette__tps1'>" . $line['tpsPrep'] . " min</span>";
         echo "</div>";
         echo "<div class='recette__g'>";
-        echo "<span class='icon-stopwatch'></span><span class='recette__tps2'>" . $line['tpsCui'] . " min</span>";
+        echo "<span class='icon-pan'></span><span class='recette__tps2'>" . $line['tpsCui'] . " min</span>";
         echo "</div>";
 
         echo "<div class='recette__g'>";

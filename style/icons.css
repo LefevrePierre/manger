@@ -46,3 +46,13 @@
 .icon-magnifying-glass:before {
   content: "\e907";
 }
+
+.icon-pan:before {
+content: '\e90a';
+  font-size: 30px;
+}
+
+.icon-chopping-board:before {
+  content: '\e903';
+  font-size: 30px;
+}

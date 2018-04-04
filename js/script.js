@@ -154,7 +154,7 @@ $(document).ready(function () {
 
     mySwiper.init();
 
-//Etats initiales :
+//Etats initiaux :
     $('.nav-manger:nth-child(2) .triangle').css('top','45px');
     $('.nav-manger:nth-child(3) .triangle').css('top','45px');
     $('#page-ingredients').css('font-weight','bold'); //normal de la categorie ingredients swiper
@@ -240,6 +240,12 @@ $(document).ready(function($){
 
 
     //script pour la recherche
+$('*').click(function () {
+        if($('.categorie6:visible')){
+            $('#search-input').focus();
+            console.log('socus');
+        }
+    })
 
 	$('#search-input').keyup(function () {
 		var recherche = $(this).val();
@@ -257,5 +263,15 @@ $(document).ready(function($){
 		}
 
     });
+
+
+
+    //script couleur fouteur
+
+    $('.footer__icon').click(function () {
+        $(this).css('background','green');
+        $(this).find('span').css('color','#ffffff')
+        $('.footer__icon:not('$(this)')').css('background','white');
+    })
 
 });

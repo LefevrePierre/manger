@@ -72,7 +72,7 @@ font-size:1.3em;
     color:#909090;
 }
 
-.footer__icon span:hover{
+.footer__icon:hover .footer__icon span{
     font-size:1.4em;
     color:#fff;
 }
