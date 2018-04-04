@@ -11,9 +11,9 @@ if(!isset($_SESSION['login'])) {
 
 <div class="container__admin">
     <form method="post" action="index.php?action=Admin_trait_NewIngredient" enctype="multipart/form-data">
-        <a href="index.php?action=Admin_accueil"><span class="triangle"></span></a>
+        <a href="index.php?action=Admin_accueil"><span class="triangle-admin"></span></a>
         <a href="index.php?action=Admin_accueil" class="retour">Retour</a>
-        <h3>Nouvel ingrédient</h3>
+        <h4>Nouvel ingrédient</h4>
         <hr size=1 width=100% color=#1C1C1C>
         <table class="ing"><tr>
                 <td><label for="nom">Nom</label></td>

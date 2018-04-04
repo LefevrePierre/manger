@@ -13,7 +13,7 @@ if(!isset($_SESSION['login'])) {
 
     <form action="index.php?action=Admin_trait_NewRecette" method="post" enctype="multipart/form-data" onsubmit="return valider();">
 
-        <a href="index.php?action=Admin_accueil"><span class="triangle"></span></a>
+        <a href="index.php?action=Admin_accueil"><span class="triangle-admin"></span></a>
         <a href="index.php?action=Admin_accueil" class="retour">Retour</a>
 
         <div class="form__content">

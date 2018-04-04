@@ -28,7 +28,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
     <form action="index.php?action=Admin_trait__Maj_Recette" method="post" enctype="multipart/form-data">
 
-        <a href="index.php?action=Admin_accueil"><span class="triangle"></span></a>
+        <a href="index.php?action=Admin_accueil"><span class="triangle-admin"></span></a>
         <a href="index.php?action=Admin_accueil" class="retour">Retour</a>
 
         <div class="form__content">
@@ -165,34 +165,34 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
                 }
 
                 echo '<tr>
-					<td><label for="video">Vidéo</label></td>
-					<td class="reponse__video">';
+                    <td><label for="video">Vidéo</label></td>
+                    <td class="reponse__video">';
                 if(!empty($line['video'])) {
                     echo '<div>
-							<label for="ouiVideo">Oui</label>
-							<input type="radio" name="validerVideo" value="oui" id="ouiVideo" onclick="afficherInputLien();" checked="checked">
-							<div id="lien__video" style="display:block;">
-								<input type="text" value="'.$line['video'].'" id="video" name="video">
-							</div>
-						</div>';
+                            <label for="ouiVideo">Oui</label>
+                            <input type="radio" name="validerVideo" value="oui" id="ouiVideo" onclick="afficherInputLien();" checked="checked">
+                            <div id="lien__video" style="display:block;">
+                                <input type="text" value="'.$line['video'].'" id="video" name="video">
+                            </div>
+                        </div>';
                     echo '<div> 
-								<label for="nonVideo">Non</label>
-								<input type="radio" name="validerVideo" value="non" id="nonVideo" onclick="desafficherInputLien();">
-						</div>';
+                                <label for="nonVideo">Non</label>
+                                <input type="radio" name="validerVideo" value="non" id="nonVideo" onclick="desafficherInputLien();">
+                        </div>';
                 }
 
                 else {
                     echo '<div>
-							<label for="ouiVideo">Oui</label>
-							<input type="radio" name="validerVideo" value="oui" id="ouiVideo" onclick="afficherInputLien();">
-							<div id="lien__video">
-								<input type="text" placeholder="http://www.youtube.fr/watch?..." id="video" name="video">
-							</div>
-						</div>';
+                            <label for="ouiVideo">Oui</label>
+                            <input type="radio" name="validerVideo" value="oui" id="ouiVideo" onclick="afficherInputLien();">
+                            <div id="lien__video">
+                                <input type="text" placeholder="http://www.youtube.fr/watch?..." id="video" name="video">
+                            </div>
+                        </div>';
                     echo '<div> 
-								<label for="nonVideo">Non</label>
-								<input type="radio" name="validerVideo" value="non" id="nonVideo" onclick="desafficherInputLien();" checked="checked">
-							</div>';
+                                <label for="nonVideo">Non</label>
+                                <input type="radio" name="validerVideo" value="non" id="nonVideo" onclick="desafficherInputLien();" checked="checked">
+                            </div>';
                 }
                 echo '</td>';
                 echo '</tr>';
@@ -510,11 +510,11 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
                 // affichage en display none des autres pour pouvoir les display block. On commence à $i, enfin $i+1 comme on sort de la boucle while
                 for($j=$i;$j<=10;$j++) {
                     echo '<div class="etp" id="etape'.$j.'" style="display:none; position:relative;">
-						<span class="etape__title" id="nom__etape'.$j.'">Etape '.$j.'</span> 
-						<button id="bouton__supp'.$j.'" class="supprimer__etape" value="'.$j.'" onclick="supprimerEtape(this.value);">-</button>
-						<br>
-						<textarea id="etape'.$j.'__contenu" name="etape'.$j.'"></textarea>
-					</div>';
+                        <span class="etape__title" id="nom__etape'.$j.'">Etape '.$j.'</span> 
+                        <button id="bouton__supp'.$j.'" class="supprimer__etape" value="'.$j.'" onclick="supprimerEtape(this.value);">-</button>
+                        <br>
+                        <textarea id="etape'.$j.'__contenu" name="etape'.$j.'"></textarea>
+                    </div>';
                 }
 
                 $i--; // pour pas avoir $i+1 en sortie de boucle

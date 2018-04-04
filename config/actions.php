@@ -14,7 +14,7 @@ $listeDesActions = array(
     "Admin_trait_connexion"=>"traitement/Admin_trait_connexion.php",
     "Admin_trait_deconnexion"=>"traitement/Admin_trait_deconnexion.php",
     //page acceuil admin co
-    "Admin_acceuil"=>"admin/index.php",
+    "Admin_accueil"=>"admin/index.php",
     // new recette
     "Admin_view_NewRecette"=>"admin/Admin_view_NewRecette.php",
     "Admin_trait_NewRecette"=>"traitement/Admin_trait_NewRecette.php",
