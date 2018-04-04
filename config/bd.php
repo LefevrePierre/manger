@@ -4,7 +4,7 @@
 
 $host = "localhost"; // le chemin vers le serveur (localhost dans 99% des cas)
 
-$db = "Manger20";
+$db = "ProjetManger";
 // A l IUT, 3 possibilité prenomnom prenomnom1...
 
 $user = "root";

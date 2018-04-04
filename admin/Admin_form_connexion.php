@@ -11,22 +11,22 @@
     <link href="style/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="form_connexion">
-    	<form action="index.php?action=Admin_trait_connexion" method="post">
-            <h3>Qu'est ce qu'on mange</h3>
-            <hr size=1 width=100% color=#1C1C1C>
-            <h4>Administration</h4>
-            <br>
-    		<label for="login">Identifiant</label>
-            <br>
-    		<input type="text" name="login" id="login" class="input_co" autofocus>
-            <br>
-            <br>
-    		<label for="password">Mot de passe</label>
-            <br>
-    		<input type="password" name="password" id="password" class="input_co">
-            <input type="submit" value="Se connecter" id="seconnecter">
-    	</form>
-    </div>
+<div class="form_connexion">
+    <form action="index.php?action=Admin_trait_connexion" method="post">
+        <h3>Qu'est ce qu'on mange</h3>
+        <hr size=1 width=100% color=#1C1C1C>
+        <h4>Administration</h4>
+        <br>
+        <label for="login">Identifiant</label>
+        <br>
+        <input type="text" name="login" id="login" class="input_co" autofocus>
+        <br>
+        <br>
+        <label for="password">Mot de passe</label>
+        <br>
+        <input type="password" name="password" id="password" class="input_co">
+        <input type="submit" value="Se connecter" id="seconnecter">
+    </form>
+</div>
 
 </body>
