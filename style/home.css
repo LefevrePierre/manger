@@ -22,8 +22,7 @@
     width: 100%;
     margin: 0 auto;
     display: block;
-    position: absolute;
-    bottom: -110px;
+    margin-top: 70px;
 }
 
 .home-blanc {
