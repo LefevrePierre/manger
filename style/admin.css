@@ -1,0 +1,573 @@
+a:hover {
+    text-decoration: none;
+}
+
+/* CSS DU PHONE */
+/*viandespoissons, on affiche la premiere au moins*/
+#categorie1 {
+    display:block;
+}
+/*legumes*/
+#categorie2 {
+    display:none;
+}
+/*feculents*/
+#categorie3 {
+    display:none;
+}
+/*laitiers*/
+#categorie4 {
+    display:none;
+}
+/*divers*/
+#categorie5 {
+    display:none;
+}
+
+/* page admin PC */
+
+/* connexion */
+
+.form_connexion {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.form_connexion form {
+    margin: auto;
+}
+
+.input_co {
+    border: none;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    width:150px;
+    height:30px;
+    padding-left: 10px;
+}
+
+#seconnecter {
+    left:0 !important;
+}
+
+.container__admin {
+    display: flex;
+    max-height:1500px;
+}
+
+.admin {
+    position: relative;
+}
+
+.trier {
+    position: absolute;
+    right: 0;
+    top: 85px;
+}
+
+/*ajout ing*/
+select.liste__type  {
+    text-transform: uppercase;
+}
+
+input[type='submit'].submit__ing {
+    position: absolute;
+    right: 25px;
+}
+
+.annuler.annuler__ing {
+    position: absolute;
+    right:120px;
+}
+
+.notif__new__ing {
+    color: #1C1C1C;
+    background-color: transparent;
+    border: 1px solid #1D1D1D;
+    margin-left: 20px;
+}
+
+.notif__new__ing:hover {
+    background-color: transparent;
+    color: #1C1C1C;
+    cursor: default;
+    border: 1px solid #1D1D1D;
+}
+
+/* formulaires de new et modif*/
+form {
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+}
+
+.form__content {
+    display: flex;
+}
+
+.un {
+    background-color: rgba(238,238,238,0.6);
+    transition: all 0.8s;
+    padding: 30px 40px;
+    max-width: 650px;
+}
+
+.un input {
+    padding-left: 5px;
+}
+
+#lien__video {
+    display: none;
+}
+
+.reponse__video {
+    display: flex;
+}
+.reponse__video div {
+    margin-right: 20px;
+}
+
+.personne {
+    position: absolute;
+    right:0px;
+    top:0px;
+}
+
+.personne select {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.indication-none {
+    position: absolute;
+    top:34px;
+    right:10px;
+    color: #808080;
+    display: none;
+}
+
+.indication-displayed {
+    position: absolute;
+    top:34px;
+    right:10px;
+    color: #808080;
+    -webkit-animation: fadeInFromNone 1s ease-out;
+    -moz-animation: fadeInFromNone 1s ease-out;
+    -o-animation: fadeInFromNone 1s ease-out;
+    animation: fadeInFromNone 1s ease-out;
+}
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+.indication-displayed span {
+    background-color: rgba(128,128,128,0.2);
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.deux {
+    background-color: rgba(238,238,238,0.6);
+    transition: all 0.8s;
+    padding: 30px 40px;
+    min-width: 550px;
+}
+
+.deux table {
+    min-height: 80px;
+}
+
+.deux table tr td {
+    transition: all 0.8s;
+    transition: background 0.8s;
+    padding-top: 10px;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.deux table tr td:hover {
+    background-color: rgba(238,238,238,0.6);
+    transition: background 0.8s;
+}
+
+.divQte {
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.trois {
+    background-color: rgba(238,238,238,0.6);
+    transition: all 0.8s;
+    padding: 30px 40px;
+    position: relative;
+    width:350px;
+}
+
+.modif {
+    background-color: rgba(34,139,24,0.9);
+    color:white;
+    border-radius: 5px;
+    padding:10px 20px;
+    border: none;
+    transition: background 0.5s;
+    margin-left: 10px;
+}
+
+.changeCouleur {
+    background-color: rgba(244,162,10,0.9);
+    color:white;
+    border-radius: 5px;
+    padding:10px 20px;
+    border: none;
+    transition: background 0.5s;
+    margin-left: 10px;
+}
+
+.image__actuelle {
+    position: relative;
+}
+
+.apercu__image {
+    width:150px;
+}
+
+.hover__image {
+    position: relative;
+    display: inline-block;
+}
+
+.voir__image {
+    position: absolute;
+    top:0;
+    left:0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding-top: 25%;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.hover__image:hover .voir__image {
+    opacity: 1;
+    transition: opacity 0.3s;
+    color:white;
+}
+
+.input__cache {
+    left: 120px;
+    top:35px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+}
+
+.actuels {
+    margin-top: 60px;
+    position: relative;
+}
+
+.actuels h4 {
+    margin-bottom: 30px;
+}
+
+.nom__ing {
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.nom__ing__index {
+    text-transform: uppercase;
+}
+
+.etp {
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 90%;
+    padding: 10px;
+    border-radius: 2px;
+    border:none;
+    -webkit-box-shadow: 9px 7px 12px -5px rgba(0,0,0,0.05);
+    -moz-box-shadow: 9px 7px 12px -5px rgba(0,0,0,0.05);
+    box-shadow: 9px 7px 12px -5px rgba(0,0,0,0.05);
+}
+
+.check__admin {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.check__admin input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border: 0.5px solid rgba(128,128,128,0.3);
+}
+
+/* When the checkbox is checked, add a blue background */
+.check__admin input:checked ~ .checkmark {
+    background-color: green;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.check__admin input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.check__admin .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.etape__title {
+    font-size: 1.5em;
+}
+
+/*retour*/
+.retour {
+    color: #1C1C1C;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    transform: translateX(0px);
+    transition: transform 1s;
+}
+
+.retour:hover {
+    transform: translateX(-1px);
+    transition: transform 1s;
+}
+
+.triangle-admin {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 20px solid #1C1C1C;
+    border-bottom: 10px solid transparent;
+}
+/*fin retour*/
+
+.un tr>td {
+    padding-bottom: 15px;
+}
+
+.un td {
+    padding-right: 25px;
+}
+
+.ing tr>td {
+    padding-bottom: 15px;
+}
+
+/*boutons et checkbox*/
+
+#deco {
+    right:0px;
+    border: none ! important;
+}
+
+#deco:hover {
+    background-color: rgba(230,80,66,1);
+}
+
+.bouton__plus {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.1em;
+    background-color: rgba(34,139,24,0.9);
+    color:white;
+    border: none;
+    display: block;
+    position: absolute;
+    right: 50%;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.bouton__plus:hover {
+    background-color: rgba(34,139,24,1);
+}
+
+.supprimer__etape {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.1em;
+    background-color: rgba(230,80,66,0.9);
+    color:white;
+    border: none;
+    position: absolute;
+    right: -10px;
+    top:55px;
+    cursor: pointer;
+}
+
+.supprimer__etape:hover {
+    background-color: rgba(230,80,66,1);
+}
+
+input[type='checkbox'] {
+    margin-right: 10px;
+}
+
+input[type='submit'] {
+    display: block;
+    position: absolute;
+    right:0;
+    background-color: rgba(34,139,24,0.9);
+    color:white;
+    border-radius: 5px;
+    padding:10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+input[type='submit']:hover {
+    background-color: rgba(34,139,24,1);
+}
+
+.annuler {
+    display: block;
+    position: absolute;
+    right:180px;
+    background-color: rgba(230,80,66,0.9);
+    color:white;
+    border-radius: 5px;
+    padding:10px 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.annuler:hover {
+    color: white;
+    background-color: rgba(230,80,66,1);
+}
+
+/* fin admin PC */
+
+
+/* PAGE ADMIN TABLETTE*/
+
+@media screen and (max-width: 1024px) {
+
+    .form__content {
+        flex-direction: column;
+    }
+
+    .trois {
+        width: inherit; /*prend donc 100% du parent*/
+    }
+
+    .bouton__plus {
+        margin-top: -10px;
+    }
+}
