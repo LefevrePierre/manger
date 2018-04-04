@@ -271,7 +271,9 @@ $('*').click(function () {
     $('.footer__icon').click(function () {
         $(this).css('background','green');
         $(this).find('span').css('color','#ffffff')
+/*
         $('.footer__icon:not('$(this)')').css('background','white');
+*/
     })
 
 });
