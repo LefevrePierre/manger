@@ -80,3 +80,11 @@ font-size:1.3em;
 .commentaire__form-pseudo{
     width:80%;
 }
+
+.afficher-cat {
+
+}
+
+*[id^="categorie"]{
+    transition: all 400ms ease-in-out;
+}
