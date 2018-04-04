@@ -76,3 +76,11 @@ font-size:1.3em;
     font-size:1.4em;
     color:#fff;
 }
+
+.afficher-cat {
+
+}
+
+*[id^="categorie"]{
+    transition: all 400ms ease-in-out;
+}

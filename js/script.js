@@ -13,7 +13,7 @@ function afficherCategorie(numero) {
 	for(i=1;i<numero;i++) {
 		document.getElementById('categorie'+i).style.display="none";
 	}
-	for(i=numero+1;i<=5;i++) {
+	for(i=numero+1;i<=6;i++) {
 		document.getElementById('categorie'+i).style.display="none";
 	}
 }
@@ -203,5 +203,12 @@ $(document).ready(function($){
 		}
 
     });
+
+
+
+
+	//focus recherce
+
+
 
 });

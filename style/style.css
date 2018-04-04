@@ -459,9 +459,24 @@ input[type='submit']:hover {
 		height: 100%;
 	
 	}
+	.item-container-search {
+		/* position: relative; */
+		/* display: inline-block; */
+		/* width: 50%; */
+		height: 200px;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+
 	.post-it {
 		position:relative;
 		width:100%;
+	}
+
+	.post-it-search {
+		position: relative;
+		height: 75%;
 	}
 	
 	.nom{
@@ -471,6 +486,16 @@ input[type='submit']:hover {
 	    left: 23px;
 		font-weight: 200;
 		font-size:0.85em;
+		text-transform: capitalize;
+	}
+
+	.nom-search {
+		/* position: absolute; */
+		/* display: inline; */
+		/* bottom: 13px; */
+		/* left: 23px; */
+		font-weight: 200;
+		font-size: 1.75em;
 		text-transform: capitalize;
 	}
 
@@ -485,6 +510,20 @@ input[type='submit']:hover {
 		height:25px;
 		padding-left: 0.475em;
 		color:#787784;
+		text-decoration: none;
+	}
+
+	.ajout-search {
+		/* bottom: 26px; */
+		right: 63px;
+		font-weight: 300;
+		border: 1px solid #787784;
+		border-radius: 50%;
+		width: 25px;
+		TRANSFORM: translateY(-25%);
+		height: 25px;
+		padding-left: 0.475em;
+		color: #787784;
 		text-decoration: none;
 	}
 	
