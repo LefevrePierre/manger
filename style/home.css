@@ -25,7 +25,7 @@
     margin-top: 70px;
 }
 
-.home-blanc {
+.home-forme {
     position: absolute;
     bottom: 0;
     width: 100vw;
@@ -48,3 +48,75 @@
 home-fond a:focus {
     color: grey;
 }
+
+
+
+
+
+
+
+
+.home-pc {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media only screen  and (min-width : 1224px) {
+    .home-fond {
+        display: none;
+    }
+    .home-pc {
+        display: block;
+    }
+}
+
+
+/*desktop*/
+
+
+.home-vert {
+    height: 50vh;
+    width: 100vw;
+    background: #76be77;
+    color: white;
+    padding-left: 60px;
+}
+.home-blanc {
+    height: 50vh;
+    width: 100vw;
+    padding-left: 60px;
+    padding-top: 60px;
+}
+
+.home-vert img {
+    height: 70px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+.home-vert p {
+    font-size: 2em;
+}
+
+.home-vert h1 {
+    font-size: 3em;
+}
+
+.home-blanc h3 {
+    font-size: 2em;
+}
+
+.home-blanc p {
+    width: 40%;
+    text-align: justify;
+    font-size: 1em;
+}
+
+.fourchette {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+}
+
+
