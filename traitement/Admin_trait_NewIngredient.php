@@ -20,7 +20,7 @@ if(isset($_POST['demandeAjout'])) {
 	 	$q1=$pdo->prepare($sql1);
 		$q1->execute();
 
-	header("Location:index.php?new=".$nom."&action=Admin_acceuil");
+	header("Location:index.php?new=".$nom."&action=Admin_accueil");
 
 }
 
