@@ -49,38 +49,38 @@ home-fond a:focus {
     color: grey;
 }
 
-.s8 {
+.iphonex {
     height: 100%;
-    position: absolute;
+    position: relative;
 }
 
 .home-pc iframe {
 
-    transform: scale(0.70);
     transform-origin: 0 0;
-    height: 128%;
+    height: 96.2%;
     margin: auto;
     display: block;
-    top: 28px;
-    position: relative;
-    width: 132.4%;
-    margin-left: 9.3px;
-    border-radius: 26px;
-
+    top: 2%;
+    /* position: relative; */
+    width: 108%;
+    position: absolute;
+    width: 89.4%;
+    /* margin-left: 20.8px; */
+    border-radius: 6%;
+    left: 50%;
+    transform: translateX(-50%);
 
 }
 
 
 .div-iframe {
     position: absolute;
-    height: 500px;
-    top: 160px;
-    /* display: flex; */
-    left: 50%;
-    transform: translateX(-30%);
-    /* border-radius: 31px; */
-    width: 232px;
-    justify-content: center;
+    height: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: a;
+    right: 161px;
+    transform-origin: 0 0;
 }
 
 
