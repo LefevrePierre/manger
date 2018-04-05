@@ -43,9 +43,11 @@ $_SESSION['ing_checked']=array();
         <h3>Rendez vous sur mobile</h3>
         <p>Parce qu'on a rarement son ordinateur avec soi devant le frigo ou le placard, <strong>rendez-vous</strong> sur <strong>mobile</strong> dès maintenant ! <strong>Sélectionnez</strong> vos ingrédients. <strong>Découvrez</strong> nos recettes étudiantes. Du burger maison à la poêlée de légumes, un large choix vous attend. <strong>À partager</strong> seul ou entre amis !</p>
     </div>
+    <div class="div-iframe">
     <img src="img/icones/s8" alt="" class="s8">
     <iframe src="index.php" frameborder="0"></iframe>
-</div>
+    </div>
+    </div>
 
 
 

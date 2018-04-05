@@ -50,22 +50,38 @@ home-fond a:focus {
 }
 
 .s8 {
+    height: 100%;
     position: absolute;
-    height: 500px;
-    top: 160px;
-    left: 50%;
 }
 
 .home-pc iframe {
-    position: absolute;
-    height: 500px;
-    top: 160px;
-    left: 50%;
-    border-radius: 31px;
+
+    transform: scale(0.70);
+    transform-origin: 0 0;
+    height: 128%;
+    margin: auto;
+    display: block;
+    top: 28px;
+    position: relative;
+    width: 132.4%;
+    margin-left: 9.3px;
+    border-radius: 26px;
+
+
 }
 
 
-
+.div-iframe {
+    position: absolute;
+    height: 500px;
+    top: 160px;
+    /* display: flex; */
+    left: 50%;
+    transform: translateX(-30%);
+    /* border-radius: 31px; */
+    width: 232px;
+    justify-content: center;
+}
 
 
 
