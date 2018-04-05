@@ -27,11 +27,9 @@ if(!isset($_SESSION['login'])) {
                         <option>Divers</option>
                     </SELECT></td></tr>
             <tr>
-                <td><label for="image__list">Image (liste)</label></td>
-                <td><input type="file" name="imgListe" id="image__list" required></td></tr>
-            <tr>
-                <td><label for="image__recette">Image (recette)</label></td>
-                <td><input type="file" name="imgRecette" id="image__recette" required></td></tr>
+                <td><label for="image__list">Image</label></td>
+                <td><input type="file" name="imgListe" id="image__list" required></td>
+            </tr>
         </table>
         <input type="submit" name="demandeAjout" class="submit__ing">
         <a href="index.php?action=Admin_accueil" class="annuler annuler__ing">Annuler</a>
