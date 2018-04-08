@@ -27,6 +27,7 @@ include('config/head.php');
                     echo "<p class=pas-ing__coch>Merci de cocher au moins ".$nbrManquant." ingrédients supplémentaires pour voir une recette</p>";
             }
 
+
             // 1. on remplit un tab ViandesPoissonsBDD à partir des viandes et poissons de la BDD
             $ViandesPoissonsBDD=array();
             $sql="SELECT * FROM ingredient WHERE type='Viande-Poisson'";

@@ -1,4 +1,4 @@
-<?php
+supprimer.php<?php
 
 session_start(); // pour garder la var de SESSION
 

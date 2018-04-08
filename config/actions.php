@@ -27,5 +27,7 @@ $listeDesActions = array(
     "Admin_form_NewIngredient"=>"admin/Admin_form_NewIngredient.php",
     "Admin_trait_NewIngredient"=>"traitement/Admin_trait_NewIngredient.php",
     // 404.php
-    "error"=>"vues/404.php"
+    "error"=>"vues/404.php",
+    "videPanier"=>"traitement/videPanier.php",
+
 );
