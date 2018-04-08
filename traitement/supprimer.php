@@ -11,10 +11,8 @@ if(isset($_GET['id'])) {
         }
 
         $ingChecked_serialize = serialize($_SESSION['ing_checked']);
-        print_r($ingChecked_serialize);// Affiche a:3:{i:0;s:4:"moto";i:1;s:7:"voiture";i:2;s:5:"vélo";}
 
         setcookie("cookieIng", $ingChecked_serialize, time()+24*60*60);
-        $tab_cookies = unserialize($_COOKIE['cookieIng']);
 
     }
 

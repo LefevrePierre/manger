@@ -3,15 +3,34 @@ include("config/head.php");
 
 session_start();
 // création de la var de session
-$_SESSION['ing_checked']=array();
+if (isset($_COOKIE['cookieIng'])){
+    $_SESSION['ing_checked']=array();
+    $_SESSION['ing_checked']=unserialize($_COOKIE['cookieIng']);
+}else{
+    $_SESSION['ing_checked']=array();
+}
 
 $ingChecked_serialize = serialize($_SESSION['ing_checked']);
-print_r($ingChecked_serialize);// Affiche a:3:{i:0;s:4:"moto";i:1;s:7:"voiture";i:2;s:5:"vélo";}
 
-setcookie("cookieIng", $ingChecked_serialize, time()+24*60*60);
-
+setcookie("cookieIng", $ingChecked_serialize, time()+24*60*60,'/');
+echo '<br>';
 $tab_cookies = unserialize($_COOKIE['cookieIng']);
 echo "<br>mes ing : ".print_r($tab_cookies); // Array ( [0] => moto [1] => voiture [2] => vélo )
+
+for($i=0;$i<sizeof($tab_cookies);$i++) {
+
+    $sql = "SELECT * FROM ingredient WHERE id=?";
+    $q = $pdo->prepare($sql);
+    $q->execute(array($tab_cookies[$i]));
+
+    while($line=$q->fetch()) {
+        echo "<div class='liste__item'>";
+        echo "<img src=img/".$line['type']."/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
+        echo "<p class=liste-nom>".$line['nom']."</p>";
+        echo "<a href=index.php?id=".$line['id']."&action=supprimer><img src='img/icones/cancel.png' class='croix-supp' alt='supprimer'></a>";
+        echo "</div>";
+    }
+}
 ?>
 
 <!--<div class="logo">
