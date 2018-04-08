@@ -431,6 +431,38 @@ input[type='checkbox'] {
 	
 	/* PAGE INGRÉDIENTS */
 
+	.nbRecette {
+		position: fixed;
+		top: 100px;
+		right: 50px;
+		background: red;
+		color: white;
+		text-align: center;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		height: 40px;
+		width: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.8em;
+	}
+
+	.modal-recette {
+		position: fixed;
+		background: #a0ffa9;
+		height: 61vh;
+		width: 50px;
+		top: 140px;
+		width: 80vw;
+		left: 50%;
+		padding: 33px;
+		transform: translateX(-50%);
+		border-radius: 21px;
+		display: none;
+	}
+
 	#slideIng { /****************************************************************/
 		padding-bottom: 50px;
 	}

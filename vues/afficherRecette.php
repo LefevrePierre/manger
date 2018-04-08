@@ -9,9 +9,11 @@ if(isset($_GET['id'])) {
         echo "<div class='header-manger'>";
         echo "<nav>";
         echo "<h1 class='recette__title'>" . $line['titre'] . "</h1>";
+        echo "<a href='javascript:history.go(-1)'><span id='retourne'  class='icon-back'></a></span>";
         echo "</nav>";
         echo "</div>";
         echo "<button><a href=index.php?action=selection>&#171;</a></button>";
+
         //fin header
 
         echo "<div class=recette__mainimg style='background: url(img/recette/" . $line['imgBg'] . ");background-size: cover;background-position: center;'></div>";
@@ -44,6 +46,9 @@ if(isset($_GET['id'])) {
 
         echo "<div class='recette__container'>";
         echo "<h4>INGRÉDIENTS</h4>";
+        echo "<div class=\"div-nbPersonne\">
+                    <button class=\"btn-moins\">-</button><span class=\"disp-np\">1</span><button class=\"btn-plus\">+</button> personne(s)
+                </div>";
         echo "<div class='ingredients-recette-div'>";
 
         $sql3="SELECT nom,qteIng,uniteQte,type,imgListe FROM estDans JOIN ingredient ON ingredient.id=idIngredient WHERE idRecette=?";
@@ -51,7 +56,7 @@ if(isset($_GET['id'])) {
         $q3->execute(array($_GET['id']));
         echo "<div class='ingredients-recette'>";
         while ($line = $q3->fetch()) {
-            echo "<div>".$line['nom'] ."<br>".$line['qteIng'].$line['uniteQte']. "<img class='ingredients-recette-img' src='img/".$line['type']."/".$line['imgListe']."'>"." </div>";
+            echo "<div><span>".$line['nom']."</span>"."<span><input value='".$line['qteIng']."' class='quantite'></input>".$line['uniteQte']."</span>". "<img class='ingredients-recette-img' src='img/".$line['type']."/".$line['imgListe']."'>"." </div>";
         }
         echo "</div>";
         echo "</div>";

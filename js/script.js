@@ -167,7 +167,7 @@ $(document).ready(function () {
     $('.nav-manger:nth-child(3) .triangle').css('transition','all 500ms');
 
 
-    mySwiper.on('slideChange', function() {
+        $(document).ready(function(){
 		if(mySwiper.activeIndex==0) {
 			$('footer').fadeIn("fast", function() {
    				 // Apparition
@@ -213,6 +213,52 @@ $(document).ready(function () {
 		}
 	});
 
+    mySwiper.on('slideChange', function() {
+            if(mySwiper.activeIndex==0) {
+                $('footer').fadeIn("fast", function() {
+                    // Apparition
+                });
+                //bold et normal categorie
+                $('#page-ingredients').css('font-weight','bold'); //normal de la categorie ingredients swiper
+                $('#maliste').css('font-weight','300'); //bold de la categorie maliste swiper
+                $('#recettes').css('font-weight','300'); //bold de la categorie recette swiper
+
+                $('.nav-manger:nth-child(1) .triangle').css('top','25px');
+                $('.nav-manger:nth-child(2) .triangle').css('top','45px');
+                $('.nav-manger:nth-child(3) .triangle').css('top','45px');
+            }
+
+            if(mySwiper.activeIndex==1) {
+                $('footer').fadeOut("fast", function() {
+                    // Disparition
+                });
+                //bold et normal categorie
+                $('#page-ingredients').css('font-weight','300'); //normal de la categorie ingredients swiper
+                $('#maliste').css('font-weight','bold'); //bold de la categorie maliste swiper
+                $('#recettes').css('font-weight','300'); //bold de la categorie recette swiper
+
+                $('.nav-manger:nth-child(2) .triangle').css('top','25px');
+                $('.nav-manger:nth-child(1) .triangle').css('top','45px');
+                $('.nav-manger:nth-child(3) .triangle').css('top','45px');
+
+
+                $('.ingredient-panier').fadeOut("fast",function(){
+                    // Disparition
+                });
+            }
+
+            if(mySwiper.activeIndex==2) {
+                //bold et normal categorie
+                $('#page-ingredients').css('font-weight','300'); //normal de la categorie ingredients swiper
+                $('#maliste').css('font-weight','300'); //bold de la categorie maliste swiper
+                $('#recettes').css('font-weight','bold'); //bold de la categorie recette swiper
+
+                $('.nav-manger:nth-child(3) .triangle').css('top','25px');
+                $('.nav-manger:nth-child(2) .triangle').css('top','45px');
+                $('.nav-manger:nth-child(1) .triangle').css('top','45px');
+            }
+        });
+
 
 // message ajout et suppression
 $('.ingredient-panier').delay(1100).fadeOut(400);//disparition de l'ajout en fadeout de 400ms après 1s
@@ -231,7 +277,7 @@ $(document).ready(function($){
         var visible = $('.ingredients-recette').visible(); // Set the visible status into the span.
         console.log(visible);
         console.log(scy);
-        if(scy > 800){
+        if(scy > 870){
             $('.ingredients-recette').addClass('ingredients-fixed');
         }else if(scy < 654){
             $('.ingredients-recette').removeClass('ingredients-fixed');
@@ -287,12 +333,66 @@ $('*').click(function () {
 
     })
 
+
+    //modal recette
+    $('.nbRecette').mouseenter(function () {
+        $('.modal-recette').slideDown();
+    })
+    $('.nbRecette').mouseleave(function () {
+        $('.modal-recette').slideUp();
+    })
+
+
+
+
+
+    //nombre personnes
+    let np = 1;
+
+    $('.btn-plus').click(function () {
+        //quantité gestion
+        $( ".quantite" ).each(function() {
+            let recupQt = $(this).val();
+
+            recupQt = recupQt*1 + (recupQt / np);
+            $(this).val(recupQt);
+            console.log("recupt = "+recupQt);
+            console.log("np "+np);
+        });
+
+        np++;
+        $('.disp-np').text(np);
+
+    })
+    $('.btn-moins').click(function () {
+        if($('.disp-np').text()!=1) {
+            //quantité gestion
+            $(".quantite").each(function () {
+                let recupQt = $(this).val();
+                recupQt = recupQt * 1 - recupQt / np;
+                $(this).val(recupQt);
+                console.log(recupQt);
+            });
+            np--;
+            $('.disp-np').text(np);
+        }else{
+            return
+        }
+
+    })
+
+
+
+
+
+
+
 //test
-       /* $('.footer__icon:nth-child(2)').click(function () {
-            var cecat = $(this);
-            $('*[id^="categorie"]').not(cecat).css('transform','rotateY(90deg)');
-            $('#categorie2').css('transform','rotateY(0deg)');
-        })
+    /* $('.footer__icon:nth-child(2)').click(function () {
+         var cecat = $(this);
+         $('*[id^="categorie"]').not(cecat).css('transform','rotateY(90deg)');
+         $('#categorie2').css('transform','rotateY(0deg)');
+     })
 */
 
 

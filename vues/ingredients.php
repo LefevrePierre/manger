@@ -143,12 +143,15 @@ session_start(); // pour garder la var de SESSION
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6" id="categorie6">
 
-                    <div class='search-div'> <input type='text' name='search-input' id='search-input'/></div>
-                    <div class='searchResult-div'></div>
+<!--                    <div class='search-div'> <input type='text' name='search-input' id='search-input'/></div>
+-->                    <div class='searchResult-div'></div>
                 </div>
 
             </div>
             <!-- Fin content-manger -->
+<!--            <div class="nbRecette">--><?php //echo $_SESSION['nbRecettes']; ?><!--</div>-->
+            <div class="modal-recette">
+            </div>
         </div>
         <!-- Fin Slide ingrédients -->
         <!-- Slide liste -->

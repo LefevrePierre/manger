@@ -3,7 +3,6 @@
 include("config/bd.php");
 include("config/actions.php");
 ob_start(); // Je démarre le buffer de sortie : les données à afficher sont stockées
-
 ?>
     <!DOCTYPE html>
     <html lang="fr">

@@ -8,12 +8,10 @@ include('config/head.php');
 
 
             <?php
-
             // débuggage
             // echo "<pre> SESSION actuelle : ";
             // print_r($_SESSION['ing_checked']);
             // echo "</pre>";
-
         // on vérifie que la session existe
         if(isset($_SESSION['ing_checked'])) {
             //message si liste vide
@@ -36,6 +34,7 @@ include('config/head.php');
             $q->execute();
             while($line=$q->fetch()) {
                 array_push($ViandesPoissonsBDD,$line['id']);
+
             }
 
             // on fait de meme pour les autres types d'ing de la BDD

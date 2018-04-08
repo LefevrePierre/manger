@@ -26,7 +26,7 @@ if(isset($_SESSION['ing_checked'])) {
         $a=1;
 
         $q1->execute();
-
+        $_SESSION['nbRecettes'] = 0;
         while ($line1=$q1->fetch()) { // ne pas oublier de le mettre
 
             $recetteTab[$numRecette]=$line1['titre'];
@@ -35,10 +35,13 @@ if(isset($_SESSION['ing_checked'])) {
             $q2 = $pdo->prepare($sql2);
             $q2->execute(array($numRecette));
 
+
+
+
             while ($line2=$q2->fetch()) { // ne pas oublier de le mettre
                 $ingredientsDeLaRecette[$numRecette][$a]=$line2['idIngredient'];
                 $a=$a+1;
-                
+
                 
             }
 
@@ -47,7 +50,6 @@ if(isset($_SESSION['ing_checked'])) {
         $numRecette=$numRecette+1;
             
         }
-
         echo "<div class='selectionRecette-conteneur'>";
         // TOUS LES INGREDIENTS ET PLUS FONCTIONNE
         echo "<h2 class='selectionRecette-titre'>Recettes trouvées</h2>";
@@ -55,9 +57,9 @@ if(isset($_SESSION['ing_checked'])) {
         $recetteTrouve=false;
 
         foreach($ingredientsDeLaRecette as $niemeIng => $idIng) {
-            $result= array_diff($ingredientsDeLaRecette[$niemeIng], $_SESSION['ing_checked']); 
-            /* var_dump($result)*/;
+            $result= array_diff($ingredientsDeLaRecette[$niemeIng], $_SESSION['ing_checked']);
             /*echo "niemeIng = ".$niemeIng."<br>";*/
+
             if($result==array() && $x>0){
                    /* echo "<h5>".$recetteTab[$niemeIng]."</h5>";
 
@@ -67,8 +69,7 @@ if(isset($_SESSION['ing_checked'])) {
                             
                         </div>";*/
 
-
-                    echo "<div class='selectionRecette-div'>
+                echo "<div class='selectionRecette-div'>
                                 <div class='selectionRecette-desc'>
                                     <h5>".$recetteTab[$niemeIng]."</h5>
                                     <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
@@ -76,7 +77,10 @@ if(isset($_SESSION['ing_checked'])) {
                           </div>";
 
 
-                    //il faut mettre dans ce echo une div avec un bgimg
+                $_SESSION['nbRecettes']++;
+
+
+                //il faut mettre dans ce echo une div avec un bgimg
                     //echo "<img src='img/recette/".$recetteTabImg[$niemeIng]."'>";
 
 
@@ -125,6 +129,7 @@ if(isset($_SESSION['ing_checked'])) {
                                     <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
                                 </div>
                           </div>";
+                $_SESSION['nbRecettes']++;
 
 
                 $recetteTrouveManque1=true;
@@ -141,7 +146,6 @@ if(isset($_SESSION['ing_checked'])) {
 
     }
 }
-
 ?>
     </div>
     <!-- Fin swiper wrapper -->
