@@ -2,11 +2,14 @@ supprimer.php<?php
 
 session_start(); // pour garder la var de SESSION
 
+include('config/bd.php');
+include('config/head.php');
+
 if(isset($_GET['id'])) {
 
     // recherche de l'indice de l'ing passé en parametre avec le $_GET['id']
     foreach ($_SESSION['ing_checked'] as $key => $value) {
-        if($value==$_GET['id']) {
+        if($value==$_GET['id'])) {
             unset($_SESSION['ing_checked'][$key]);
         }
 
@@ -19,9 +22,11 @@ if(isset($_GET['id'])) {
     //requete pour recuperer le nom de l'ingredient supprime, puis on redirige vers page liste
     $sql="SELECT nom FROM ingredient WHERE id=?";
     $q=$pdo->prepare($sql);
-    $q->execute(array($_GET['id']));
+    $q->execute(array($_REQUEST['value']));
     if($line=$q->fetch()) {
-        header("Location:index.php?nomSupp=".$line['nom']."&action=listeIngredients#slide2");
+        echo '<script type="text/javascript">
+                    $("#slideIng").load("traitement/afficherTypeIng.php", {value:'.$line['type'].', nameSupp='.$line['nom'].'});
+             </script>';
     }
 }
 
