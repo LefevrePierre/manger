@@ -13,6 +13,7 @@ function ajouter(id) {
             $('#ing'+id).css('color','white');
             $('#ing'+id).css('background-color','#76be77');
             $('#ing'+id).css('border','none');
+            $('#ing'+id).prop('disabled', true);
         },
         error : function () {
             $('#MaListe').load('vues/404.php');
@@ -35,6 +36,7 @@ function supprimer(id) {
             $('#ing'+id).css('color','#787784');
             $('#ing'+id).css('background-color','white');
             $('#ing'+id).css('border','1px solid #787784');
+            $('#ing'+id).prop('disabled', false);
 
         },
         error : function () {
