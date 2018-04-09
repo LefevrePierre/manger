@@ -18,14 +18,6 @@ if(isset($_GET['id'])) {
         setcookie("cookieIng", $ingChecked_serialize, time()+24*60*60);
 
     }
-
-    //requete pour recuperer le nom de l'ingredient supprime, puis on redirige vers page liste
-    $sql="SELECT nom FROM ingredient WHERE id=?";
-    $q=$pdo->prepare($sql);
-    $q->execute(array($_GET['id']));
-    if($line=$q->fetch()) {
-        header("Location:index.php?nomSupp=".$line['nom']."&action=listeIngredients#slide1");
-    }
 }
 
 ?>

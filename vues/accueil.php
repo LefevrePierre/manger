@@ -8,16 +8,11 @@ if (isset($_COOKIE['cookieIng'])){
     $_SESSION['ing_checked']=unserialize($_COOKIE['cookieIng']);
     $ingChecked_serialize = serialize($_SESSION['ing_checked']);
     setcookie("cookieIng", $ingChecked_serialize, time()+24*60*60,'/');
+    $tab_cookies = unserialize($_COOKIE['cookieIng']);
 }else{
     $_SESSION['ing_checked']=array();
 }
 
-
-//echo '<br>';
-if (isset($_COOKIE['cookieIng'])) {
-    $tab_cookies = unserialize($_COOKIE['cookieIng']);
-//echo "<br>mes ing : ".print_r($tab_cookies); // Array ( [0] => moto [1] => voiture [2] => vélo )
-}
 ?>
 
 <!--<div class="logo">
@@ -37,6 +32,7 @@ if (isset($_COOKIE['cookieIng'])) {
     <img src="../img/home-1.jpg" id="img-home-1">
 </div>-->
 
+<body>
 <div class="home-fond">
     <img class="home-logo" src="img/icones/logo.png" alt="">
     <p class="home-p">Qu'est ce qu'on mange ? <br> Nous répondons enfin à cette question éternelle ! <br> Vos ingrédients, nos recettes, vos plats.</p>
@@ -50,14 +46,18 @@ if (isset($_COOKIE['cookieIng'])) {
 <div class="home-ing">
 
     <?php
-    if(isset($_COOKIE['cookieIng'])){
+    if(isset($tab_cookies) && !empty($tab_cookies)){
+        // echo '<pre>';
+        // print_r($tab_cookies);
+        // echo '<pre>';
         echo "<h4>Votre liste de la dernière fois</h4>";
         echo "<div class='home-ing-grid'>";
-        for($i=0;$i<sizeof($tab_cookies);$i++) {
+
+        foreach($tab_cookies as $key=>$value) {
 
             $sql = "SELECT * FROM ingredient WHERE id=?";
             $q = $pdo->prepare($sql);
-            $q->execute(array($tab_cookies[$i]));
+            $q->execute(array($value));
 
             while($line=$q->fetch()) {
                 echo "<div class='liste__item'>";
@@ -67,9 +67,10 @@ if (isset($_COOKIE['cookieIng'])) {
                 echo "</div>";
             }
         }
+        // fin foreach
         echo "</div>";
-        echo "<a class='btn-home' href='index.php?action=listeIngredients' style='margin-top: 20px;'>Continuer</a>";
-        echo "<a class='btn-home' href=\"index.php?action=videPanier\" style='background: none;border: 2px #73ba74 solid;color: #73ba74;'>Nouvelle liste</a>";
+        echo '<a class="btn-home" href="index.php?action=listeIngredients" style="margin-top: 20px;">Continuer</a>';
+        echo '<a class="btn-home" href="index.php?action=videPanier" style="background: none;border: 2px #73ba74 solid;color: #73ba74;">Nouvelle liste</a>';
     }else{
         echo "<ul>
                     <li><span class='home-etape'>1</span> Choisissez vos ingrédients parmi les différentes catégories<br></li>
@@ -95,12 +96,7 @@ if (isset($_COOKIE['cookieIng'])) {
         <p>Parce qu'on a rarement son ordinateur avec soi devant le frigo ou le placard, <strong>rendez-vous</strong> sur <strong>mobile</strong> dès maintenant ! <strong>Sélectionnez</strong> vos ingrédients. <strong>Découvrez</strong> nos recettes étudiantes. Du burger maison à la poêlée de légumes, un large choix vous attend. <strong>À partager</strong> seul ou entre amis !</p>
     </div>
     <div class="div-iframe">
-    <img src="img/icones/iphonex.png" alt="" class="iphonex">
-    <iframe src="index.php" frameborder="0"></iframe>
+        <img src="img/icones/iphonex.png" alt="" class="iphonex">
+        <iframe src="index.php" frameborder="0"></iframe>
     </div>
 </div>
-
-
-
-
-</html>
