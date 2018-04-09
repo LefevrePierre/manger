@@ -1,4 +1,4 @@
-supprimer.php<?php
+<?php
 
 session_start(); // pour garder la var de SESSION
 
@@ -9,7 +9,7 @@ if(isset($_GET['id'])) {
 
     // recherche de l'indice de l'ing passé en parametre avec le $_GET['id']
     foreach ($_SESSION['ing_checked'] as $key => $value) {
-        if($value==$_GET['id'])) {
+        if($value==$_GET['id']) {
             unset($_SESSION['ing_checked'][$key]);
         }
 
@@ -24,7 +24,7 @@ if(isset($_GET['id'])) {
     $q=$pdo->prepare($sql);
     $q->execute(array($_GET['id']));
     if($line=$q->fetch()) {
-        header("Location:index.php?nomSupp=".$line['nom']."&action=supprimer");
+        header("Location:index.php?nomSupp=".$line['nom']."&action=listeIngredients#slide1");
     }
 }
 
