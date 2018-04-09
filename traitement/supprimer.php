@@ -22,11 +22,9 @@ if(isset($_GET['id'])) {
     //requete pour recuperer le nom de l'ingredient supprime, puis on redirige vers page liste
     $sql="SELECT nom FROM ingredient WHERE id=?";
     $q=$pdo->prepare($sql);
-    $q->execute(array($_REQUEST['value']));
+    $q->execute(array($_GET['id']));
     if($line=$q->fetch()) {
-        echo '<script type="text/javascript">
-                    $("#slideIng").load("traitement/afficherTypeIng.php", {value:'.$line['type'].', nameSupp='.$line['nom'].'});
-             </script>';
+        header("Location:index.php?nomSupp=".$line['nom']."&action=supprimer");
     }
 }
 
