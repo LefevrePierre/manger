@@ -95,13 +95,14 @@ if(isset($_SESSION['ing_checked'])) {
     // echo "<pre>";
     // print_r($viandespoissonsAffiches);
     // echo "</pre>";
-
+    $afficherPoubelle=false;
     // s'il y a des viandes poissons parmi les checked, on affiche image et bouton - pour chaque
     echo "<div class='liste__cat-container'>";
 
     if(COUNT($viandespoissonsAffiches)>0) {
         echo "<h3 class='liste-titre'>Mes viandes et poissons</h3>";
         echo "<div class='liste__cat'>";
+        $afficherPoubelle=true;
         // on passe en revue tous les ingredients checked du type viande/poisson
         foreach ($viandespoissonsAffiches as $key => $id) {
             // pour chaque, on va chercher l'image et l'id (pour le supprimer si voulu)
@@ -126,6 +127,7 @@ if(isset($_SESSION['ing_checked'])) {
 
         echo "<h3 class='liste-titre'>Mes légumes</h3>";
         echo "<div class='liste__cat'>";
+        $afficherPoubelle=true;
         // on passe en revue tous les ingredients checked du type viande/poisson
         foreach ($legumesAffiches as $key => $id) {
             // pour chaque, on va chercher l'image et l'id (pour le supprimer si voulu)
@@ -151,6 +153,7 @@ if(isset($_SESSION['ing_checked'])) {
 
         echo "<h3 class='liste-titre'>Mes féculents</h3>";
         echo "<div class='liste__cat'>";
+        $afficherPoubelle=true;
         // on passe en revue tous les ingredients checked du type viande/poisson
         foreach ($feculentAffiches as $key => $id) {
             // pour chaque, on va chercher l'image et l'id (pour le supprimer si voulu)
@@ -176,6 +179,7 @@ if(isset($_SESSION['ing_checked'])) {
 
         echo "<h3 class='liste-titre'>Mes produits laitiers</h3>";
         echo "<div class='liste__cat'>";
+        $afficherPoubelle=true;
         // on passe en revue tous les ingredients checked du type viande/poisson
         foreach ($laitierAffiches as $key => $id) {
             // pour chaque, on va chercher l'image et l'id (pour le supprimer si voulu)
@@ -201,6 +205,7 @@ if(isset($_SESSION['ing_checked'])) {
 
         echo "<h3 class='liste-titre'>Mes autres produits</h3>";
         echo "<div class='liste__cat'>";
+        $afficherPoubelle=true;
         // on passe en revue tous les ingredients checked du type viande/poisson
         foreach ($diversAffiches as $key => $id) {
             // pour chaque, on va chercher l'image et l'id (pour le supprimer si voulu)
@@ -222,6 +227,17 @@ if(isset($_SESSION['ing_checked'])) {
     }
     // fin du if COUNT Divers
     echo "</div>";
+
+    if($afficherPoubelle) {
+
+        // vider le panier
+        $sql="SELECT COUNT(id) AS nbrIngBDD FROM ingredient";
+        $q = $pdo->prepare($sql);
+        $q->execute();
+        if($line=$q->fetch()) {
+            echo '<a onclick="viderPanier('.$line['nbrIngBDD'].');" class="poubelle"><img src="img/icones/bin.png" alt="Vider la liste"></a>';
+        }
+    }
 
 }
 // fin du if isset SESSION
