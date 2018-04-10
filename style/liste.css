@@ -12,6 +12,14 @@
     position: fixed;
     bottom: 200px;
     right: 20px;
+    background-color: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 10px;
+    width: 40px;
+}
+
+.poubelle img {
+    width:100%;
 }
 
 .liste__item {

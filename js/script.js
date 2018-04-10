@@ -13,10 +13,10 @@ function ajouter(id) {
             $('#ing'+id).css('color','white');
             $('#ing'+id).css('background-color','#76be77');
             $('#ing'+id).css('border','none');
-            $('#ing'+id).prop('disabled', true);
+            $('#ing'+id).css('pointer-events','none');
         },
         error : function () {
-            $('#MaListe').load('vues/404.php');
+            $('body').load('http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=error');
         }
     });
 }
@@ -36,15 +36,33 @@ function supprimer(id) {
             $('#ing'+id).css('color','#787784');
             $('#ing'+id).css('background-color','white');
             $('#ing'+id).css('border','1px solid #787784');
-            $('#ing'+id).prop('disabled', false);
-
+            $('#ing'+id).css('pointer-events','auto');
         },
         error : function () {
-            $('#MaListe').load('vues/404.php');
+            $('body').load('http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=error');
         }
     });
 }
 
+// vider panier en AJAX
+function viderPanier(nbrIngBDD) {
+    $.ajax({
+        url:'http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=videPanier',
+        success : function () {
+            $('#MaListe').load('traitement/contenuListeAjax.php');
+            for(i=1;i<nbrIngBDD;i++) {
+                $('#ing'+i).text('+');
+                $('#ing'+i).css('color','#787784');
+                $('#ing'+i).css('background-color','white');
+                $('#ing'+i).css('border','1px solid #787784');
+                $('#ing'+i).css('pointer-events','auto');
+            }
+        },
+        error : function () {
+            $('body').load('http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=error');
+        }
+    });
+}
 
 function afficherCategorie(numero) {
     var i;
