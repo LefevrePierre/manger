@@ -42,13 +42,13 @@ if(isset($_SESSION['ing_checked'])) {
                 $ingredientsDeLaRecette[$numRecette][$a]=$line2['idIngredient'];
                 $a=$a+1;
 
-                
+
             }
 
-        $a=1;
+            $a=1;
 
-        $numRecette=$numRecette+1;
-            
+            $numRecette=$numRecette+1;
+
         }
         echo "<div class='selectionRecette-conteneur'>";
         // TOUS LES INGREDIENTS ET PLUS FONCTIONNE
@@ -61,13 +61,13 @@ if(isset($_SESSION['ing_checked'])) {
             /*echo "niemeIng = ".$niemeIng."<br>";*/
 
             if($result==array() && $x>0){
-                   /* echo "<h5>".$recetteTab[$niemeIng]."</h5>";
+                /* echo "<h5>".$recetteTab[$niemeIng]."</h5>";
 
-                    //div fictive pour intégrer
-                    echo "<div class='imgRecette'></div>";
-                    echo "<div class='titreRecette'>
-                            
-                        </div>";*/
+                 //div fictive pour intégrer
+                 echo "<div class='imgRecette'></div>";
+                 echo "<div class='titreRecette'>
+
+                     </div>";*/
 
                 echo "<div class='selectionRecette-div'>
                                 <div class='selectionRecette-desc'>
@@ -81,12 +81,12 @@ if(isset($_SESSION['ing_checked'])) {
 
 
                 //il faut mettre dans ce echo une div avec un bgimg
-                    //echo "<img src='img/recette/".$recetteTabImg[$niemeIng]."'>";
+                //echo "<img src='img/recette/".$recetteTabImg[$niemeIng]."'>";
 
 
-                    $recetteTrouve=true;
-/*                    echo "<a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>";*/
-                }
+                $recetteTrouve=true;
+                /*                    echo "<a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>";*/
+            }
             $x++;
         }
 
@@ -96,17 +96,13 @@ if(isset($_SESSION['ing_checked'])) {
 
 
         echo "<h2 class='selectionRecette-titre'>Il vous manque 1 ingrédient</h2>";
-            
-        $y=0;
-        $recetteTrouveManque1=false;
-        $ingredientManquant="";
-        $nomIngredientManquant="";
 
+        $y=0;
         foreach($ingredientsDeLaRecette as $niemeIng => $idIng) {
-            $result= array_diff($ingredientsDeLaRecette[$niemeIng], $_SESSION['ing_checked']); 
+            $result= array_diff($ingredientsDeLaRecette[$niemeIng], $_SESSION['ing_checked']);
            /* var_dump($result)*/;
             /*echo "niemeIng = ".$niemeIng."<br>";*/
-            if(count($result)==1 && $y>0){ 
+            if(count($result)==1 && $y>0){
                     //var_dump($result);
                     //echo $recetteTab[$niemeIng]."<br>";
                     //echo "<img src='img/recette/".$recetteTabImg[$niemeIng]."'>";
