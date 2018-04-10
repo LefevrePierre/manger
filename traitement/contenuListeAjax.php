@@ -235,7 +235,10 @@ if(isset($_SESSION['ing_checked'])) {
         $q = $pdo->prepare($sql);
         $q->execute();
         if($line=$q->fetch()) {
-            echo '<a onclick="viderPanier('.$line['nbrIngBDD'].');" class="poubelle"><img src="img/icones/bin.png" alt="Vider la liste"></a>';
+            echo '<div class="poubelle">';
+            echo '<a onclick="viderPanier('.$line['nbrIngBDD'].');"><img src="img/icones/bin.png" alt="Vider la liste"></a>';
+            echo '<span class="nbr__panier">'.COUNT($_SESSION['ing_checked']).'</span>';
+            echo '</div>';
         }
     }
 

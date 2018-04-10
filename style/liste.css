@@ -16,10 +16,23 @@
     padding: 10px;
     border-radius: 10px;
     width: 40px;
+    height: 40px;
 }
 
 .poubelle img {
     width:100%;
+}
+
+.poubelle span {
+    color: white;
+    background: red;
+    position: absolute;
+    top:-6px;
+    right:-6px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
 }
 
 .liste__item {
