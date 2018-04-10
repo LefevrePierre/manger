@@ -2,7 +2,7 @@
 function ajouter(id) {
     $.ajax({
         type: "GET",
-        url:'http://localhost:8888/projetTut_Ajax_3/manger/index.php',
+        url:'http://localhost:8888/projetTut/manger/index.php',
         data : 'id=' + id + '&action=ajouter',
         success : function () {
             $('#MaListe').load('traitement/contenuListeAjax.php');
@@ -16,7 +16,7 @@ function ajouter(id) {
             $('#ing'+id).css('pointer-events','none');
         },
         error : function () {
-            $('body').load('http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=error');
+            $('body').load('http://localhost:8888/projetTut/manger/index.php?action=error');
         }
     });
 }
@@ -25,7 +25,7 @@ function ajouter(id) {
 function supprimer(id) {
     $.ajax({
         type: "GET",
-        url:'http://localhost:8888/projetTut_Ajax_3/manger/index.php',
+        url:'http://localhost:8888/projetTut/manger/index.php',
         data : 'id=' + id + '&action=supprimer',
         success : function () {
             $('#MaListe').load('traitement/contenuListeAjax.php');
@@ -39,7 +39,7 @@ function supprimer(id) {
             $('#ing'+id).css('pointer-events','auto');
         },
         error : function () {
-            $('body').load('http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=error');
+            $('body').load('http://localhost:8888/projetTut/manger/index.php?action=error');
         }
     });
 }
@@ -47,7 +47,7 @@ function supprimer(id) {
 // vider panier en AJAX
 function viderPanier(nbrIngBDD) {
     $.ajax({
-        url:'http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=videPanier',
+        url:'http://localhost:8888/projetTut/manger/index.php?action=videPanier',
         success : function () {
             $('#MaListe').load('traitement/contenuListeAjax.php');
             for(i=1;i<nbrIngBDD;i++) {
@@ -59,7 +59,7 @@ function viderPanier(nbrIngBDD) {
             }
         },
         error : function () {
-            $('body').load('http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=error');
+            $('body').load('http://localhost:8888/projetTut/manger/index.php?action=error');
         }
     });
 }
