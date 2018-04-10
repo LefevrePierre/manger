@@ -2,21 +2,21 @@
 function ajouter(id) {
     $.ajax({
         type: "GET",
-        url:'http://localhost:8888/projetTut_Ajax_3/manger/index.php',
+        url:'index.php',
         data : 'id=' + id + '&action=ajouter',
         success : function () {
             $('#MaListe').load('traitement/contenuListeAjax.php');
             $('#ingredient-panier').fadeIn(400); // pour afficher, obligé de fadeIn
             $('#ingredient-panier').load('traitement/nom.php?idAjoute='+id);
             $('#ingredient-panier').delay(1100).fadeOut(400);//disparition de l'ajout en fadeout de 400ms après 1s
-            $('#ing'+id).text('✓');
+            $('#ing'+id).text('&#10003;');
             $('#ing'+id).css('color','white');
             $('#ing'+id).css('background-color','#76be77');
             $('#ing'+id).css('border','none');
             $('#ing'+id).css('pointer-events','none');
         },
         error : function () {
-            $('body').load('http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=error');
+            $('body').load('index.php?action=error');
         }
     });
 }
@@ -25,7 +25,7 @@ function ajouter(id) {
 function supprimer(id) {
     $.ajax({
         type: "GET",
-        url:'http://localhost:8888/projetTut_Ajax_3/manger/index.php',
+        url:'index.php',
         data : 'id=' + id + '&action=supprimer',
         success : function () {
             $('#MaListe').load('traitement/contenuListeAjax.php');
@@ -39,7 +39,7 @@ function supprimer(id) {
             $('#ing'+id).css('pointer-events','auto');
         },
         error : function () {
-            $('body').load('http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=error');
+            $('body').load('index.php?action=error');
         }
     });
 }
@@ -47,7 +47,7 @@ function supprimer(id) {
 // vider panier en AJAX
 function viderPanier(nbrIngBDD) {
     $.ajax({
-        url:'http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=videPanier',
+        url:'index.php?action=videPanier',
         success : function () {
             $('#MaListe').load('traitement/contenuListeAjax.php');
             for(i=1;i<nbrIngBDD;i++) {
@@ -59,10 +59,16 @@ function viderPanier(nbrIngBDD) {
             }
         },
         error : function () {
-            $('body').load('http://localhost:8888/projetTut_Ajax_3/manger/index.php?action=error');
+            $('body').load('index.php?action=error');
         }
     });
 }
+
+
+
+
+
+
 
 function afficherCategorie(numero) {
     var i;
