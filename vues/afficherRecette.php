@@ -1,5 +1,7 @@
 <?php
 include('config/head.php');
+include('config/bd.php');
+
 if(isset($_GET['id'])) {
     $sql = "SELECT * FROM recette WHERE id=?";
     $q = $pdo->prepare($sql);
@@ -37,10 +39,14 @@ if(isset($_GET['id'])) {
         echo "</div>";
         echo "</div>";
 
-        echo "<span class='recette__ustensiles'>" . $line['ustensile'] . "</span>";
+        $sql2= "SELECT nom FROM ustensile JOIN estDans on ustensile.id=idUstensile JOIN recette ON recette.id=idRecette WHERE idRecette=?";
+        $q2 = $pdo->prepare($sql2);
+        $q2->execute(array($_GET['id']));
+        while($line2 = $q2->fetch()) {
+            echo "<span class='recette__ustensiles'>" . $line2['nom'] . "</span><br>";
+        }
 
-
-        echo "<p class=''>" . $line['calorie'] . " kcal</p>";
+        echo "<br><span class='recette__ustensiles'>" . $line['calorie'] . " cal</span><br>";
         echo "</div>";
 
 
@@ -64,18 +70,18 @@ if(isset($_GET['id'])) {
         echo "<div>";
 
 
-/*
-        $sql3="SELECT nom,qteIng,uniteQte,type,imgListe FROM estDans JOIN ingredient ON ingredient.id=idIngredient WHERE idRecette=?";
-        $q3=$pdo->prepare($sql3);
-        $q3->execute(array($_GET['id']));
+        /*
+                $sql3="SELECT nom,qteIng,uniteQte,type,imgListe FROM estDans JOIN ingredient ON ingredient.id=idIngredient WHERE idRecette=?";
+                $q3=$pdo->prepare($sql3);
+                $q3->execute(array($_GET['id']));
 
-while($line=$q3->fetch()) {
-    echo $line['qteIng'];
-    echo $line['uniteQte'];
-    echo $line['nom'];
-    echo $line['type'];
-    echo $line['imgListe'];
-}*/
+        while($line=$q3->fetch()) {
+            echo $line['qteIng'];
+            echo $line['uniteQte'];
+            echo $line['nom'];
+            echo $line['type'];
+            echo $line['imgListe'];
+        }*/
 
         echo "<iframe width=\"100%\" height=\"218px\" src=\"https://www.youtube.com/embed/woYrzHuC7yw?rel=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
 
@@ -150,11 +156,11 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
 
     echo"<div class='commentaire__container'>";
     echo" <h5 class='commentaire__title'>Commentaires:</h5>";
-     while($c = $commentaires->fetch()) {
-         echo" <div class='fieldset'>";
-         echo" </div>";
-         echo "<span class='commentaire__pseudo'>" . $c['pseudo'] . " à écrit:</span>";
-         echo "<span class='commentaire__contenu'>" . $c['commentaire'] . "</span>";
+    while($c = $commentaires->fetch()) {
+        echo" <div class='fieldset'>";
+        echo" </div>";
+        echo "<span class='commentaire__pseudo'>" . $c['pseudo'] . " à écrit:</span>";
+        echo "<span class='commentaire__contenu'>" . $c['commentaire'] . "</span>";
 
     }
     echo" <h5 class='commentaire__title'>Partagez votre expérience :</h5>";?>
@@ -166,7 +172,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
         <textarea name="commentaire" class="commentaire__form-contenu" placeholder="Commentaire"></textarea><br />
         <input type="submit" value="Poster mon commentaire" class="commentaire__form-btn" name="submit_commentaire" />
     </form>
-</div>
+    </div>
 
 
     <?php if(isset($c_msg)) { echo "<p class='commentaire__message'>".$c_msg."</p>"; } ?>
@@ -175,4 +181,4 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
     <?php
 }
 
-	?>
+?>

@@ -2,15 +2,10 @@
 include('config/head.php');
 include('vues/notifs.php');
 ?>
-
-<div class="swiper-slide" id="slideListe">
-
-    <section id="MaListe">
-        <!-- Début de la liste -->
-
-        <!-- Fin Affichage divers sélectionnés -->
-    </section>
+<section id="topListe"></section>
+<div id="slideListe">
 </div>
+
 <!-- Fin Slide liste -->
 
 

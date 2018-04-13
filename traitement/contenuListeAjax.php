@@ -231,15 +231,15 @@ if(isset($_SESSION['ing_checked'])) {
     if($afficherPoubelle) {
 
         // vider le panier
-        $sql="SELECT COUNT(id) AS nbrIngBDD FROM ingredient";
-        $q = $pdo->prepare($sql);
-        $q->execute();
-        if($line=$q->fetch()) {
-            echo '<div class="poubelle">';
-            echo '<a onclick="viderPanier('.$line['nbrIngBDD'].');"><img src="img/icones/bin.png" alt="Vider la liste"></a>';
-            echo '<span class="nbr__panier">'.COUNT($_SESSION['ing_checked']).'</span>';
-            echo '</div>';
-        }
+        echo '<div class="poubelle">';
+        echo '<a onclick="viderPanier('.COUNT($_SESSION['ing_checked']).',1);"><img src="img/icones/bin.png" alt="Vider la liste"></a>';
+
+        $nbrDeDifferents=array();
+        $nbrDeDifferents=array_unique($_SESSION['ing_checked']);
+
+        echo '<span class="nbr__panier">'.COUNT($nbrDeDifferents).'</span>';
+        echo '</div>';
+
     }
 
 }

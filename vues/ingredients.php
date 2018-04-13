@@ -40,7 +40,7 @@ session_start(); // pour garder la var de SESSION
 
                     <?php
                     //affichage des div comprenant img + bouton ajouter
-                    $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Viande-Poisson'";
+                    $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Viande-Poisson' ORDER BY nom";
                     $q = $pdo->prepare($sql);
                     $q->execute();
                     while ($line=$q->fetch()) {
@@ -48,7 +48,7 @@ session_start(); // pour garder la var de SESSION
                         echo "<img src=img/Viande-Poisson/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
                         echo "<p class=nom>".$line['nom']."</p>";
                         //echo "<a href=index.php?id=".$line['id']."&action=ajouter class='ajout'>+</a>";
-                        echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+                        echo '<a onclick="ajouter('.$line['id'].',1);" class="ajout" id="ing'.$line['id'].'">+</a>';
                         echo "</div>";
                     }
 
@@ -58,7 +58,7 @@ session_start(); // pour garder la var de SESSION
                 <div class="col-md-6 col-sm-6 col-xs-6" id="categorie2">
                     <?php
                     //affichage des div comprenant img + bouton ajouter
-                    $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Légume'";
+                    $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Légume' ORDER BY nom";
                     $q = $pdo->prepare($sql);
                     $q->execute();
                     while ($line=$q->fetch()) {
@@ -66,7 +66,7 @@ session_start(); // pour garder la var de SESSION
                         echo "<img src=img/Légume/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
                         echo "<p class=nom>".$line['nom']."</p>";
                         //echo "<a href=index.php?id=".$line['id']."&action=ajouter class='ajout'>+</a>";
-                        echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+                        echo '<a onclick="ajouter('.$line['id'].',2);" class="ajout" id="ing'.$line['id'].'">+</a>';
                         echo "</div>";
                     }
 
@@ -76,7 +76,7 @@ session_start(); // pour garder la var de SESSION
 
                     <?php
                     //affichage des div comprenant img + bouton ajouter
-                    $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Féculent'";
+                    $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Féculent' ORDER BY nom";
                     $q = $pdo->prepare($sql);
                     $q->execute();
                     while ($line=$q->fetch()) {
@@ -84,7 +84,7 @@ session_start(); // pour garder la var de SESSION
                         echo "<img src=img/Féculent/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
                         echo "<p class=nom>".$line['nom']."</p>";
                         //echo "<a href=index.php?id=".$line['id']."&action=ajouter class='ajout'>+</a>";
-                        echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+                        echo '<a onclick="ajouter('.$line['id'].',3);" class="ajout" id="ing'.$line['id'].'">+</a>';
                         echo "</div>";
                     }
 
@@ -94,7 +94,7 @@ session_start(); // pour garder la var de SESSION
 
                     <?php
                     //affichage des div comprenant img + bouton ajouter
-                    $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Laitier'";
+                    $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Laitier' ORDER BY nom";
                     $q = $pdo->prepare($sql);
                     $q->execute();
                     while ($line=$q->fetch()) {
@@ -102,7 +102,7 @@ session_start(); // pour garder la var de SESSION
                         echo "<img src=img/Laitier/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
                         echo "<p class=nom>".$line['nom']."</p>";
                         //echo "<a href=index.php?id=".$line['id']."&action=ajouter class='ajout'>+</a>";
-                        echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+                        echo '<a onclick="ajouter('.$line['id'].',4);" class="ajout" id="ing'.$line['id'].'">+</a>';
                         echo "</div>";
                     }
 
@@ -112,7 +112,7 @@ session_start(); // pour garder la var de SESSION
 
                     <?php
                     //affichage des div comprenant img + bouton ajouter
-                    $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Divers'";
+                    $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Divers' ORDER BY nom";
                     $q = $pdo->prepare($sql);
                     $q->execute();
                     while ($line=$q->fetch()) {
@@ -120,7 +120,7 @@ session_start(); // pour garder la var de SESSION
                         echo "<img src=img/Divers/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
                         echo "<p class=nom>".$line['nom']."</p>";
                         //echo "<a href=index.php?id=".$line['id']."&action=ajouter class='ajout'>+</a>";
-                        echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+                        echo '<a onclick="ajouter('.$line['id'].',5);" class="ajout" id="ing'.$line['id'].'">+</a>';
                         echo "</div>";
                     }
                     ?>
@@ -147,16 +147,7 @@ session_start(); // pour garder la var de SESSION
             <div class="footer__container">
                 <ul>
 
-                    <li class="footer__icon <?php
-                    $premiereFois=true;
-                    if($premiereFois==true) {
-                        echo "first-time-green";
-                        $premiereFois=false;
-                    }
-                    else {
-                        echo "second-time-white";
-                    }
-                    ?>" id="footer__first-icon" onclick="afficherCategorie(1);"><span class="icon-chicken"></li>
+                    <li class="footer__icon" id="footer__first-icon" onclick="afficherCategorie(1);"><span class="icon-chicken"></li>
                     <li class="footer__icon" onclick="afficherCategorie(2);"><span class="icon-cabbage"></li>
                     <li class="footer__icon" onclick="afficherCategorie(3);"><span class="icon-spaguetti"></li>
                     <li class="footer__icon" onclick="afficherCategorie(4);"><span class="icon-milk"></span></li>
@@ -176,7 +167,8 @@ session_start(); // pour garder la var de SESSION
                 },
             });
 
-            $('#MaListe').load('traitement/contenuListeAjax.php');
+            $('#slideListe').load('traitement/contenuListeAjax.php');
+            $('#slideSelectionRecette').load('traitement/contenuSelectionRecette.php');
 
         </script>
         <!-- Fin Page ingrédients et liste de checked -->

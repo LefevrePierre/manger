@@ -20,6 +20,14 @@
     padding: 5%;
 }
 
+#topListe {
+    height:90px;
+}
+
+#topSelection {
+    height:90px;
+}
+
 .swiper-container {
     margin-top: 60px;
 }

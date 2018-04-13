@@ -15,23 +15,6 @@ if (isset($_COOKIE['cookieIng'])){
 
 ?>
 
-<!--<div class="logo">
-    <p>logo</p>
-</div>
-<div class="content-1">
-    <div class="paragraphe-home">
-        <h2 id="slogan">Qu'est-ce qu'on mange ce soir ce soir  ?</h2>
-        <p>Nous aussi on en a marre de se poser la même question tous les soirs.. Mais rassurez-vous, nous répondons enfin à cette question éternelle ! Vos ingrédients, nos recettes, VOS PLATS!</p>
-    </div>
-</div>
-<div class="go">
-    <a href="index.php?action=listeIngredients" class="btn-go">C'est parti</a>
-</div>
-<div class="img-home">
-
-    <img src="../img/home-1.jpg" id="img-home-1">
-</div>-->
-
 <body>
 <div class="home-fond">
     <img class="home-logo" src="img/icones/logo.png" alt="">
@@ -39,7 +22,6 @@ if (isset($_COOKIE['cookieIng'])){
     <img class="home-iphone" src="img/icones/iphone.png" alt="">
     <img class="home-forme" src="img/icones/homeblanc.png" alt="">
     <a href="index.php?action=listeIngredients" class="home-go">C'est parti ></a>
-
 
 </div>
 
@@ -50,27 +32,22 @@ if (isset($_COOKIE['cookieIng'])){
         // echo '<pre>';
         // print_r($tab_cookies);
         // echo '<pre>';
+        echo '<div id="cookies__display">';
         echo "<h4>Votre liste de la dernière fois</h4>";
-        echo "<div class='home-ing-grid'>";
-
-        foreach($tab_cookies as $key=>$value) {
-
-            $sql = "SELECT * FROM ingredient WHERE id=?";
-            $q = $pdo->prepare($sql);
-            $q->execute(array($value));
-
-            while($line=$q->fetch()) {
-                echo "<div class='liste__item'>";
-                echo "<img src=img/".$line['type']."/".$line['imgListe']." class=post-it alt=".$line['imgListe'].">";
-                echo "<p class=liste-nom>".$line['nom']."</p>";
-                echo "<a href=index.php?id=".$line['id']."&action=supprimer><img src='img/icones/cancel.png' class='croix-supp' alt='supprimer'></a>";
-                echo "</div>";
-            }
-        }
-        // fin foreach
+        echo '<div class="notif_supp_accueil_parent"><div id="ingredient-panier-supp" class="notif__supp_accueil"></div></div>';
+        echo "<div class='home-ing-grid' id='liste__cookie'>";
+        // traitement, contenu = contenuListeCookies.php
         echo "</div>";
+
         echo '<a class="btn-home" href="index.php?action=listeIngredients" style="margin-top: 20px;">Continuer</a>';
-        echo '<a class="btn-home" href="index.php?action=videPanier" style="background: none;border: 2px #73ba74 solid;color: #73ba74;">Nouvelle liste</a>';
+
+        $sql="SELECT COUNT(id) AS nbrIngBDD FROM ingredient";
+        $q = $pdo->prepare($sql);
+        $q->execute();
+        if($line=$q->fetch()) {
+            echo '<a onclick="viderPanier('.$line['nbrIngBDD'].',0);" class="btn-home" style="background: none;border: 2px #73ba74 solid;color: #73ba74;">Nouvelle liste</a>';
+        }
+        echo '</div>';
     }else{
         echo "<ul>
                     <li><span class='home-etape'>1</span> Choisissez vos ingrédients parmi les différentes catégories<br></li>
@@ -100,3 +77,7 @@ if (isset($_COOKIE['cookieIng'])){
         <iframe src="index.php" frameborder="0"></iframe>
     </div>
 </div>
+
+<script>
+    $('#liste__cookie').load('traitement/contenuListeCookies.php');
+</script>

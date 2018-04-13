@@ -1,19 +1,18 @@
 // ajout en AJAX marche, yes !
-function ajouter(id) {
+function ajouter(id,cat) {
     $.ajax({
         type: "GET",
         url:'index.php',
         data : 'id=' + id + '&action=ajouter',
         success : function () {
-            $('#MaListe').load('traitement/contenuListeAjax.php');
+            $('#slideListe').load('traitement/contenuListeAjax.php');
+            $('#slideSelectionRecette').load('traitement/contenuSelectionRecette.php');
             $('#ingredient-panier').fadeIn(400); // pour afficher, obligé de fadeIn
             $('#ingredient-panier').load('traitement/nom.php?idAjoute='+id);
             $('#ingredient-panier').delay(1100).fadeOut(400);//disparition de l'ajout en fadeout de 400ms après 1s
-            $('#ing'+id).text('✓');
-            $('#ing'+id).css('color','white');
-            $('#ing'+id).css('background-color','#76be77');
-            $('#ing'+id).css('border','none');
-            $('#ing'+id).css('pointer-events','none');
+            $('#ing'+id).html("&#10003;"); // checked
+
+            $('#ing'+id).attr("class","coche__cookie");
         },
         error : function () {
             $('body').load('index.php?action=error');
@@ -28,15 +27,19 @@ function supprimer(id) {
         url:'index.php',
         data : 'id=' + id + '&action=supprimer',
         success : function () {
-            $('#MaListe').load('traitement/contenuListeAjax.php');
+            $('#slideListe').load('traitement/contenuListeAjax.php');
+            $('#slideSelectionRecette').load('traitement/contenuSelectionRecette.php');
+
+            // pour accueil
+            $('#liste__cookie').load('traitement/contenuListeCookies.php');
+
             $('#ingredient-panier-supp').fadeIn(400); // pour afficher, obligé de fadeIn
             $('#ingredient-panier-supp').load('traitement/nom.php?idSupp='+id);
             $('#ingredient-panier-supp').delay(1100).fadeOut(400);//disparition de l'ajout en fadeout de 400ms après 1s
-            $('#ing'+id).text('+');
-            $('#ing'+id).css('color','#787784');
-            $('#ing'+id).css('background-color','white');
-            $('#ing'+id).css('border','1px solid #787784');
-            $('#ing'+id).css('pointer-events','auto');
+            $('#ing'+id).html('+');
+
+            $('#ing'+id).attr("class","ajout");
+
         },
         error : function () {
             $('body').load('index.php?action=error');
@@ -45,17 +48,22 @@ function supprimer(id) {
 }
 
 // vider panier en AJAX
-function viderPanier(nbrIngBDD) {
+function viderPanier(nbrIngBDD,action) {
     $.ajax({
         url:'index.php?action=videPanier',
         success : function () {
-            $('#MaListe').load('traitement/contenuListeAjax.php');
+            $('#slideListe').load('traitement/contenuListeAjax.php');
+            $('#slideSelectionRecette').load('traitement/contenuSelectionRecette.php');
+
+            // pour accueil
+            $('#liste__cookie').load('traitement/contenuListeCookies.php');
+
             for(i=1;i<nbrIngBDD;i++) {
-                $('#ing'+i).text('+');
-                $('#ing'+i).css('color','#787784');
-                $('#ing'+i).css('background-color','white');
-                $('#ing'+i).css('border','1px solid #787784');
-                $('#ing'+i).css('pointer-events','auto');
+                $('#ing'+i).html('+');
+                $('#ing'+i).attr("class","ajout");
+            }
+            if(action==0) {
+                $(location).attr('href', 'index.php?action=listeIngredients')
             }
         },
         error : function () {
@@ -309,6 +317,9 @@ $(document).ready(function () {
             $('.ingredient-panier').fadeOut("fast",function(){
                 // Disparition
             });
+
+            // permet de remonter en haut de la liste
+            $('html, body').animate({scrollTop: $("#topListe").offset().top}, 0);
         }
 
         if(mySwiper.activeIndex==2) {
@@ -320,6 +331,9 @@ $(document).ready(function () {
             $('.nav-manger:nth-child(3) .triangle').css('top','25px');
             $('.nav-manger:nth-child(2) .triangle').css('top','45px');
             $('.nav-manger:nth-child(1) .triangle').css('top','45px');
+
+            // permet de remonter en haut de la liste
+            $('html, body').animate({scrollTop: $("#topSelection").offset().top}, 0);
         }
     });
 
@@ -330,8 +344,8 @@ $(document).ready(function($){
     $( window ).scroll(function() {
         var scy=$(window).scrollTop();
         var visible = $('.ingredients-recette').visible(); // Set the visible status into the span.
-        console.log(visible);
-        console.log(scy);
+        //console.log(visible);
+        //console.log(scy);
         if(scy > 870){
             $('.ingredients-recette').addClass('ingredients-fixed');
         }else if(scy < 654){
@@ -350,7 +364,7 @@ $(document).ready(function($){
         if($('.categorie6:visible')){
             $('#search-input').show();
             $('#search-input').focus();
-            console.log('socus');
+            //console.log('socus');
         }else{
             $('#search-input').hide();
         }
@@ -377,8 +391,8 @@ $(document).ready(function($){
 
 
     //script couleur footer
-    $('.footer__icon:nth-child(1)').css('background','#76be77');
-    $('.footer__icon:nth-child(1)').find('span').css('color','#ffffff');
+    // $('.footer__icon:nth-child(1)').css('background','#76be77');
+    // $('.footer__icon:nth-child(1)').find('span').css('color','#ffffff');
     $('.footer__icon').click(function () {
         var celi = $(this)
         $('.footer__icon').not(celi).css('background','white');

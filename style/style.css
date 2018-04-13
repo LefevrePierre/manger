@@ -194,7 +194,22 @@
 		height:25px;
 		padding-left: 0.475em;
 		color:#787784;
+		text-decoration: auto;
+	}
+
+	.coche__cookie {
+		position: absolute;
+		bottom: 26px;
+		right: 24px;
+		font-weight: 300;
+		border-radius: 50%;
+		width:25px;
+		height:25px;
+		padding-left: 0.475em;
 		text-decoration: none;
+		color:white !important;
+		background-color: #76be77;
+		pointer-events: none;
 	}
 
 	.ajout-search {
@@ -239,6 +254,16 @@
 		font-weight: 400;
 		font-size:0.8em;
 	}
+
+	.notif_supp_accueil_parent {
+		min-height: 40px;
+	}
+
+	.notif__supp_accueil {
+		position: relative !important;
+		z-index: 9999;
+	}
+
 
 	/* PAGE LISTE */
 
@@ -397,7 +422,24 @@
 		padding-left: 0.475em;
 		color:#787784;
 		text-decoration: none;
+		pointer-events: auto;
 	}
+
+	.coche__cookie {
+		position: absolute;
+		bottom: 22px;
+		right: 17px;
+		font-weight: 300;
+		border-radius: 50%;
+		width:25px;
+		height:25px;
+		padding-left: 0.475em;
+		text-decoration: none;
+		color:white !important;
+		background-color: #76be77;
+		pointer-events: none;
+	}
+
 	#ingredient-panier {
 		width:80%;
 	}
