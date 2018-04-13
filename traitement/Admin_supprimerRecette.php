@@ -9,7 +9,7 @@ if(isset($_GET['id'])) {
 	$q=$pdo->prepare($sql);
 	$q->execute(array($_GET['id']));
 
-	header("Location:index.php?action=admin");
+	header("Location:index.php?action=Admin_accueil");
 
 }
 
