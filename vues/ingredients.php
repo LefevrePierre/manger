@@ -126,7 +126,7 @@ session_start(); // pour garder la var de SESSION
                     ?>
                 </div>
                 <div   id="categorie6">
-
+                    <p>Quel ingrédient vous fait envie ?</p>
                     <div class='search-div'> <input type='text' name='search-input' id='search-input'/></div>
                     <div class='searchResult-div'></div>
                 </div>

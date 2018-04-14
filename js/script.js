@@ -368,7 +368,7 @@ $(document).ready(function($){
     //script pour la recherche
     $('#search-input').hide();
     $('#categorie6').click(function () {
-        if($('.categorie6:visible')){
+        if($('#categorie6:visible')){
             $('#search-input').show();
             $('#search-input').focus();
             //console.log('socus');
