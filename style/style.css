@@ -182,15 +182,7 @@
 		font-size: 1.75em;
 		text-transform: capitalize;
 	}
-
-	.search-div {
-		margin-top: 20px;
-	}
 	
-	#search-input {
-		width:60%;
-	}
-
 	.ajout{
 		position: absolute;
 		bottom: 26px;
