@@ -49,10 +49,11 @@ if(isset($_SESSION['ing_checked'])) {
     }
     // TOUS LES INGREDIENTS ET PLUS
     else {
-        echo "<div class='selectionRecette-conteneur'>";
 
         $x=0;
         $recetteTrouve=false;
+        echo "<h2 class='selectionRecette-titre'>Recettes trouvées</h2>";
+        echo "<div class='selectionRecette-conteneur'>";
 
         foreach($ingredientsDeLaRecette as $niemeIng => $idIng) {
             $result= array_diff($ingredientsDeLaRecette[$niemeIng], $_SESSION['ing_checked']);
@@ -67,14 +68,13 @@ if(isset($_SESSION['ing_checked'])) {
 
                      </div>";*/
 
-                echo "<h2 class='selectionRecette-titre'>Recettes trouvées</h2>";
+
                 echo "<div class='selectionRecette-div'>
                                 <div class='selectionRecette-desc'>
                                     <h5>".$recetteTab[$niemeIng]."</h5>
                                     <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
                                 </div>
                           </div>";
-
                 $_SESSION['nbRecettes']++;
 
                 //il faut mettre dans ce echo une div avec un bgimg
@@ -85,6 +85,8 @@ if(isset($_SESSION['ing_checked'])) {
             }
             $x++;
         }
+        echo "</div>";
+
 
         if($recetteTrouve=false) {
             echo "<div class=pas-ing>";
@@ -98,6 +100,10 @@ if(isset($_SESSION['ing_checked'])) {
         $recetteTrouveManque1=false;
         $ingredientManquant="";
         $nomIngredientManquant="";
+
+        echo "<h2 class='selectionRecette-titre'>Il vous manque 1 ingrédient</h2>";
+        echo "<div class='selectionRecette-conteneur'>";
+
 
         foreach($ingredientsDeLaRecette as $niemeIng => $idIng) {
             $result= array_diff($ingredientsDeLaRecette[$niemeIng], $_SESSION['ing_checked']);
@@ -118,7 +124,6 @@ if(isset($_SESSION['ing_checked'])) {
                         $nomIngredientManquant=$line['nom'];
                     }
                 }
-                echo "<h2 class='selectionRecette-titre'>Il vous manque 1 ingrédient</h2>";
                 echo "<div class='selectionRecette-div'>
                                 <div class='manque'>Ingrédient manquant :<br> ".$nomIngredientManquant."</div>
                                 <div class='selectionRecette-desc'>
