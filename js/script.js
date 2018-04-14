@@ -81,13 +81,9 @@ function afficherCategorie(numero) {
     for (i = numero + 1; i <= 6; i++) {
         document.getElementById('categorie' + i).style.display = "none";
     }
-    if(numero==6) {
-        document.getElementById('search-input').style.display="block";
-    }
-    else {
-        document.getElementById('search-input').style.display="none";
-    }
 }
+
+
 
 dataQte=[];
 
@@ -368,6 +364,18 @@ $(document).ready(function($){
         });
     }
 
+    //script pour la recherche
+    $('#search-input').hide();
+    $('#afficherSearch').click(function () {
+        if($('#categorie6:visible')){
+            $('#search-input').show();
+            $('#search-input').focus();
+            //console.log('socus');
+        }else{
+            $('#search-input').hide();
+        }
+
+    })
 
     $('#search-input').keyup(function () {
         var recherche = $(this).val();
