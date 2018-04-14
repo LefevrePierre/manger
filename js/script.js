@@ -366,7 +366,7 @@ $(document).ready(function($){
 
     //script pour la recherche
     $('#search-input').hide();
-    $('#afficherSearch').click(function () {
+    $('#footer__last-icon').click(function () {
         if($('#categorie6:visible')){
             $('#search-input').show();
             $('#search-input').focus();
