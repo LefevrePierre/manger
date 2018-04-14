@@ -351,8 +351,8 @@ $(document).ready(function($){
         $(window).scroll(function () {
             var scy = $(window).scrollTop();
             var visible = $('.ingredients-recette').visible(); // Set the visible status into the span.
-            console.log(visible);
-            console.log(scy);
+            //console.log(visible);
+            //console.log(scy);
             if (scy > 870) {
                 $('.ingredients-recette').addClass('ingredients-fixed');
             } else if (scy < 654) {
@@ -365,14 +365,13 @@ $(document).ready(function($){
     }
 
 
-    $('#search-input').hide();
     //script pour la recherche
     $('#search-input').hide();
-    $('*').click(function () {
+    $('#categorie6').click(function () {
         if($('.categorie6:visible')){
             $('#search-input').show();
             $('#search-input').focus();
-            console.log('socus');
+            //console.log('socus');
         }else{
             $('#search-input').hide();
         }
@@ -433,8 +432,8 @@ $(document).ready(function($){
 
             recupQt = recupQt*1 + (recupQt / np);
             $(this).val(recupQt);
-            console.log("recupt = "+recupQt);
-            console.log("np "+np);
+            //console.log("recupt = "+recupQt);
+            //console.log("np "+np);
         });
 
         np++;
@@ -448,7 +447,7 @@ $(document).ready(function($){
                 let recupQt = $(this).val();
                 recupQt = recupQt * 1 - recupQt / np;
                 $(this).val(recupQt);
-                console.log(recupQt);
+                //console.log(recupQt);
             });
             np--;
             $('.disp-np').text(np);
