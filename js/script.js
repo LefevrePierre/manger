@@ -333,20 +333,23 @@ $(document).ready(function () {
 
 
 $(document).ready(function($){
-    $( window ).scroll(function() {
-        var scy=$(window).scrollTop();
-        var visible = $('.ingredients-recette').visible(); // Set the visible status into the span.
-        console.log(visible);
-        console.log(scy);
-        if(scy > 870){
-            $('.ingredients-recette').addClass('ingredients-fixed');
-        }else if(scy < 654){
-            $('.ingredients-recette').removeClass('ingredients-fixed');
+    if (window.matchMedia("(max-width: 760px)").matches) {
 
-        }else {
+        $(window).scroll(function () {
+            var scy = $(window).scrollTop();
+            var visible = $('.ingredients-recette').visible(); // Set the visible status into the span.
+            console.log(visible);
+            console.log(scy);
+            if (scy > 870) {
+                $('.ingredients-recette').addClass('ingredients-fixed');
+            } else if (scy < 654) {
+                $('.ingredients-recette').removeClass('ingredients-fixed');
 
-        }
-    });
+            } else {
+
+            }
+        });
+    }
 
 
 

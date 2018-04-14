@@ -40,6 +40,7 @@
         <link href="style/home.css" rel="stylesheet">
         <link href="style/404.css" rel="stylesheet">
         <link href="style/admin.css" rel="stylesheet">
+        <link href="style/tablette.css" rel="stylesheet">
         <!-- Demo styles -->
 
         <!-- Fin Ajouts HEAD -->

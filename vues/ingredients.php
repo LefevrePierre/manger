@@ -36,7 +36,7 @@ session_start(); // pour garder la var de SESSION
         <div class="swiper-slide" data-hash="slide1" id="slideIng">
 
             <div class="content-manger">
-                <div class="col-md-6 col-sm-6 col-xs-6" id="categorie1">
+                <div   id="categorie1">
 
                     <?php
                     //affichage des div comprenant img + bouton ajouter
@@ -55,7 +55,7 @@ session_start(); // pour garder la var de SESSION
                     ?>
                 </div>
 
-                <div class="col-md-6 col-sm-6 col-xs-6" id="categorie2">
+                <div   id="categorie2">
                     <?php
                     //affichage des div comprenant img + bouton ajouter
                     $sql="SELECT imgListe,id,nom FROM ingredient WHERE type='Légume'";
@@ -72,7 +72,7 @@ session_start(); // pour garder la var de SESSION
 
                     ?>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6" id="categorie3">
+                <div   id="categorie3">
 
                     <?php
                     //affichage des div comprenant img + bouton ajouter
@@ -90,7 +90,7 @@ session_start(); // pour garder la var de SESSION
 
                     ?>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6" id="categorie4">
+                <div   id="categorie4">
 
                     <?php
                     //affichage des div comprenant img + bouton ajouter
@@ -108,7 +108,7 @@ session_start(); // pour garder la var de SESSION
 
                     ?>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6" id="categorie5">
+                <div   id="categorie5">
 
                     <?php
                     //affichage des div comprenant img + bouton ajouter
@@ -125,7 +125,7 @@ session_start(); // pour garder la var de SESSION
                     }
                     ?>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6" id="categorie6">
+                <div   id="categorie6">
 
                     <!--                    <div class='search-div'> <input type='text' name='search-input' id='search-input'/></div>
                     -->                    <div class='searchResult-div'></div>

@@ -1,13 +1,19 @@
-.selectionRecette-conteneur {
-    width: 85%;
-    margin: auto;
-    padding-top: 30px;
-}
+
 
 .selectionRecette-titre {
     font-size: 1.4em;
+    width: 85%;
+    margin: auto;
+    /* text-align: center; */
+    margin-top: 35px;
+    /* margin-bottom: 2px; */
 }
 
+.selectionRecette-conteneur {
+    width: 85%;
+    margin: auto;
+    padding-top: 10px;
+}
 
 .selectionRecette-div {
     background-image: url("../img/recettes/escalopelegumes.jpg");

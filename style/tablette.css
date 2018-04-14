@@ -1,0 +1,80 @@
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .item-container {
+        position: relative;
+        display: inline-block;
+        width: 33%;
+        height: 100%;
+    }
+
+    .nom {
+        font-size: 1.4em;
+    }
+
+    .liste-nom {
+        font-weight: 200;
+        font-size: 1.45em;
+        text-transform: capitalize;
+        margin-top: -20%;
+    }
+
+    .liste__item>img {
+        height: 180px;
+        width: auto;
+        margin: auto;
+    }
+
+    .selectionRecette-conteneur {
+        width: 85%;
+        margin: auto;
+        padding-top: 30px;
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-gap: 40px;
+    }
+
+    .selectionRecette-titre {
+        font-size: 1.8em;
+        width: 85%;
+        margin: auto;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .ingredients-recette {
+        display: grid;
+        grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+        grid-gap: 0px;
+        width: 50%;
+        /* margin: auto; */
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 50px;
+        transition: all 400ms ease;
+    }
+
+    .ingredients-recette-img {
+        /* height: 70px; */
+        margin-bottom: -20px;
+        width: 100%;
+        margin-top: -5px;
+    }
+
+    .home-p {
+        color: white;
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .poubelle {
+        position: fixed;
+        top: 30px;
+        right: 20px;
+        background-color: rgba(0,0,0,0.3);
+        padding: 10px;
+        border-radius: 10px;
+        width: 60px;
+        height: 60px;
+    }
+
+
+}

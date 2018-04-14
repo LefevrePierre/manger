@@ -50,9 +50,10 @@ if(isset($_SESSION['ing_checked'])) {
             $numRecette=$numRecette+1;
 
         }
-        echo "<div class='selectionRecette-conteneur'>";
         // TOUS LES INGREDIENTS ET PLUS FONCTIONNE
         echo "<h2 class='selectionRecette-titre'>Recettes trouvées</h2>";
+        echo "<div class='selectionRecette-conteneur'>";
+
         $x=0;
         $recetteTrouve=false;
 
@@ -93,9 +94,11 @@ if(isset($_SESSION['ing_checked'])) {
         if($recetteTrouve==false){
             echo "";
         }
+        echo "</div>";
 
 
         echo "<h2 class='selectionRecette-titre'>Il vous manque 1 ingrédient</h2>";
+        echo "<div class='selectionRecette-conteneur'>";
 
         $y=0;
         $recetteTrouveManque1=false;
