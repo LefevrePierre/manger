@@ -352,7 +352,7 @@ $(document).ready(function($){
     }
 
 
-
+    $('#search-input').hide();
     //script pour la recherche
     $('#search-input').hide();
     $('*').click(function () {
@@ -360,8 +360,6 @@ $(document).ready(function($){
             $('#search-input').show();
             $('#search-input').focus();
             console.log('socus');
-        }else{
-            $('#search-input').hide();
         }
 
     })

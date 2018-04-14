@@ -99,7 +99,6 @@ h3:nth-child(7) {
 #search-input {
     text-align: center;
     margin: 0 auto;
-    display: none;
     background: #fbfbfb;
     border: 1px grey solid;
     margin-top: 18px;

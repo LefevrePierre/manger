@@ -164,7 +164,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
     <form method="POST">
         <input type="text" name="pseudo" class="commentaire__form-pseudo" placeholder="Prenom" /><br />
         <textarea name="commentaire" class="commentaire__form-contenu" placeholder="Commentaire"></textarea><br />
-        <input type="submit" value="Poster mon commentaire" class="commentaire__form-btn" name="submit_commentaire" />
+        <input type="submit" value="Poster mon commentaire" class="commentaire__form-btn" name="submit_commentaire" style="margin-bottom: 50px" />
     </form>
 </div>
 

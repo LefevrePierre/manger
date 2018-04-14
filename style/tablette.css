@@ -76,5 +76,24 @@
         height: 60px;
     }
 
+    .recette__infos-title {
+        font-size: 4em;
+    }
+
+    .recette__infos {
+        font-size: 2em;
+    }
+
+    .btn-plus, .btn-moins {
+        width: 45px;
+        height: 46px;
+        background-color: #76be77;
+        border: none;
+        color: white;
+        margin: 0 10px;
+        font-size: 2em;
+    }
+
+
 
 }
