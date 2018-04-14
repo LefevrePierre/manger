@@ -226,6 +226,11 @@ $(document).ready(function () {
         }
     });
 
+
+        if(mySwiper.activeIndex==2) {
+            $('footer').css("display", "none");
+        }
+
     mySwiper.init();
 
 //Etats initiaux :
