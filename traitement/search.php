@@ -15,7 +15,7 @@ if(isset($_GET['motcle'])){
             echo "<div class=item-container-search>";
             echo "<img src=img/".$line['type']."/".$line['imgListe']." class=post-it-search alt=".$line['imgListe'].">";
             echo "<p class=nom-search>".$line['nom']."</p>";
-            echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+            echo '<a onclick="ajouter('.$line['id'].');" class="ajout-search" id="ing'.$line['id'].'">+</a>';
             echo "</div>";
         }
     }else{

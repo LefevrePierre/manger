@@ -1,5 +1,5 @@
 // ajout en AJAX marche, yes !
-function ajouter(id,cat) {
+function ajouter(id) {
     $.ajax({
         type: "GET",
         url:'index.php',
@@ -364,13 +364,14 @@ $(document).ready(function($){
         });
     }
 
+
     //script pour la recherche
     $('#search-input').hide();
     $('#footer__last-icon').click(function () {
-        if($('#categorie6:visible')){
+        if($('.categorie6:visible')){
             $('#search-input').show();
             $('#search-input').focus();
-            //console.log('socus');
+            console.log('socus');
         }else{
             $('#search-input').hide();
         }
@@ -431,8 +432,8 @@ $(document).ready(function($){
 
             recupQt = recupQt*1 + (recupQt / np);
             $(this).val(recupQt);
-            //console.log("recupt = "+recupQt);
-            //console.log("np "+np);
+            console.log("recupt = "+recupQt);
+            console.log("np "+np);
         });
 
         np++;
@@ -446,7 +447,7 @@ $(document).ready(function($){
                 let recupQt = $(this).val();
                 recupQt = recupQt * 1 - recupQt / np;
                 $(this).val(recupQt);
-                //console.log(recupQt);
+                console.log(recupQt);
             });
             np--;
             $('.disp-np').text(np);

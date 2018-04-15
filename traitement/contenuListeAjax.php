@@ -232,8 +232,12 @@ if(isset($_SESSION['ing_checked'])) {
 
         // vider le panier
         echo '<div class="poubelle">';
-        echo '<a onclick="viderPanier('.COUNT($_SESSION['ing_checked']).',1);"><img src="img/icones/bin.png" alt="Vider la liste"></a>';
-
+        $sql="SELECT COUNT(id) AS nbrIng FROM ingredient";
+        $q=$pdo->prepare($sql);
+        $q->execute(array($id));
+        if($line=$q->fetch()) {
+            echo '<a onclick="viderPanier('.$line['nbrIng'].',1);"><img src="img/icones/bin.png" alt="Vider la liste"></a>';
+        }
         $nbrDeDifferents=array();
         $nbrDeDifferents=array_unique($_SESSION['ing_checked']);
 
