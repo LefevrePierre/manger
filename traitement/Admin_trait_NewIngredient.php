@@ -15,7 +15,7 @@ if(isset($_POST['demandeAjout'])) {
     $type=$_POST['type'];
     $nom=$_POST['newIngredient'];
 
-    $sql1='INSERT INTO ingredient(type,nom,imgListe,imgListeType,imgListeSize) VALUES("$type","$nom","$imgListeFile","$file_type1","$file_size1")';
+    $sql1="INSERT INTO ingredient(type,nom,imgListe,imgListeType,imgListeSize) VALUES('$type','$nom','$imgListeFile','$file_type1','$file_size1')";
 
     $q1=$pdo->prepare($sql1);
     $q1->execute();
