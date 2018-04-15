@@ -111,7 +111,7 @@ if(!isset($_SESSION['login'])) {
                     <tr>
                         <?php
                         echo '<h4> Viandes et poissons </h4>';
-                        $sql="SELECT * FROM ingredient WHERE type='Viande-Poisson'";
+                        $sql="SELECT * FROM ingredient WHERE type='Viande-Poisson' ORDER BY nom";
                         $q=$pdo->prepare($sql);
                         $q->execute();
                         $ligne=0;
@@ -148,7 +148,7 @@ if(!isset($_SESSION['login'])) {
                         echo '<h4> Légumes </h4>';
                         echo '<table>';
                         echo '<tr>';
-                        $sql="SELECT * FROM ingredient WHERE type='Légume'";
+                        $sql="SELECT * FROM ingredient WHERE type='Légume' ORDER BY nom";
                         $q=$pdo->prepare($sql);
                         $q->execute();
                         $ligne=0;
@@ -183,7 +183,7 @@ if(!isset($_SESSION['login'])) {
                         echo '<h4> Féculents </h4>';
                         echo '<table>';
                         echo '<tr>';
-                        $sql="SELECT * FROM ingredient WHERE type='Féculent'";
+                        $sql="SELECT * FROM ingredient WHERE type='Féculent' ORDER BY nom";
                         $q=$pdo->prepare($sql);
                         $q->execute();
                         $ligne=0;
@@ -218,7 +218,7 @@ if(!isset($_SESSION['login'])) {
                         echo '<h4> Laitages </h4>';
                         echo '<table>';
                         echo '<tr>';
-                        $sql="SELECT * FROM ingredient WHERE type='Laitier'";
+                        $sql="SELECT * FROM ingredient WHERE type='Laitier' ORDER BY nom";
                         $q=$pdo->prepare($sql);
                         $q->execute();
                         $ligne=0;
@@ -254,7 +254,7 @@ if(!isset($_SESSION['login'])) {
                         echo '<h4> Divers </h4>';
                         echo '<table>';
                         echo '<tr>';
-                        $sql="SELECT * FROM ingredient WHERE type='Divers'";
+                        $sql="SELECT * FROM ingredient WHERE type='Divers' ORDER BY nom";
                         $q=$pdo->prepare($sql);
                         $q->execute();
                         $ligne=0;
