@@ -77,9 +77,7 @@ if(isset($_SESSION['login'])==false) {
                 }
                 echo '</td>';
                 echo '<td width=300>';
-                echo '<a class="btn btn-default" href="index.php?id='.$lineInfo['id'].'&action=afficherRecette"><span class="glyphicon glyphicon-eye-open"></span> Voir</a>';
-                echo ' ';
-                echo '<a class="btn btn-primary" href="index.php?id='.$lineInfo['id'].'&action=Admin_view_Maj_Recette"><span class="glyphicon glyphicon-pencil"></span> Modifier</a>';
+                echo '<a class="btn btn-primary" href="index.php?id='.$lineInfo['id'].'&action=Admin_view_Maj_Recette"><span class="glyphicon glyphicon-pencil"></span> Voir ou Modifier</a>';
                 echo ' ';
                 echo '<a class="btn btn-danger" onclick="confirmSupp();"><span class="glyphicon glyphicon-remove"></span> Supprimer</a>';
                 echo '</td>';
