@@ -88,7 +88,7 @@ if(isset($_SESSION['ing_checked'])) {
         echo "</div>";
 
 
-        if($recetteTrouve=false) {
+        if($recetteTrouve==false) {
             echo "<div class=pas-ing>";
             echo "<img class='img-vide' src='img/icones/recetteVide.png'>";
             echo "<p class=pas-ing__coch>Pas de recette trouvée</p>";
