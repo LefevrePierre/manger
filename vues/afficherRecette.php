@@ -159,7 +159,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
     while($c = $commentaires->fetch()) {
         echo" <div class='fieldset'>";
         echo" </div>";
-        echo "<span class='commentaire__pseudo'>" . $c['pseudo'] . " à écrit:</span>";
+        echo "<span class='commentaire__pseudo'>" . $c['pseudo'] . " a écrit:</span>";
         echo "<span class='commentaire__contenu'>" . $c['commentaire'] . "</span>";
 
     }
