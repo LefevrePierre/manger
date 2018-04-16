@@ -67,7 +67,7 @@ if(isset($_SESSION['login'])==false) {
                 echo '<td>'. $lineInfo['tpsCui'] . '</td>';
                 echo '<td>';
                 // les ingredients de la ieme recette
-                $sql2= 'SELECT * FROM ingredient JOIN estDans on ingredient.id=idIngredient JOIN recette ON recette.id=idRecette WHERE recette.id=:numRecette';
+                $sql2= 'SELECT * FROM ingredient JOIN estDans on ingredient.id=idIngredient JOIN recette ON recette.id=idRecette WHERE recette.id=:numRecette ORDER BY nom';
                 $q2=$pdo->prepare($sql2);
                 $q2->execute(array(
                     ':numRecette'=>$lineInfo['id']
