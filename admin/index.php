@@ -80,7 +80,7 @@ if(isset($_SESSION['login'])==false) {
                 echo ' ';
                 echo '<a class="btn btn-primary" href="index.php?id='.$lineInfo['id'].'&action=Admin_view_Maj_Recette"><span class="glyphicon glyphicon-pencil"></span> Voir ou Modifier</a>';
                 echo ' ';
-                echo '<a class="btn btn-danger" onclick=index.php?id='.$lineInfo['id'].'&action=Admin_supprimerRecette><span class="glyphicon glyphicon-remove"></span> Supprimer</a>';
+                echo '<a class="btn btn-danger" href="index.php?id='.$lineInfo['id'].'&action=Admin_supprimerRecette"><span class="glyphicon glyphicon-remove"></span> Supprimer</a>';
                 echo '</td>';
                 echo '</tr>';
             }
