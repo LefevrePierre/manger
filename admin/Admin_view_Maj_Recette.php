@@ -152,7 +152,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
                     echo '<td class="image__actuelle">';
                     echo '<div class="hover__image">';
                     echo '<img src="img/recette/'.$line['imgBg'].'" class="apercu__image">';
-                    echo '<a class="voir__image" href="http://localhost:8888/projet-manger/img/recette/'.$line['imgBg'].'" target="_blank">Voir</a>';
+                    echo '<a class="voir__image" href="img/recette/'.$line['imgBg'].'" target="_blank">Voir</a>';
                     echo '</div>';
                     echo '<label for="imgBgbutton" class="modif" id="modif__img">Modifier</label>';
                     echo '<input type="file" accept=".png, .jpg, .jpeg" name="imgBackground" id="imgBg" class="input__cache" onclick="notifUpload();">';
