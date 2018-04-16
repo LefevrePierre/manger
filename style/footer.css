@@ -10,7 +10,7 @@ footer{
     width:85%;
     position: fixed;
     bottom:30px;
-    background-color:white;
+    background-color:#76be77;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 160px;
@@ -25,7 +25,7 @@ footer{
     z-index: 10;
     width:85%;
     position: fixed;
-    background-color:white;
+    background-color:#76be77;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 160px;
@@ -64,10 +64,10 @@ footer{
 
 }
 .footer__icon span{
-display: block;
+    display: block;
     margin-top:9px;
-font-size:1.3em;
-    color:#909090;
+    font-size:1.3em;
+    color:white;
 }
 
 .footer__icon:hover .footer__icon span{

@@ -96,6 +96,11 @@ h3:nth-child(7) {
 }
 
 
+.search-div {
+    margin-top: 50px;
+}
+
+
 #search-input {
     text-align: center;
     margin: 0 auto;

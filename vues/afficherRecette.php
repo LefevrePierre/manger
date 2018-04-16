@@ -82,8 +82,13 @@ if(isset($_GET['id'])) {
             echo $line['type'];
             echo $line['imgListe'];
         }*/
-
-        echo "<iframe width=\"100%\" height=\"218px\" src=\"https://www.youtube.com/embed/woYrzHuC7yw?rel=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
+        $sql = "SELECT video FROM recette WHERE id=?";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($_GET['id']));
+        $line = $q->fetch();
+        if(!empty($line['video'])) {
+            echo "<div class=\"iframe-holder\"><iframe src=\"".$line['video']."?rel=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe></div>";
+        }
 
 
 

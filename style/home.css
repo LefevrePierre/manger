@@ -118,6 +118,10 @@ home-fond a:focus {
     border-radius: 60px;
 }
 
+.btn-home:active {
+    color:white;
+}
+
 .home-etape {
     display: block;
     text-align: center;

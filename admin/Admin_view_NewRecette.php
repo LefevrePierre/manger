@@ -47,8 +47,8 @@ if(!isset($_SESSION['login'])) {
                             </SELECT></td></tr>
 
                     <tr><td><label>Ustensile(s)</label></td>
-                       <!-- --><?php
-/*                        echo '<td>';
+                        <?php
+                        echo '<td>';
                         echo '<table>';
                         echo '<tr>';
                         $sql="SELECT * FROM ustensile ORDER BY nom";
@@ -76,7 +76,7 @@ if(!isset($_SESSION['login'])) {
                         echo '</table>';
                         echo '</td>';
                         echo '</tr>';
-                        */?>
+                        ?>
 
                     <tr><td><label for="calorie">Calories</label></td>
                         <td><input type="number" placeholder="Calories (en cal)" id="calorie" name="calorie" onKeypress="blocage();"></td></tr>

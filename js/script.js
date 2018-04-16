@@ -229,9 +229,9 @@ $(document).ready(function () {
     });
 
 
-        if(mySwiper.activeIndex==2) {
-            $('footer').css("display", "none");
-        }
+    if(mySwiper.activeIndex==2) {
+        $('footer').css("display", "none");
+    }
 
     mySwiper.init();
 
@@ -324,7 +324,8 @@ $(document).ready(function () {
             });
 
             // permet de remonter en haut de la liste
-            $('html, body').animate({scrollTop: $("#topListe").offset().top}, 0);
+            $('html, body').animate({scrollTop: $("#slideListe").offset().top}, 0);
+
         }
 
         if(mySwiper.activeIndex==2) {
@@ -402,10 +403,10 @@ $(document).ready(function($){
     // $('.footer__icon:nth-child(1)').find('span').css('color','#ffffff');
     $('.footer__icon').click(function () {
         var celi = $(this)
-        $('.footer__icon').not(celi).css('background','white');
-        $('.footer__icon').not(celi).find('span').css('color','#b2b2b2');
-        $(this).css('background','#76be77');
-        $(this).find('span').css('color','#ffffff')
+        $('.footer__icon').not(celi).css('background','#76be77');
+        $('.footer__icon').not(celi).find('span').css('color','white');
+        $(this).css('background','white');
+        $(this).find('span').css('color','#b2b2b2')
 
     })
 

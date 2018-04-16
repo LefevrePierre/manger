@@ -12,7 +12,7 @@ if(isset($_SESSION['ing_checked'])) {
 
     //message si liste vide
     $nbrCoches=COUNT($_SESSION['ing_checked']);
-    $nbrManquant=4-$nbrCoches;
+    $nbrManquant=2-$nbrCoches;
     if($nbrCoches==0) {
         echo "<img class='img-vide' src='img/icones/vide.png'>";
     }

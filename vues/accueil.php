@@ -21,7 +21,7 @@ if (isset($_COOKIE['cookieIng'])){
     <p class="home-p">Qu'est ce qu'on mange ? <br> Nous répondons enfin à cette question éternelle ! <br> Vos ingrédients, nos recettes, vos plats.</p>
     <img class="home-iphone" src="img/icones/iphone.png" alt="">
     <img class="home-forme" src="img/icones/homeblanc.png" alt="">
-    <a href="index.php?action=listeIngredients" class="home-go">C'est parti ></a>
+    <!-- <a href="index.php?action=listeIngredients" class="home-go">C'est parti ></a> -->
 
 </div>
 
