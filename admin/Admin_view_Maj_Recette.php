@@ -217,7 +217,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
                 echo '<table>';
                 echo '<tr>';
 
-                $sql = 'SELECT ingredient.id,nom,qteIng,uniteQte FROM ingredient JOIN estDans ON ingredient.id=idIngredient JOIN recette ON recette.id=idRecette WHERE ingredient.id IN (SELECT idIngredient FROM estDans WHERE recette.id=?) ORDER BY nom';
+                $sql = 'SELECT ingredient.id,nom,qteIng,uniteQte FROM ingredient JOIN estDans ON ingredient.id=idIngredient JOIN recette ON recette.id=idRecette WHERE ingredient.id IN (SELECT idIngredient FROM estDans WHERE recette.id=?) ORDER BY type';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
 
@@ -301,7 +301,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
                 $ligne=0;
 
-                $sql='SELECT * FROM ingredient WHERE type="Viande-Poisson" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?) ORDER BY nom';
+                $sql='SELECT * FROM ingredient WHERE type="Viande-Poisson" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?);';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
                 while($line=$q->fetch()) {
@@ -340,7 +340,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
                 $ligne=0;
 
-                $sql='SELECT * FROM ingredient WHERE type="Légume" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?) ORDER BY nom';
+                $sql='SELECT * FROM ingredient WHERE type="Légume" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?);';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
                 while($line=$q->fetch()) {
@@ -380,7 +380,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
                 $ligne=0;
 
-                $sql='SELECT * FROM ingredient WHERE type="Féculent" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?) ORDER BY nom';
+                $sql='SELECT * FROM ingredient WHERE type="Féculent" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?);';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
                 while($line=$q->fetch()) {
@@ -419,7 +419,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
                 $ligne=0;
 
-                $sql='SELECT * FROM ingredient WHERE type="Laitier" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?) ORDER BY nom';
+                $sql='SELECT * FROM ingredient WHERE type="Laitier" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?);';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
                 while($line=$q->fetch()) {
@@ -458,7 +458,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
                 $ligne=0;
 
-                $sql='SELECT * FROM ingredient WHERE type="Divers" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?) ORDER BY nom';
+                $sql='SELECT * FROM ingredient WHERE type="Divers" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?);';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
                 while($line=$q->fetch()) {

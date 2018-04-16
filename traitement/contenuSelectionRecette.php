@@ -52,7 +52,7 @@ if(isset($_SESSION['ing_checked'])) {
 
         $x=0;
         $recetteTrouve=false;
-
+        
 
         foreach($ingredientsDeLaRecette as $niemeIng => $idIng) {
             $result= array_diff($ingredientsDeLaRecette[$niemeIng], $_SESSION['ing_checked']);
@@ -68,7 +68,7 @@ if(isset($_SESSION['ing_checked'])) {
                      </div>";*/
 
                 echo "<h2 class='selectionRecette-titre'>Recettes trouvées</h2>";
-                echo "<div class='selectionRecette-conteneur'>";
+                echo "<div class='selectionRecette-conteneur'>";     
                 echo "<div class='selectionRecette-div'>
                                 <div class='selectionRecette-desc'>
                                     <h5>".$recetteTab[$niemeIng]."</h5>
@@ -86,7 +86,7 @@ if(isset($_SESSION['ing_checked'])) {
             }
             $x++;
         }
-
+       
 
         // TOUS LES INGREDIENTS MOINS 1
         $y=0;
@@ -94,7 +94,7 @@ if(isset($_SESSION['ing_checked'])) {
         $ingredientManquant="";
         $nomIngredientManquant="";
 
-
+        
 
 
         foreach($ingredientsDeLaRecette as $niemeIng => $idIng) {

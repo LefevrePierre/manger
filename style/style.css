@@ -99,6 +99,12 @@
 
 	/* PAGE INGRÉDIENTS */
 
+
+	*[id^="categorie"] {
+		width: 93%;
+		margin: auto;
+	}
+
 	.nbRecette {
 		position: fixed;
 		top: 100px;
@@ -182,7 +188,7 @@
 		font-size: 1.75em;
 		text-transform: capitalize;
 	}
-	
+
 	.ajout{
 		position: absolute;
 		bottom: 26px;

@@ -26,21 +26,21 @@
 
     <script src="js/script.js"></script>
 
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="dist/css/swiper.min.css">
-    <link href="style/header.css" rel="stylesheet">
-    <link href="style/style.css" rel="stylesheet">
-    <link href="style/footer.css" rel="stylesheet">
-    <link href="style/icons.css" rel="stylesheet">
-    <link href="style/liste.css" rel="stylesheet">
-    <link href="style/recette.css" rel="stylesheet">
-    <link href="style/triangle.css" rel="stylesheet">
-    <link href="style/selectionRecette.css" rel="stylesheet">
-    <link href="style/home.css" rel="stylesheet">
-    <link href="style/404.css" rel="stylesheet">
-    <link href="style/admin.css" rel="stylesheet">
-    <link href="style/tablette.css" rel="stylesheet">
-    <!-- Demo styles -->
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="dist/css/swiper.min.css">
+        <link href="style/header.css" rel="stylesheet">
+        <link href="style/style.css" rel="stylesheet">
+        <link href="style/footer.css" rel="stylesheet">
+        <link href="style/icons.css" rel="stylesheet">
+        <link href="style/liste.css" rel="stylesheet">
+        <link href="style/recette.css" rel="stylesheet">
+        <link href="style/triangle.css" rel="stylesheet">
+        <link href="style/selectionRecette.css" rel="stylesheet">
+        <link href="style/home.css" rel="stylesheet">
+        <link href="style/404.css" rel="stylesheet">
+        <link href="style/admin.css" rel="stylesheet">
+        <link href="style/tablette.css" rel="stylesheet">
+        <!-- Demo styles -->
 
     <!-- Fin Ajouts HEAD -->
 

@@ -47,9 +47,8 @@ if(!isset($_SESSION['login'])) {
                             </SELECT></td></tr>
 
                     <tr><td><label>Ustensile(s)</label></td>
-
-                        <?php
-                        echo '<td>';
+                       <!-- --><?php
+/*                        echo '<td>';
                         echo '<table>';
                         echo '<tr>';
                         $sql="SELECT * FROM ustensile ORDER BY nom";
@@ -77,7 +76,7 @@ if(!isset($_SESSION['login'])) {
                         echo '</table>';
                         echo '</td>';
                         echo '</tr>';
-                        ?>
+                        */?>
 
                     <tr><td><label for="calorie">Calories</label></td>
                         <td><input type="number" placeholder="Calories (en cal)" id="calorie" name="calorie" onKeypress="blocage();"></td></tr>
@@ -111,7 +110,7 @@ if(!isset($_SESSION['login'])) {
                     <tr>
                         <?php
                         echo '<h4> Viandes et poissons </h4>';
-                        $sql="SELECT * FROM ingredient WHERE type='Viande-Poisson' ORDER BY nom";
+                        $sql="SELECT * FROM ingredient WHERE type='Viande-Poisson'";
                         $q=$pdo->prepare($sql);
                         $q->execute();
                         $ligne=0;
@@ -148,7 +147,7 @@ if(!isset($_SESSION['login'])) {
                         echo '<h4> Légumes </h4>';
                         echo '<table>';
                         echo '<tr>';
-                        $sql="SELECT * FROM ingredient WHERE type='Légume' ORDER BY nom";
+                        $sql="SELECT * FROM ingredient WHERE type='Légume'";
                         $q=$pdo->prepare($sql);
                         $q->execute();
                         $ligne=0;
@@ -183,7 +182,7 @@ if(!isset($_SESSION['login'])) {
                         echo '<h4> Féculents </h4>';
                         echo '<table>';
                         echo '<tr>';
-                        $sql="SELECT * FROM ingredient WHERE type='Féculent' ORDER BY nom";
+                        $sql="SELECT * FROM ingredient WHERE type='Féculent'";
                         $q=$pdo->prepare($sql);
                         $q->execute();
                         $ligne=0;
@@ -218,7 +217,7 @@ if(!isset($_SESSION['login'])) {
                         echo '<h4> Laitages </h4>';
                         echo '<table>';
                         echo '<tr>';
-                        $sql="SELECT * FROM ingredient WHERE type='Laitier' ORDER BY nom";
+                        $sql="SELECT * FROM ingredient WHERE type='Laitier'";
                         $q=$pdo->prepare($sql);
                         $q->execute();
                         $ligne=0;
@@ -254,7 +253,7 @@ if(!isset($_SESSION['login'])) {
                         echo '<h4> Divers </h4>';
                         echo '<table>';
                         echo '<tr>';
-                        $sql="SELECT * FROM ingredient WHERE type='Divers' ORDER BY nom";
+                        $sql="SELECT * FROM ingredient WHERE type='Divers'";
                         $q=$pdo->prepare($sql);
                         $q->execute();
                         $ligne=0;
