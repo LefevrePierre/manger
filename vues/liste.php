@@ -2,8 +2,8 @@
 include('config/head.php');
 include('vues/notifs.php');
 ?>
-<section id="topListe"></section>
-<div id="slideListe">
+
+<div id="slideListe" class="no-padding">
 </div>
 
 <!-- Fin Slide liste -->

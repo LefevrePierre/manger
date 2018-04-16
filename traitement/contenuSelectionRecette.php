@@ -69,12 +69,17 @@ if(isset($_SESSION['ing_checked'])) {
 
                 echo "<h2 class='selectionRecette-titre'>Recettes trouvées</h2>";
                 echo "<div class='selectionRecette-conteneur'>";
-                echo "<div class='selectionRecette-div'>
-                                <div class='selectionRecette-desc'>
-                                    <h5>".$recetteTab[$niemeIng]."</h5>
-                                    <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
+                $sql="SELECT * FROM recette WHERE id=?";
+                $q=$pdo->prepare($sql);
+                $q->execute(array($niemeIng));
+                if($line=$q->fetch()) {
+                    echo '<div class="selectionRecette-div" style="background-image: url(img/recette/'.$line['imgBg'].');background-position:center;background-size:cover;background-color: rgba(0,0,0,0.6);box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);">
+                                <div class="selectionRecette-desc">
+                                    <h5>'.$recetteTab[$niemeIng].'</h5>
+                                    <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src="img/icones/iconfleche.png" alt=""></a>
                                 </div>
-                          </div>";
+                          </div>';
+                }
                 echo "</div>";
                 $_SESSION['nbRecettes']++;
 
@@ -121,9 +126,9 @@ if(isset($_SESSION['ing_checked'])) {
                 echo "<div class='selectionRecette-div'>";
                 $sql="SELECT * FROM recette WHERE id=?";
                 $q=$pdo->prepare($sql);
-                $q->execute(array($recetteTab[$niemeIng]));
+                $q->execute(array($niemeIng));
                 if($line=$q->fetch()) {
-                    echo    '<div class="manque" style="background-image:url(img/recette/94878-thon_puree.jpg);">Ingrédient manquant :<br> '.$nomIngredientManquant.'</div>
+                    echo    '<div class="manque" style="background-image: url(img/recette/'.$line['imgBg'].');background-position:center;background-size:cover;background-color: rgba(0,0,0,0.6);box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);">Ingrédient manquant :<br> '.$nomIngredientManquant.'</div>
                                 <div class="selectionRecette-desc">
                                     <h5>'.$recetteTab[$niemeIng].'</h5>
                                     <a href=index.php?id='.$niemeIng.'&action=afficherRecette><img src="img/icones/iconfleche.png" alt=""></a>

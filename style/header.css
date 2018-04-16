@@ -21,11 +21,15 @@
 }
 
 #topListe {
-    height:1px;
+   padding-top:50px;
+}
+
+.no-padding {
+    padding-top:50px;
 }
 
 #topSelection {
-    height:1px;
+    padding-top:20px;
 }
 
 .swiper-container {

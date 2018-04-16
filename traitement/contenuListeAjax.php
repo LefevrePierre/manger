@@ -10,20 +10,6 @@ include('../config/bd.php');
 // on vérifie que la session existe
 if(isset($_SESSION['ing_checked'])) {
 
-    //message si liste vide
-    $nbrCoches=COUNT($_SESSION['ing_checked']);
-    $nbrManquant=2-$nbrCoches;
-    if($nbrCoches==0) {
-        echo "<img class='img-vide' src='img/icones/vide.png'>";
-    }
-    if($nbrManquant==1) { //gestion du pluriel
-        echo "<p class=pas-ing__coch>Merci de cocher au moins ".$nbrManquant." ingrédient supplémentaire pour voir une recette</p>";
-    }
-    else if($nbrManquant>0) {
-        echo "<p class=pas-ing__coch>Merci de cocher au moins ".$nbrManquant." ingrédients supplémentaires pour voir une recette</p>";
-    }
-
-
     // 1. on remplit un tab ViandesPoissonsBDD à partir des viandes et poissons de la BDD
     $ViandesPoissonsBDD=array();
     $sql="SELECT * FROM ingredient WHERE type='Viande-Poisson'";
@@ -97,7 +83,7 @@ if(isset($_SESSION['ing_checked'])) {
     // echo "</pre>";
     $afficherPoubelle=false;
     // s'il y a des viandes poissons parmi les checked, on affiche image et bouton - pour chaque
-    echo "<div class='liste__cat-container'>";
+    echo "<div class='liste__cat-container' id='topListe'>";
 
     if(COUNT($viandespoissonsAffiches)>0) {
         echo "<h3 class='liste-titre'>Mes viandes et poissons</h3>";
@@ -228,18 +214,34 @@ if(isset($_SESSION['ing_checked'])) {
     // fin du if COUNT Divers
     echo "</div>";
 
+    //message si liste vide
+    $nbrCoches=COUNT($_SESSION['ing_checked']);
+    $nbrManquant=2-$nbrCoches;
+    if($nbrCoches==0) {
+        echo "<img class='img-vide' src='img/icones/vide.png'>";
+    }
+    if($nbrManquant==1) { //gestion du pluriel
+        echo "<p class=pas-ing__coch>Merci de cocher au moins ".$nbrManquant." ingrédient supplémentaire pour voir une recette</p>";
+    }
+    else if($nbrManquant>0) {
+        echo "<p class=pas-ing__coch>Merci de cocher au moins ".$nbrManquant." ingrédients supplémentaires pour voir une recette</p>";
+    }
+
     if($afficherPoubelle) {
 
         // vider le panier
         echo '<div class="poubelle">';
-        echo '<a onclick="viderPanier('.COUNT($_SESSION['ing_checked']).',1);"><img src="img/icones/bin.png" alt="Vider la liste"></a>';
-
+        $sql="SELECT COUNT(id) AS nbrIng FROM ingredient";
+        $q=$pdo->prepare($sql);
+        $q->execute(array($id));
+        if($line=$q->fetch()) {
+            echo '<a onclick="viderPanier('.$line['nbrIng'].',1);"><img src="img/icones/bin.png" alt="Vider la liste"></a>';
+        }
         $nbrDeDifferents=array();
         $nbrDeDifferents=array_unique($_SESSION['ing_checked']);
 
         echo '<span class="nbr__panier">'.COUNT($nbrDeDifferents).'</span>';
         echo '</div>';
-
     }
 
 }

@@ -140,7 +140,7 @@ session_start(); // pour garder la var de SESSION
         <!-- Fin Slide ingrédients -->
         <!-- Slide liste -->
         <div class="swiper-slide" data-hash="slide2"><?php include('liste.php');?></div>
-        <div class="swiper-slide" data-hash="slide3"><?php include('selectionRecette.php');?></div>
+        <div class="swiper-slide" data-hash="slide3" id="topSelection"><?php include('selectionRecette.php');?></div>
         <!-- Fin Slide liste -->
 
         <footer>

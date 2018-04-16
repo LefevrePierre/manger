@@ -13,6 +13,8 @@ function ajouter(id) {
             $('#ing'+id).html("&#10003;"); // checked
 
             $('#ing'+id).attr("class","coche__cookie");
+
+            $('.no-padding').css("padding-top","0");
         },
         error : function () {
             $('body').load('index.php?action=error');
@@ -65,6 +67,8 @@ function viderPanier(nbrIngBDD,action) {
             if(action==0) {
                 $(location).attr('href', 'index.php?action=listeIngredients')
             }
+
+            $('.no-padding').css("padding-top","50px");
         },
         error : function () {
             $('body').load('index.php?action=error');
@@ -406,7 +410,7 @@ $(document).ready(function($){
         $('.footer__icon').not(celi).css('background','#76be77');
         $('.footer__icon').not(celi).find('span').css('color','white');
         $(this).css('background','white');
-        $(this).find('span').css('color','#b2b2b2')
+        $(this).find('span').css('color','#76be77')
 
     })
 

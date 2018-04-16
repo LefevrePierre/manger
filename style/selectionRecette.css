@@ -16,10 +16,7 @@
 }
 
 .selectionRecette-div {
-    background-image: url("../img/recettes/escalopelegumes.jpg");
     height: 220px;
-    background-size: cover;
-    background-position: center;
     position: relative;
     margin-top: 15px;
     margin-bottom: 20px;
@@ -54,7 +51,6 @@
 }
 
 .manque {
-    background-color: rgba(0,0,0,0.6);
     height: 100%;
     text-align: center;
     padding-top: 50px;
