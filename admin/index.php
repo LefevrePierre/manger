@@ -23,10 +23,12 @@ if(isset($_SESSION['login'])==false) {
 </head>
 <body>
 <div class="container admin">
+    <a href="index.php?action=Admin_trait_deconnexion" class="btn btn-success btn-md annuler" id="deco">Déconnexion</a>
     <div class="row">
         <br>
         <a href="index.php?action=Admin_view_NewRecette" class="btn btn-success btn-md"> + Nouvelle recette</a>
         <a href="index.php?action=Admin_form_NewIngredient" class="btn btn-success btn-md"> + Nouvel ingrédient</a>
+
         <?php
         // notif piur nouvel ing ajoute
         if(isset($_GET['new'])) {
@@ -34,6 +36,15 @@ if(isset($_SESSION['login'])==false) {
         }
         ?>
         <br><h3>Liste des recettes</h3><br>
+        <div class="trier">
+            <span>Trier par</span>
+            <SELECT id="tri" onchange="sort(this.value);">
+                <option>A-Z</option>
+                <option>Z-A</option>
+                <option>Les + récentes</option>
+                <option>Les - récentes</option>
+            </SELECT>
+        </div>
         <table class="table table-striped table-bordered">
             <thead>
             <tr>
@@ -44,9 +55,9 @@ if(isset($_SESSION['login'])==false) {
                 <th>Actions</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="listeRecettes">
             <?php
-            $sql1 = 'SELECT * FROM recette ORDER BY recette.id DESC';
+            $sql1 = 'SELECT * FROM recette ORDER BY titre';
             $q1=$pdo->prepare($sql1);
             $q1->execute();
             while($lineInfo = $q1->fetch()) {
@@ -66,20 +77,12 @@ if(isset($_SESSION['login'])==false) {
                 }
                 echo '</td>';
                 echo '<td width=300>';
-                echo '<a class="btn btn-default" href="index.php?id='.$lineInfo['id'].'&action=afficherRecette"><span class="glyphicon glyphicon-eye-open"></span> Voir</a>';
                 echo ' ';
-                echo '<a class="btn btn-primary" href="index.php?id='.$lineInfo['id'].'&action=Admin_view_Maj_Recette"><span class="glyphicon glyphicon-pencil"></span> Modifier</a>';
+                echo '<a class="btn btn-primary" href="index.php?id='.$lineInfo['id'].'&action=Admin_view_Maj_Recette"><span class="glyphicon glyphicon-pencil"></span> Voir ou Modifier</a>';
                 echo ' ';
-                echo '<a class="btn btn-danger" onclick="confirmSupp();"><span class="glyphicon glyphicon-remove"></span> Supprimer</a>';
+                echo '<a class="btn btn-danger" onclick=index.php?id='.$lineInfo['id'].'&action=Admin_supprimerRecette><span class="glyphicon glyphicon-remove"></span> Supprimer</a>';
                 echo '</td>';
                 echo '</tr>';
-                echo '<script type="text/javascript">
-                                function confirmSupp() {
-                                    if(confirm(\'Voulez-vous supprimer cette recette ?\')) {
-                                        document.location.href="index.php?id='.$lineInfo['id'].'&action=Admin_supprimerRecette";
-                                    }
-                            }
-                            </script>';
             }
             ?>
             </tbody>
