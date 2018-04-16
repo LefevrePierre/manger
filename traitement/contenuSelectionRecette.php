@@ -119,16 +119,16 @@ if(isset($_SESSION['ing_checked'])) {
                 echo "<h2 class='selectionRecette-titre'>Il vous manque 1 ingrédient</h2>";
                 echo "<div class='selectionRecette-conteneur'>";
                 echo "<div class='selectionRecette-div'>";
-                $sql="SELECT * FROM ingredient WHERE id=?";
+                $sql="SELECT * FROM recette WHERE id=?";
                 $q=$pdo->prepare($sql);
-                $q->execute(array($ingredientManquant));
+                $q->execute(array($recetteTab[$niemeIng]));
                 if($line=$q->fetch()) {
-                    echo    "<div class='manque' style='background-image:url(img/recette/".$line['imgBg'].");'>Ingrédient manquant :<br> ".$nomIngredientManquant."</div>
-                                <div class='selectionRecette-desc'>
-                                    <h5>".$recetteTab[$niemeIng]."</h5>
-                                    <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
+                    echo    '<div class="manque" style="background-image:url(img/recette/94878-thon_puree.jpg);">Ingrédient manquant :<br> '.$nomIngredientManquant.'</div>
+                                <div class="selectionRecette-desc">
+                                    <h5>'.$recetteTab[$niemeIng].'</h5>
+                                    <a href=index.php?id='.$niemeIng.'&action=afficherRecette><img src="img/icones/iconfleche.png" alt=""></a>
                                 </div>
-                     </div>";
+                     </div>';
                     echo "</div>"; // fin de div selectionRecette-conteneur
                 }
 
