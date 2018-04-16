@@ -69,14 +69,13 @@ if(isset($_SESSION['ing_checked'])) {
 
                 echo "<h2 class='selectionRecette-titre'>Recettes trouvées</h2>";
                 echo "<div class='selectionRecette-conteneur'>";
-                    echo "<div class='selectionRecette-div'>
-                                    <div class='selectionRecette-desc'>
-                                        <h5>".$recetteTab[$niemeIng]."</h5>
-                                        <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
-                                    </div>
-                              </div>";
+                echo "<div class='selectionRecette-div'>
+                                <div class='selectionRecette-desc'>
+                                    <h5>".$recetteTab[$niemeIng]."</h5>
+                                    <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
+                                </div>
+                          </div>";
                 echo "</div>";
-
                 $_SESSION['nbRecettes']++;
 
                 //il faut mettre dans ce echo une div avec un bgimg
@@ -89,18 +88,14 @@ if(isset($_SESSION['ing_checked'])) {
         }
 
 
-        if($recetteTrouve==false) {
-            echo "<div class=pas-ing>";
-            echo "<img class='img-vide' src='img/icones/recetteVide.png'>";
-            echo "<p class=pas-ing__coch>Pas de recette trouvée</p>";
-            echo "</div>";
-        }
-
         // TOUS LES INGREDIENTS MOINS 1
         $y=0;
         $recetteTrouveManque1=false;
         $ingredientManquant="";
         $nomIngredientManquant="";
+
+
+
 
         foreach($ingredientsDeLaRecette as $niemeIng => $idIng) {
             $result= array_diff($ingredientsDeLaRecette[$niemeIng], $_SESSION['ing_checked']);
@@ -123,13 +118,13 @@ if(isset($_SESSION['ing_checked'])) {
                 }
                 echo "<h2 class='selectionRecette-titre'>Il vous manque 1 ingrédient</h2>";
                 echo "<div class='selectionRecette-conteneur'>";
-                    echo "<div class='selectionRecette-div'>
-                                    <div class='manque'>Ingrédient manquant :<br> ".$nomIngredientManquant."</div>
-                                    <div class='selectionRecette-desc'>
-                                        <h5>".$recetteTab[$niemeIng]."</h5>
-                                        <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
-                                    </div>
-                         </div>";
+                echo "<div class='selectionRecette-div'>
+                                <div class='manque'>Ingrédient manquant :<br> ".$nomIngredientManquant."</div>
+                                <div class='selectionRecette-desc'>
+                                    <h5>".$recetteTab[$niemeIng]."</h5>
+                                    <a href=index.php?id=".$niemeIng."&action=afficherRecette><img src='img/icones/iconfleche.png' alt=''></a>
+                                </div>
+                     </div>";
                 echo "</div>"; // fin de div selectionRecette-conteneur
                 $_SESSION['nbRecettes']++;
 
@@ -142,7 +137,12 @@ if(isset($_SESSION['ing_checked'])) {
 
         } // fin du foreach ingredientsDeLaRecette
 
-
+        if($recetteTrouve==false && $recetteTrouveManque1==false) {
+            echo "<div class=pas-ing>";
+            echo "<img class='img-vide' src='img/icones/recetteVide.png'>";
+            echo "<p class=pas-ing__coch>Pas de recette trouvée</p>";
+            echo "</div>";
+        }
 
     } // fin du else <=> il y a plus de 4 ing coches
 

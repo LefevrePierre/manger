@@ -45,10 +45,10 @@ session_start(); // pour garder la var de SESSION
                     $q->execute();
                     while ($line=$q->fetch()) {
                         echo "<div class=item-container>";
-                        echo "<img src=img/Viande-Poisson/".$line['imgListe']." onclick='ajouter(".$line['id'].");' class=post-it alt=".$line['imgListe'].">";
+                        echo '<a onclick="ajouter('.$line['id'].');"><img src=img/Viande-Poisson/'.$line['imgListe'].' class=post-it alt='.$line['imgListe'].'></a>';
                         echo "<p class=nom>".$line['nom']."</p>";
                         //echo "<a href=index.php?id=".$line['id']."&action=ajouter class='ajout'>+</a>";
-                        echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+                        echo '<a onclick="ajouter('.$line['id'].',1);" class="ajout" id="ing'.$line['id'].'">+</a>';
                         echo "</div>";
                     }
 
@@ -63,10 +63,10 @@ session_start(); // pour garder la var de SESSION
                     $q->execute();
                     while ($line=$q->fetch()) {
                         echo "<div class=item-container>";
-                        echo "<img src=img/Légume/".$line['imgListe']." onclick='ajouter(".$line['id'].");' class=post-it alt=".$line['imgListe'].">";
+                        echo '<a onclick="ajouter('.$line['id'].');"><img src=img/Légume/'.$line['imgListe'].' class=post-it alt='.$line['imgListe'].'></a>';
                         echo "<p class=nom>".$line['nom']."</p>";
                         //echo "<a href=index.php?id=".$line['id']."&action=ajouter class='ajout'>+</a>";
-                        echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+                        echo '<a onclick="ajouter('.$line['id'].',2);" class="ajout" id="ing'.$line['id'].'">+</a>';
                         echo "</div>";
                     }
 
@@ -81,10 +81,10 @@ session_start(); // pour garder la var de SESSION
                     $q->execute();
                     while ($line=$q->fetch()) {
                         echo "<div class=item-container>";
-                        echo "<img src=img/Féculent/".$line['imgListe']." onclick='ajouter(".$line['id'].");' class=post-it alt=".$line['imgListe'].">";
+                        echo '<a onclick="ajouter('.$line['id'].');"><img src=img/Féculent/'.$line['imgListe'].' class=post-it alt='.$line['imgListe'].'></a>';
                         echo "<p class=nom>".$line['nom']."</p>";
                         //echo "<a href=index.php?id=".$line['id']."&action=ajouter class='ajout'>+</a>";
-                        echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+                        echo '<a onclick="ajouter('.$line['id'].',3);" class="ajout" id="ing'.$line['id'].'">+</a>';
                         echo "</div>";
                     }
 
@@ -99,10 +99,10 @@ session_start(); // pour garder la var de SESSION
                     $q->execute();
                     while ($line=$q->fetch()) {
                         echo "<div class=item-container>";
-                        echo "<img src=img/Laitier/".$line['imgListe']." onclick='ajouter(".$line['id'].");' class=post-it alt=".$line['imgListe'].">";
+                        echo '<a onclick="ajouter('.$line['id'].');"><img src=img/Laitier/'.$line['imgListe'].' class=post-it alt='.$line['imgListe'].'></a>';
                         echo "<p class=nom>".$line['nom']."</p>";
                         //echo "<a href=index.php?id=".$line['id']."&action=ajouter class='ajout'>+</a>";
-                        echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+                        echo '<a onclick="ajouter('.$line['id'].',4);" class="ajout" id="ing'.$line['id'].'">+</a>';
                         echo "</div>";
                     }
 
@@ -117,10 +117,10 @@ session_start(); // pour garder la var de SESSION
                     $q->execute();
                     while ($line=$q->fetch()) {
                         echo "<div class=item-container>";
-                        echo "<img src=img/Divers/".$line['imgListe']." onclick='ajouter(".$line['id'].");' class=post-it alt=".$line['imgListe'].">";
+                        echo '<a onclick="ajouter('.$line['id'].');"><img src=img/Divers/'.$line['imgListe'].' class=post-it alt='.$line['imgListe'].'></a>';
                         echo "<p class=nom>".$line['nom']."</p>";
                         //echo "<a href=index.php?id=".$line['id']."&action=ajouter class='ajout'>+</a>";
-                        echo '<a onclick="ajouter('.$line['id'].');" class="ajout" id="ing'.$line['id'].'">+</a>';
+                        echo '<a onclick="ajouter('.$line['id'].',5);" class="ajout" id="ing'.$line['id'].'">+</a>';
                         echo "</div>";
                     }
                     ?>
