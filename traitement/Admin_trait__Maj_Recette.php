@@ -148,7 +148,7 @@ if(isset($_POST['demandeModif'])) {
         }
 
         foreach ($_POST['uniteQte'] as $key2 => $value2) {
-            if($value2!='Unite') {
+            if($value2!='Selectionner') {
                 array_push($uniteTab,$value2);
             }
         }

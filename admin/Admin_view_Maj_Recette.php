@@ -243,39 +243,52 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
                     echo '<span id="afficherQte'.$i.'"></span>';
                     echo '</div>';
                     echo '<SELECT name="uniteQteDejaDedans[]">';
-                    if($line['uniteQte']=="g") {
+                    if($line['uniteQte']=="piece") {
+                        echo '<option selected="selected">piece</option>';
+                        echo '<option>g</option>';
+                        echo '<option>cL</option>';
+                        echo '<option>cuillère à soupe</option>';
+                        echo '<option>cuillère à café</option>';
+                        echo '<option>tranche</option>';
+                    }
+                    else if($line['uniteQte']=="g") {
+                        echo '<option>piece</option>';
                         echo '<option selected="selected">g</option>';
-                        echo '<option>mL</option>';
-                        echo '<option>cuillère(s) à soupe</option>';
-                        echo '<option>cuillère(s) à café</option>';
-                        echo '<option>tranche(s)</option>';
+                        echo '<option>cL</option>';
+                        echo '<option>cuillère à soupe</option>';
+                        echo '<option>cuillère à café</option>';
+                        echo '<option>tranche</option>';
                     }
-                    else if ($line['uniteQte']=="mL") {
+                    else if ($line['uniteQte']=="cL") {
+                        echo '<option>piece</option>';
                         echo '<option>g</option>';
-                        echo '<option selected="selected">mL</option>';
-                        echo '<option>cuillère(s) à soupe</option>';
-                        echo '<option>cuillère(s) à café</option>';
-                        echo '<option>tranche(s)</option>';
+                        echo '<option selected="selected">cL</option>';
+                        echo '<option>cuillère à soupe</option>';
+                        echo '<option>cuillère à café</option>';
+                        echo '<option>tranche</option>';
                     }
-                    else if($line['uniteQte']=="cuillère(s) à soupe") {
+                    else if($line['uniteQte']=="cuillère à soupe") {
+                        echo '<option>piece</option>';
                         echo '<option>g</option>';
-                        echo '<option>mL</option>';
-                        echo '<option selected="selected">cuillère(s) à soupe</option>';
-                        echo '<option>cuillère(s) à café</option>';
-                        echo '<option>tranche(s)</option>';
+                        echo '<option>cL</option>';
+                        echo '<option selected="selected">cuillère à soupe</option>';
+                        echo '<option>cuillère à café</option>';
+                        echo '<option>tranche</option>';
                     }
-                    else if($line['uniteQte']=="cuillère(s) à café") {
+                    else if($line['uniteQte']=="cuillère à café") {
+                        echo '<option>piece</option>';
                         echo '<option>g</option>';
-                        echo '<option>mL</option>';
-                        echo '<option selected="selected">cuillère(s) à café</option>';
-                        echo '<option>tranche(s)</option>';
+                        echo '<option>cL</option>';
+                        echo '<option selected="selected">cuillère à café</option>';
+                        echo '<option>tranche</option>';
                     }
                     else {
+                        echo '<option>piece</option>';
                         echo '<option>g</option>';
-                        echo '<option>mL</option>';
-                        echo '<option>cuillère(s) à soupe</option>';
-                        echo '<option>cuillère(s) à café</option>';
-                        echo '<option selected="selected">'.$line['uniteQte'].'</option>';
+                        echo '<option>cL</option>';
+                        echo '<option>cuillère à soupe</option>';
+                        echo '<option>cuillère à café</option>';
+                        echo '<option selected="selected">tranche</option>';
                     }
                     echo '</SELECT>';
                     echo '</div>';
@@ -301,7 +314,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
                 $ligne=0;
 
-                $sql='SELECT * FROM ingredient WHERE type="Viande-Poisson" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?);';
+                $sql='SELECT * FROM ingredient WHERE type="Viande-Poisson" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?) ORDER BY nom';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
                 while($line=$q->fetch()) {
@@ -319,8 +332,10 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
                     echo '<br>';
                     echo '<input type="number" id="qteIng'.$i.'" name="qteIng[]" onKeypress="blocage();" min="1" max="5000">';
                     echo '<SELECT name="uniteQte[]">';
-                    echo '<option>Unite</option>';
+                    echo '<option>Selectionner</option>';
+                    echo '<option>piece</option>';
                     echo '<option>g</option>';
+                    echo '<option>tranche</option>';
                     echo '</SELECT>';
                     echo '</div>';
                     echo '</td>';
@@ -340,7 +355,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
                 $ligne=0;
 
-                $sql='SELECT * FROM ingredient WHERE type="Légume" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?);';
+                $sql='SELECT * FROM ingredient WHERE type="Légume" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?) ORDER BY nom';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
                 while($line=$q->fetch()) {
@@ -358,8 +373,10 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
                     echo '<br>';
                     echo '<input type="number" id="qteIng'.$i.'" name="qteIng[]" onKeypress="blocage();" min="1" max="5000">';
                     echo '<SELECT name="uniteQte[]">';
-                    echo '<option>Unite</option>';
+                    echo '<option>Selectionner</option>';
+                    echo '<option>piece</option>';
                     echo '<option>g</option>';
+                    echo '<option>tranche</option>';
                     echo '</SELECT>';
                     echo '</div>';
                     echo '</td>';
@@ -380,7 +397,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
                 $ligne=0;
 
-                $sql='SELECT * FROM ingredient WHERE type="Féculent" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?);';
+                $sql='SELECT * FROM ingredient WHERE type="Féculent" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?) ORDER BY nom';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
                 while($line=$q->fetch()) {
@@ -398,8 +415,10 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
                     echo '<br>';
                     echo '<input type="number" id="qteIng'.$i.'" name="qteIng[]" onKeypress="blocage();" min="1" max="5000">';
                     echo '<SELECT name="uniteQte[]">';
-                    echo '<option>Unite</option>';
+                    echo '<option>Selectionner</option>';
+                    echo '<option>piece</option>';
                     echo '<option>g</option>';
+                    echo '<option>tranche</option>';
                     echo '</SELECT>';
                     echo '</div>';
                     echo '</td>';
@@ -419,7 +438,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
                 $ligne=0;
 
-                $sql='SELECT * FROM ingredient WHERE type="Laitier" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?);';
+                $sql='SELECT * FROM ingredient WHERE type="Laitier" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?) ORDER BY nom';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
                 while($line=$q->fetch()) {
@@ -437,8 +456,11 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
                     echo '<br>';
                     echo '<input type="number" id="qteIng'.$i.'" name="qteIng[]" onKeypress="blocage();" min="1" max="5000">';
                     echo '<SELECT name="uniteQte[]">';
-                    echo '<option>Unite</option>';
+                    echo '<option>Selectionner</option>';
+                    echo '<option>piece</option>';
                     echo '<option>g</option>';
+                    echo '<option>cL</option>';
+                    echo '<option>tranche</option>';
                     echo '</SELECT>';
                     echo '</div>';
                     echo '</td>';
@@ -458,7 +480,7 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
 
                 $ligne=0;
 
-                $sql='SELECT * FROM ingredient WHERE type="Divers" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?);';
+                $sql='SELECT * FROM ingredient WHERE type="Divers" AND NOT EXISTS (SELECT idIngredient FROM estDans WHERE ingredient.id=idIngredient AND idRecette=?) ORDER BY nom';
                 $q=$pdo->prepare($sql);
                 $q->execute(array($_GET['id']));
                 while($line=$q->fetch()) {
@@ -476,8 +498,12 @@ echo '<body onload="tabIngQte('.$nbrIngredients.');">';
                     echo '<br>';
                     echo '<input type="number" id="qteIng'.$i.'" name="qteIng[]" onKeypress="blocage();" min="1" max="5000">';
                     echo '<SELECT name="uniteQte[]">';
-                    echo '<option>Unite</option>';
+                    echo '<option>piece</option>';
                     echo '<option>g</option>';
+                    echo '<option>cL</option>';
+                    echo '<option>cuillère à soupe</option>';
+                    echo '<option>cuillère à café</option>';
+                    echo '<option>tranche</option>';
                     echo '</SELECT>';
                     echo '</div>';
                     echo '</td>';

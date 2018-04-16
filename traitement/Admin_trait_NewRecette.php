@@ -139,7 +139,7 @@ if(isset($_POST['demandeAjout'])) {
         }
 
         foreach ($_POST['uniteQte'] as $key2 => $value2) {
-            if($value2!='Unite') {
+            if($value2!='Selectionner') {
                 array_push($uniteTab,$value2);
             }
         }
