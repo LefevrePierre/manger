@@ -46,7 +46,7 @@ if(isset($_GET['id'])) {
             echo "<span class='recette__ustensiles'>" . $line2['nom'] . "</span><br>";
         }
 
-        echo "<br><span class='recette__ustensiles'>" . $line['calorie'] . " cal</span><br>";
+        echo "<br><span class='recette__ustensiles'>" . $line['calorie'] . " kcal</span><br>";
         echo "</div>";
 
 
