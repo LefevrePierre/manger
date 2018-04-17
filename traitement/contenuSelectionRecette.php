@@ -14,7 +14,7 @@ $sql2="SELECT idIngredient FROM estDans JOIN recette ON recette.id=idRecette WHE
 
 $q1 = $pdo->prepare($sql1);
 
-$numRecette=1;
+$numRecette=2;
 $a=1;
 
 $q1->execute();
@@ -37,6 +37,11 @@ while ($line1=$q1->fetch()) { // ne pas oublier de le mettre
     $numRecette=$numRecette+1;
 
 }
+
+//echo '<pre>';
+//print_r($ingredientsDeLaRecette);
+//echo '</pre>';
+
 
 //message si pas assez d'ingrédients
 if(isset($_SESSION['ing_checked'])) {
