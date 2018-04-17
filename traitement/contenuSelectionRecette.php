@@ -75,7 +75,7 @@ if(isset($_SESSION['ing_checked'])) {
                 if($line=$q->fetch()) {
                     echo '<div class="selectionRecette-div" style="background-image: url(img/recette/'.$line['imgBg'].');background-position:center;background-size:cover;background-color: rgba(0,0,0,0.6);box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);">
                                 <div class="selectionRecette-desc">
-                                    <h5>'.$recetteTab[$niemeIng].'</h5>
+                                    <h5>'.$line['titre'].'</h5>
                                     <a href=index.php?id="'.$niemeIng.'"&action=afficherRecette><img src="img/icones/iconfleche.png" alt=""></a>
                                 </div>
                           </div>';
@@ -130,7 +130,7 @@ if(isset($_SESSION['ing_checked'])) {
                 if($line=$q->fetch()) {
                     echo    '<div class="manque" style="background-image: url(img/recette/'.$line['imgBg'].');background-position:center;background-size:cover;background-color: rgba(0,0,0,0.6);box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);">Ingrédient manquant :<br> '.$nomIngredientManquant.'</div>
                                 <div class="selectionRecette-desc">
-                                    <h5>'.$recetteTab[$niemeIng].'</h5>
+                                    <h5>'.$line['titre'].'</h5>
                                     <a href=index.php?id='.$niemeIng.'&action=afficherRecette><img src="img/icones/iconfleche.png" alt=""></a>
                                 </div>
                      </div>';
