@@ -67,7 +67,7 @@ if(isset($_SESSION['ing_checked'])) {
 
                      </div>";*/
 
-                echo "<h2 class='selectionRecette-titre'>Recettes trouvées</h2>";
+                echo "<h2 class='selectionRecette-titre'>Recette trouvée</h2>";
                 echo "<div class='selectionRecette-conteneur'>";
                 $sql="SELECT * FROM recette WHERE id=?";
                 $q=$pdo->prepare($sql);
