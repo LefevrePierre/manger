@@ -153,7 +153,86 @@ if(isset($_SESSION['ing_checked'])) {
 
         } // fin du foreach ingredientsDeLaRecette
 
-        if($recetteTrouve==false && $recetteTrouveManque1==false) {
+
+
+
+
+
+
+
+
+
+        // TOUS LES INGREDIENTS MOINS 2
+        $z=0;
+        $recetteTrouveManque2=false;
+        $ingredientManquant2="";
+        $nomIngredientManquant2="";
+        $list = array();
+
+
+
+
+        foreach($ingredientsDeLaRecette as $niemeIng => $idIng) {
+            $result= array_diff($ingredientsDeLaRecette[$niemeIng], $_SESSION['ing_checked']);
+            /* var_dump($result)*/;
+            /*echo "niemeIng = ".$niemeIng."<br>";*/
+            if(count($result)==2 && $z>0) {
+                // echo '<pre>';
+                 print_r($result);
+                // echo '</pre>';
+                //echo $recetteTab[$niemeIng]."<br>";
+                //echo "<img src='img/recette/".$recetteTabImg[$niemeIng]."'>";
+                foreach($result as $idManquant => $idRecette){
+                    $ingredientManquant=$result[$idManquant];
+                    $sql="SELECT nom FROM ingredient WHERE id=?";
+                    $q=$pdo->prepare($sql);
+                    $q->execute(array($ingredientManquant));
+                    if($line=$q->fetch()) {
+                        $nomIngredientManquant2=$line['nom'];
+                        array_push($list, $nomIngredientManquant2=$line['nom']);
+
+                    }
+                }
+                echo "<h2 class='selectionRecette-titre'>Il vous manque 2 ingrédients</h2>";
+                echo "<div class='selectionRecette-conteneur'>";
+                echo "<div class='selectionRecette-div'>";
+                $sql="SELECT * FROM recette WHERE id=?";
+                $q=$pdo->prepare($sql);
+                $q->execute(array($niemeIng));
+                if($line=$q->fetch()) {
+                    echo    '<div class="manque" style="background-image: url(img/recette/'.$line['imgBg'].');background-position:center;background-size:cover;background-color: rgba(0,0,0,0.6);box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);">Ingrédient manquant :<br> '.$nomIngredientManquant.'</div>
+                                <div class="selectionRecette-desc">
+                                    <h5>'.$line['titre'].'</h5>
+                                    <a href=index.php?id='.$line['id'].'&action=afficherRecette><img src="img/icones/iconfleche.png" alt=""></a>
+                                </div>
+                     </div>';
+                    echo "</div>"; // fin de div selectionRecette-conteneur
+//                    print_r($list);
+                    foreach($list as $idManquant => $nomIng){
+                        echo $nomIng."<br>";
+                    }
+
+                }
+
+                $_SESSION['nbRecettes']++;
+
+                $recetteTrouveManque2=true;
+                /*$ingredientManquant=$result[1];*/
+
+            } // fin du if count resultat
+
+            $z++;
+
+        } // fin du foreach ingredientsDeLaRecette
+
+
+
+
+
+
+
+
+        if($recetteTrouve==false && $recetteTrouveManque1==false && $recetteTrouveManque2==false) {
             echo "<div class=pas-ing>";
             echo "<img class='img-vide' src='img/icones/recetteVide.png'>";
             echo "<p class=pas-ing__coch>Pas de recette trouvée</p>";
